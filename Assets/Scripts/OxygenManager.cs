@@ -1,0 +1,111 @@
+using UnityEngine;
+using TMPro;
+using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
+
+public class OxygenManagement : MonoBehaviour
+{
+    [Header("Configurações de Oxigênio")]
+    public float MaxOxygen = 100f;
+    public float CurrentOxygen;
+    public float DecreaseRate = 1f; 
+    public float Accelerate = 0f;
+
+    [Header("UI")]
+    public TextMeshProUGUI OxygenText; 
+    public TextMeshProUGUI ResetText;
+    public string DeathMessage = "Morto :(";
+    public string ResetMessage = "Aperte R para voltar";
+    private bool IsDead = false;
+
+
+    void Start() 
+    {
+        CurrentOxygen = MaxOxygen;
+        UpdateOxygenText(); 
+    }
+
+    public void OnAccelerate(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Accelerate = 19f;
+        }
+        else
+        {
+            Accelerate = 0f;
+        }
+    }
+
+    void FixedUpdate()
+    {
+        float TaxaTotal = DecreaseRate + Accelerate;
+
+        if (IsDead) return;
+        CurrentOxygen -= TaxaTotal * Time.deltaTime;
+
+        if (CurrentOxygen <= 0f)
+        {
+            CurrentOxygen = 0;
+            Die();
+        }
+
+        UpdateOxygenText();
+    }
+
+    void UpdateOxygenText()
+    {
+        if (OxygenText == null) return;
+
+        if (IsDead)
+        {
+            OxygenText.text = DeathMessage;
+            if (ResetText != null)
+            {
+                ResetText.text = ResetMessage;
+            }
+        }
+        else
+        {                        
+            OxygenText.text = CurrentOxygen.ToString("F0") + "%";
+            if (ResetText != null)
+            {
+                ResetText.text = "";
+            }
+        }
+    }
+
+    void Die()
+    {
+        IsDead = true;
+        UpdateOxygenText();
+        
+        PlayerMovement moveScript = GetComponent<PlayerMovement>();
+        if (moveScript != null)
+            {
+                moveScript.IsDead = true;
+                moveScript.enabled = false;   
+            }
+
+        Rigidbody rb = GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.linearVelocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+        }
+    } 
+
+   public void OnReset(InputAction.CallbackContext context)
+    {
+        if (context.started && IsDead)
+        {
+            RestartScene();
+        }
+    }
+
+    void RestartScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }   
+
+}
