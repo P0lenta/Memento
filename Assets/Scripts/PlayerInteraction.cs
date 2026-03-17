@@ -12,6 +12,8 @@ public class PlayerInteraction : MonoBehaviour
     public TextMeshProUGUI InteractionMessage;
     public string message = "MACACOS ME MORDÃO";
 
+    public GameObject focusedObject = null;
+
     void Start()
     {
           if (InteractionMessage != null)
@@ -23,19 +25,36 @@ public class PlayerInteraction : MonoBehaviour
     public void OnInteract(InputAction.CallbackContext context)
     {
         if (context.started && CanInteract && ActualInteractiveObject != null)
-        {   
-            if (InteractionMessage != null) 
+        {
+            CameraFocus focus = ActualInteractiveObject.GetComponent<CameraFocus>();
+            if (focus != null)
             {
-                InteractionMessage.text = message;
-                InteractionMessage.gameObject.SetActive(true);  
+                focus.StartFocus(this); 
             }
-        }
             else
             {
                 if (InteractionMessage != null)
                 {
-                InteractionMessage.text = "";   
+                    InteractionMessage.text = message;
+                    InteractionMessage.gameObject.SetActive(true);
                 }
+            }
+        }
+        else
+        {
+            if (InteractionMessage != null)
+                InteractionMessage.text = "";
+        }
+    }
+    public void OnExitFocus (InputAction.CallbackContext context)
+    {
+        if (context.started && focusedObject != null)
+        {
+            CameraFocus focus = focusedObject.GetComponent<CameraFocus>();
+            if (focus != null)
+            {
+                focus.EndFocus();
+            }
         }
     }
 }

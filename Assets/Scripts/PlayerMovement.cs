@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
 
+[Header("Modelo 3D")]
+    public GameObject playerModel;
 
 [Header("Valores de velocidade")]
     public float speed = 10;              
@@ -23,12 +25,13 @@ public class PlayerMovement : MonoBehaviour
 
 [Header("Flags")]
     public bool IsDead = false;             
+    public bool IsInteracting = false;
 
     private Vector3 moveInput;
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        if (IsDead) return;
+        if (IsDead || IsInteracting) return;
 
         Vector2 input = context.ReadValue<Vector2>();
         moveInput = input.normalized * speed;
@@ -46,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (IsDead) return;
+        if (IsDead || IsInteracting) return;
 
         if (context.started)  
         {
@@ -63,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnLook(InputAction.CallbackContext context)
     {       
-        if (IsDead) return;
+        if (IsDead || IsInteracting) return;
 
         Vector2 lookInput = context.ReadValue<Vector2>();  
 
