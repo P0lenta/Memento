@@ -15,6 +15,7 @@ public class CameraFocus : MonoBehaviour
     private Transform originalParent;
     private Vector3 originalLocalPos;
     private Quaternion originalLocalRot;
+    
 
     public void StartFocus(PlayerInteraction interaction)
     {
@@ -30,6 +31,10 @@ public class CameraFocus : MonoBehaviour
 
             if (playerMovement.playerModel != null)
             playerMovement.playerModel.SetActive(false);
+
+            if(playerInteraction.HandsUI != null)
+            playerInteraction.HandsUI.SetActive(false);
+
             
         playerMovement.IsInteracting = true;
         playerInteraction.enabled = false;
@@ -65,6 +70,7 @@ public class CameraFocus : MonoBehaviour
         playerMovement.playerModel.SetActive(true);
         playerMovement.IsInteracting = false;
         playerInteraction.enabled = true;
+        playerInteraction.HandsUI.SetActive(true);
 
 
         if (playerInteraction != null)
