@@ -104,15 +104,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "ExitFocus",
-                    "type": "Button",
-                    "id": "800cddaa-b14d-4209-a62a-9af978e3acb1",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -520,17 +511,6 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "Accelerate",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "fabe36d9-36bb-46b7-981d-a4fbfb3702c0",
-                    "path": "<Keyboard>/e",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "ExitFocus",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

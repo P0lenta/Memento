@@ -3,6 +3,12 @@ using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {
-    public void LoadScene(string _sceneName) => SceneManager.LoadScene(_sceneName);
+
+    [Header("Cena")]
+    public string SceneName;
+    public void LoadScene()
+    {
+        SceneManager.LoadScene(SceneName);
+    }
     
 }
