@@ -992,10 +992,10 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2089592680}
+      - m_Target: {fileID: 2089592679}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: set_volume
-        m_Mode: 0
+        m_MethodName: 
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4183,7 +4183,7 @@ AudioSource:
   m_GameObject: {fileID: 2089592679}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 8493267988704197864, guid: f33b28dbf35d64b41b9031c8908306f8, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: bf9d2c4b0ebe8db7eb1d50ad2d262177, type: 3}
   m_PlayOnAwake: 1

@@ -4,6 +4,9 @@ using TMPro;
 
 public class PlayerInteraction : MonoBehaviour
 {
+    [Header("Emoção capturada")]
+    public EmotionType HeldFishEmotion = EmotionType.None;
+
     [Header("flags")]
     public bool CanInteract = false;
     public GameObject ActualInteractiveObject = null;
@@ -43,6 +46,12 @@ public class PlayerInteraction : MonoBehaviour
             return;
         }
             
+        FishCapture fish = ActualInteractiveObject.GetComponent<FishCapture>();
+        if (fish != null)
+        {
+            fish.Interact(this);
+            return;
+        }
 }
 
 }
