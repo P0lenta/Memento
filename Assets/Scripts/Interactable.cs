@@ -17,6 +17,9 @@ public class Interactable : MonoBehaviour
 
     private void OnTriggerEnter (Collider other)
     {
+        if (!gameObject.activeInHierarchy)
+        return;
+
          PlayerInteraction playerInteraction = other.GetComponent<PlayerInteraction>();
             if (playerInteraction != null)
             {
@@ -47,6 +50,14 @@ public class Interactable : MonoBehaviour
             {
                 InteractionText.gameObject.SetActive(false);
             }
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (InteractionText != null)
+        {
+            InteractionText.gameObject.SetActive(false);
         }
     }
 
