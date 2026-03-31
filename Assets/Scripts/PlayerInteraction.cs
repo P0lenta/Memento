@@ -17,6 +17,8 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (!context.started) return;
 
+        if (!context.started) return;
+
         if (focusedObject != null)
         {
             CameraFocus focus = focusedObject.GetComponent<CameraFocus>();
@@ -25,31 +27,42 @@ public class PlayerInteraction : MonoBehaviour
             return; 
         }
         
-        if (CanInteract && ActualInteractiveObject != null)
+        if (!CanInteract || ActualInteractiveObject == null)
         {
-            CameraFocus focus = ActualInteractiveObject.GetComponent<CameraFocus>();
-            if (focus != null)
-                focus.StartFocus(this);
-        }
-
-        EmotionGiver emotionGiver = ActualInteractiveObject.GetComponent<EmotionGiver>();
-        if (emotionGiver != null)
-        {
-            EmotionManager.Instance.SetEmotion(emotionGiver.emotionToGive);
             return;
         }
 
-        SceneChanger sceneChanger = ActualInteractiveObject.GetComponent<SceneChanger>();
-        if (sceneChanger != null)
+        EmotionGiver giver = ActualInteractiveObject.GetComponent<EmotionGiver>();
+        if (giver != null)
         {
-            sceneChanger.LoadScene();
+            EmotionManager.Instance.SetEmotion(giver.EmotionToGive);
+        }
+
+        CameraFocus Focus = ActualInteractiveObject.GetComponent<CameraFocus>();
+            if (Focus != null)
+            {
+                Focus.StartFocus(this);
+                return;
+            }
+
+        SceneChanger SceneChanger = ActualInteractiveObject.GetComponent<SceneChanger>();
+        if (SceneChanger != null)
+        {
+            SceneChanger.LoadScene();
             return;
         }
             
-        FishCapture fish = ActualInteractiveObject.GetComponent<FishCapture>();
-        if (fish != null)
+        FishCapture Fish = ActualInteractiveObject.GetComponent<FishCapture>();
+        if (Fish != null)
         {
-            fish.Interact(this);
+            Fish.Interact(this);
+            return;
+        }
+
+        FishDelivery Delivery = ActualInteractiveObject.GetComponent<FishDelivery>();
+        if (Delivery != null)
+        {
+            Delivery.TryDeliver(this);
             return;
         }
 }

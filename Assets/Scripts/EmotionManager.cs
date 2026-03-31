@@ -28,6 +28,7 @@ public class EmotionManager : MonoBehaviour
     
     public void SetEmotion (EmotionType newEmotion)
     {
+         Debug.Log($"SetEmotion chamado com {newEmotion}. Atual: {currentEmotion}");
         if (currentEmotion == newEmotion) return;
         currentEmotion = newEmotion;
         OnEmotionChanged?.Invoke(currentEmotion);

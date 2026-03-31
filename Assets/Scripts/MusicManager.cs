@@ -7,32 +7,51 @@ public class MusicManager : MonoBehaviour
 {
     public Slider MusicSlider;
     public Slider SFXSlider;
-    public float VolumeMusic = 0.5f;
-    public float VolumeSFX = 0.5f;
     public AudioMixer MasterMixer;
 
-    void Awake() => Invoke("Setup", 0.1f);
+    private float CurrentMusicVolume = 0.5f;
+    private float CurrentSFXVolume = 0.5f;
 
-    void Setup()
+    void Awake()
     {
-        if(PlayerPrefs.HasKey("MusicVolume")) VolumeMusic = PlayerPrefs.GetFloat("MusicVolume");
-        OnSliderMusic(VolumeMusic);
-        MusicSlider.value = VolumeMusic;
+        if (PlayerPrefs.HasKey("VolumeMusic"))
+        CurrentMusicVolume = PlayerPrefs.GetFloat("VolumeMusic");
+        if (PlayerPrefs.HasKey("VolumeSFX"))
+        CurrentSFXVolume = PlayerPrefs.GetFloat("VolumeSFX");
 
-        if(PlayerPrefs.HasKey("SFXVolume")) VolumeSFX = PlayerPrefs.GetFloat("SFXVolume");
-        OnSliderSFX(VolumeSFX);
-        SFXSlider.value = VolumeSFX;
+        MusicSlider.value = CurrentMusicVolume;
+        SFXSlider.value = CurrentSFXVolume;
+
+        ApplyMusicVolume(CurrentMusicVolume);
+        ApplySFXVolume(CurrentSFXVolume);
     }
 
-    public void OnSliderMusic(float Volume) => OnSetVolume("MusicVolume", ref VolumeMusic, ref Volume);
-    public void OnSliderSFX(float Volume) => OnSetVolume("SFXVolume", ref VolumeSFX, ref Volume);
-
-    public void OnSetVolume(string MixerGroup, ref float CurrentVolume, ref float NewVolume)
+    public void OnSliderMusic(float Volume)
     {
-        CurrentVolume = NewVolume;
-        MasterMixer.SetFloat(MixerGroup, Mathf.Log10(Mathf.Max(CurrentVolume, 0.0001f)) * 20f);
-        PlayerPrefs.SetFloat(MixerGroup, CurrentVolume);
+        CurrentMusicVolume = Volume;
+        ApplyMusicVolume(Volume);
+        PlayerPrefs.SetFloat("VolumeMusic", Volume);
         PlayerPrefs.Save();
+    }
+
+    public void OnSliderSFX(float Volume)
+    {
+        CurrentSFXVolume = Volume;
+          ApplySFXVolume(Volume);
+          PlayerPrefs.SetFloat("VolumeSFX", Volume);
+        PlayerPrefs.Save();
+    }
+    
+    private void ApplyMusicVolume(float LinearVolume)
+    {
+        float dB = Mathf.Log10(Mathf.Max(LinearVolume, 0.0001f)) * 20f;
+        MasterMixer.SetFloat("VolumeMusic", dB);
+    }
+
+    private void ApplySFXVolume(float LinearVolume)
+    {
+        float dB = Mathf.Log10(Mathf.Max(LinearVolume, 0.0001f)) * 20f;
+        MasterMixer.SetFloat("VolumeSFX", dB);
     }
 
 }
