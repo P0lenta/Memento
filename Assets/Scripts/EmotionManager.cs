@@ -5,8 +5,11 @@ public class EmotionManager : MonoBehaviour
    public static EmotionManager Instance { get; private set; }
 
     [SerializeField] private EmotionType currentEmotion = EmotionType.None;
+    public EmotionType CurrentMissionFish = EmotionType.None;
+    public EmotionType HeldFish = EmotionType.None;
 
     public System.Action<EmotionType> OnEmotionChanged;
+
 
     private void Awake()
     {
@@ -28,11 +31,9 @@ public class EmotionManager : MonoBehaviour
     
     public void SetEmotion (EmotionType newEmotion)
     {
-         Debug.Log($"SetEmotion chamado com {newEmotion}. Atual: {currentEmotion}");
         if (currentEmotion == newEmotion) return;
         currentEmotion = newEmotion;
         OnEmotionChanged?.Invoke(currentEmotion);
-        Debug.Log ("Emoção alterada para: " + currentEmotion);
     }
 
 }

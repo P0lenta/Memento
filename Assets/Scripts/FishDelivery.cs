@@ -38,7 +38,16 @@ public class FishDelivery : MonoBehaviour
             };
         }
 
-        SetRandomRequiredEmotion();
+        if (EmotionManager.Instance.CurrentMissionFish == EmotionType.None)
+        {
+            SetRandomRequiredEmotion();
+            EmotionManager.Instance.CurrentMissionFish = RequiredEmotion;
+        }
+        else
+        {
+            RequiredEmotion = EmotionManager.Instance.CurrentMissionFish;
+        }
+
         UpdateIcon();
 
     }
@@ -48,15 +57,17 @@ public class FishDelivery : MonoBehaviour
         if (RequiredEmotion == EmotionType.None)
         {
             SetRandomRequiredEmotion();
+            EmotionManager.Instance.CurrentMissionFish = RequiredEmotion;
             UpdateIcon();
         }
 
         if (MessageTimer > 0)
         {
             MessageTimer -= Time.deltaTime;
-            if(MessageTimer <= 0 && MessageText != null)
+            if(MessageTimer <= 0f)
             {
-                MessageText.text = "";
+                if (MessageText != null) MessageText.gameObject.SetActive(false);
+                if (EmotionIcon != null) EmotionIcon.gameObject.SetActive(false);
             }
         }
     }
@@ -78,27 +89,35 @@ public class FishDelivery : MonoBehaviour
 
     public void TryDeliver(PlayerInteraction player)
     {
-        Debug.Log ("Trydeliver ativado");
-        Debug.Log($"TryDeliver: HeldFish={player.HeldFishEmotion}, Required={RequiredEmotion}");
-        if (player.HeldFishEmotion == RequiredEmotion)
+        if (EmotionManager.Instance.CurrentMissionFish == EmotionType.None)
+        {   
+            SetRandomRequiredEmotion();
+            EmotionManager.Instance.CurrentMissionFish = RequiredEmotion;
+            UpdateIcon();
+            ShowMessage($"Preciso do peixe {RequiredEmotion}");
+            return;
+        }
+
+        if (player.HeldFishEmotion == EmotionManager.Instance.CurrentMissionFish)
         {
-            player.HeldFishEmotion = EmotionType.None;
+            player.SetHeldFish(EmotionType.None);
+            EmotionManager.Instance.SetEmotion(EmotionType.None);
+            
             ShowMessage("Obrigado pela entrega");
 
             if (PedestalRenderer != null && SuccessMaterial != null)
             PedestalRenderer.material = SuccessMaterial;
 
-            SetRandomRequiredEmotion();
-            UpdateIcon();
-
+            EmotionManager.Instance.CurrentMissionFish = EmotionType.None;
+            
             if (DefaultMaterial != null)
             {
-                Invoke(nameof(RevertMaterial), 0.5f);
+                Invoke(nameof(RevertMaterial), 2f);
             }
         }
         else
         {
-            ShowMessage($"Preciso do peixe {RequiredEmotion}");
+            ShowMessage($"Preciso do peixe {EmotionManager.Instance.CurrentMissionFish}");
         }
     }
 

@@ -14,17 +14,33 @@ public class PlayerInteraction : MonoBehaviour
     public GameObject HandsUI;
     public Animator HandsAnimation;
 
+
+    void Start()
+    {
+        if (EmotionManager.Instance != null)
+        HeldFishEmotion = EmotionManager.Instance.HeldFish;
+        
+        UpdateHoldingAnimation();
+    }
+
+    public void SetHeldFish(EmotionType Fish)
+    {
+        HeldFishEmotion = Fish;
+        if (EmotionManager.Instance != null)
+        {
+            EmotionManager.Instance.HeldFish = Fish;
+        }
+
+        UpdateHoldingAnimation();
+    }
     public void OnInteract(InputAction.CallbackContext context)
     {
         if (!context.started) return;
-
-        Debug.Log("OnInteract chamado");
+        
+        HandsAnimation.SetTrigger("Grab");
 
         if (focusedObject != null)
         {
-
-            Debug.Log("Tem focusedObject, tentando sair do foco");
-
             CameraFocus focus = focusedObject.GetComponent<CameraFocus>();
             if (focus != null)
                 focus.EndFocus();
@@ -33,62 +49,50 @@ public class PlayerInteraction : MonoBehaviour
         
         if (!CanInteract || ActualInteractiveObject == null)
         {
-            Debug.Log($"Não pode interagir: CanInteract={CanInteract}, ActualInteractiveObject={ActualInteractiveObject}");
             return;
         }
 
-            
-
-            Debug.Log($"Pode interagir com: {ActualInteractiveObject.name}");
-
-        EmotionGiver giver = ActualInteractiveObject.GetComponent<EmotionGiver>();
-        if (giver != null)
+        EmotionGiver Giver = ActualInteractiveObject.GetComponent<EmotionGiver>();
+        if (Giver != null)
         {
-
-            Debug.Log("Encontrou EmotionGiver");
-
-            EmotionManager.Instance.SetEmotion(giver.EmotionToGive);
+            EmotionManager.Instance.SetEmotion(Giver.EmotionToGive);
         }
+
+        CameraFocus Focus = ActualInteractiveObject.GetComponent<CameraFocus>();
+            if (Focus != null)
+            {
+                Focus.StartFocus(this);
+            }
 
         SceneChanger SceneChanger = ActualInteractiveObject.GetComponent<SceneChanger>();
         if (SceneChanger != null)
         {
-
-            Debug.Log("Encontrou SceneChanger");
-
             SceneChanger.LoadScene();
         }
             
         FishCapture Fish = ActualInteractiveObject.GetComponent<FishCapture>();
         if (Fish != null)
         {
-
-            Debug.Log("Encontrou FishCapture");
-
             Fish.Interact(this);
         }
 
         FishDelivery Delivery = ActualInteractiveObject.GetComponent<FishDelivery>();
         if (Delivery != null)
         {
-
-            Debug.Log("Encontrou FishDelivery");
-
             Delivery.TryDeliver(this);
         }
+    }
 
-        CameraFocus Focus = ActualInteractiveObject.GetComponent<CameraFocus>();
-            if (Focus != null)
-            {
-
-                Debug.Log("Encontrou CameraFocus");
-
-                Focus.StartFocus(this);
-            }
-
-        Debug.Log("Nenhum componente de interação encontrado");
-
-}
-
+    void UpdateHoldingAnimation()
+    {
+        if (HeldFishEmotion == EmotionType.None)
+        {
+         HandsAnimation.SetBool("IsHolding", false);   
+        }
+        else
+        {
+            HandsAnimation.SetBool("IsHolding", true);
+        }
+    }
 
 }

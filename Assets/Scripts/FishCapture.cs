@@ -13,8 +13,7 @@ public class FishCapture : MonoBehaviour
     {
         if (fishVisibility != null)
         {
-            player.HeldFishEmotion = fishVisibility.EmotionAttached;
-            Debug.Log($"Pegou um peixe {player.HeldFishEmotion}!");
+            player.SetHeldFish(fishVisibility.EmotionAttached);
         }
         else
         {

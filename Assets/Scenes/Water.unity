@@ -872,8 +872,8 @@ GameObject:
   - component: {fileID: 510617305}
   - component: {fileID: 510617304}
   - component: {fileID: 510617309}
-  - component: {fileID: 510617310}
   - component: {fileID: 510617303}
+  - component: {fileID: 510617310}
   - component: {fileID: 510617308}
   m_Layer: 0
   m_Name: SadSphere
@@ -1033,11 +1033,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 510617302}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8253af5e2ba49c64c8bd9c7fdc932a60, type: 3}
+  m_Script: {fileID: 11500000, guid: b8f23c688c8788842a532d87a37c0241, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FishVisibility
-  EmotionAttached: 0
-  DisableMatch: 0
+  m_EditorClassIdentifier: Assembly-CSharp::FishCapture
+  fishVisibility: {fileID: 0}
 --- !u!1 &609579084
 GameObject:
   m_ObjectHideFlags: 0
@@ -1158,6 +1157,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EmotionManager
   currentEmotion: 0
+  CurrentMissionFish: 0
+  HeldFish: 0
 --- !u!4 &614291046
 Transform:
   m_ObjectHideFlags: 0
@@ -3565,6 +3566,7 @@ MonoBehaviour:
   ActualInteractiveObject: {fileID: 0}
   focusedObject: {fileID: 0}
   HandsUI: {fileID: 487669813}
+  HandsAnimation: {fileID: 487669814}
 --- !u!114 &1904847107
 MonoBehaviour:
   m_ObjectHideFlags: 0
