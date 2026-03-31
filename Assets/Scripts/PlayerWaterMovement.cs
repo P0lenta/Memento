@@ -26,6 +26,7 @@ public class PlayerWaterMovement : MonoBehaviour
     public bool IsDead = false;             
     public bool IsInteracting = false;
     private bool IsJumping = false;
+    public Animator HandsAnimation;
 
     private Vector3 moveInput;
 
@@ -35,6 +36,15 @@ public class PlayerWaterMovement : MonoBehaviour
 
         Vector2 input = context.ReadValue<Vector2>();
         moveInput = input.normalized * speed;
+
+        if (moveInput.sqrMagnitude > 0.1f)
+        {
+            HandsAnimation.SetBool("IsSwiming", true);
+        }
+        else
+        {
+            HandsAnimation.SetBool("IsSwiming", false);
+        }
 
     }
 

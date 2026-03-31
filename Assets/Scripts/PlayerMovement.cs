@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
 [Header("Flags")]
     public bool IsDead = false;             
     public bool IsInteracting = false;
+    public Animator HandsAnimation;
 
     private Vector3 moveInput;
 
@@ -36,7 +37,17 @@ public class PlayerMovement : MonoBehaviour
         Vector2 input = context.ReadValue<Vector2>();
         moveInput = input.normalized * speed;
 
+        if (moveInput.sqrMagnitude > 0.1f)
+        {
+            HandsAnimation.SetBool("IsMoving", true);
+        }
+        else
+        {
+            HandsAnimation.SetBool("IsMoving", false);
+        }
+
     }
+    
 
     void FixedUpdate()
     {

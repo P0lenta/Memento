@@ -55,7 +55,9 @@ public class FishDelivery : MonoBehaviour
         {
             MessageTimer -= Time.deltaTime;
             if(MessageTimer <= 0 && MessageText != null)
-            MessageText.text = "";
+            {
+                MessageText.text = "";
+            }
         }
     }
 
@@ -76,6 +78,7 @@ public class FishDelivery : MonoBehaviour
 
     public void TryDeliver(PlayerInteraction player)
     {
+        Debug.Log ("Trydeliver ativado");
         Debug.Log($"TryDeliver: HeldFish={player.HeldFishEmotion}, Required={RequiredEmotion}");
         if (player.HeldFishEmotion == RequiredEmotion)
         {
