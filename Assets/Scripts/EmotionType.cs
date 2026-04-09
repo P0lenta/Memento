@@ -3,10 +3,10 @@ using UnityEngine;
     public enum EmotionType
     {
         None,
-        Happy,
-        Sad,
-        Angry,
-        Fear,
-        Surprised
+        Felicidade,
+        Tristeza,
+        Raiva,
+        Medo,
+        Surpresa
     }
 

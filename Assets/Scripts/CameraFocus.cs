@@ -15,13 +15,15 @@ public class CameraFocus : MonoBehaviour
     private Transform originalParent;
     private Vector3 originalLocalPos;
     private Quaternion originalLocalRot;
+    private Renderer PlayerRenderer;
+    private Renderer HandRenderer;
     
 
     public void StartFocus(PlayerInteraction interaction)
     {
         if (IsFocused) return;
 
-            
+
             playerInteraction = interaction;
             playerMovement = interaction.GetComponent<PlayerMovement>();
             if (playerMovement == null) return;
@@ -30,10 +32,17 @@ public class CameraFocus : MonoBehaviour
             if (playerCamera == null) return;
 
             if (playerMovement.playerModel != null)
-            playerMovement.playerModel.SetActive(false);
+            {
+                PlayerRenderer = playerMovement.playerModel.GetComponent<Renderer>();
+                PlayerRenderer.enabled = false;
+            }
+
 
             if(playerInteraction.HandsUI != null)
-            playerInteraction.HandsUI.SetActive(false);
+            {   
+                HandRenderer = playerInteraction.HandsUI.GetComponent<Renderer>();
+                HandRenderer.enabled = false;
+            }
 
             
         playerMovement.IsInteracting = true;
@@ -57,6 +66,8 @@ public class CameraFocus : MonoBehaviour
 
         IsFocused = true;
 
+
+
     }
 
     public void EndFocus()
@@ -67,7 +78,8 @@ public class CameraFocus : MonoBehaviour
         playerCamera.localPosition = originalLocalPos;
         playerCamera.localRotation = originalLocalRot;
 
-        playerMovement.playerModel.SetActive(true);
+        PlayerRenderer.enabled = true;
+        HandRenderer.enabled = true;
         playerMovement.IsInteracting = false;
         playerInteraction.enabled = true;
         playerInteraction.HandsUI.SetActive(true);

@@ -30,6 +30,16 @@ public class PlayerWaterMovement : MonoBehaviour
 
     private Vector3 moveInput;
 
+[Header("Gravidade na água")]
+    public float WaterGravityPercent = 50f;
+    private float DefaultGravity = -9.81f;
+
+
+    void Start()
+    {
+        rig.useGravity = false;
+    }
+
     public void OnMove(InputAction.CallbackContext context)
     {
         if (IsDead || IsInteracting) return;
@@ -50,6 +60,10 @@ public class PlayerWaterMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+
+        float ReducedGravity = DefaultGravity * (WaterGravityPercent / 100);
+        rig.AddForce(Vector3.up * ReducedGravity, ForceMode.Acceleration);
+
         Vector3 vX = moveInput.x * transform.right;        
         Vector3 vY = rig.linearVelocity.y * transform.up;   
         Vector3 vZ = moveInput.y * transform.forward;       

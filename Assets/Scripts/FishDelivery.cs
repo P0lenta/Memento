@@ -30,11 +30,11 @@ public class FishDelivery : MonoBehaviour
         {
             PossibleEmotion = new EmotionType[]
             {
-                EmotionType.Happy,
-                EmotionType.Sad,
-                EmotionType.Angry,
-                EmotionType.Fear,
-                EmotionType.Surprised
+                EmotionType.Felicidade,
+                EmotionType.Tristeza,
+                EmotionType.Raiva,
+                EmotionType.Medo,
+                EmotionType.Surpresa
             };
         }
 
@@ -54,13 +54,6 @@ public class FishDelivery : MonoBehaviour
 
     void Update()
     {
-        if (RequiredEmotion == EmotionType.None)
-        {
-            SetRandomRequiredEmotion();
-            EmotionManager.Instance.CurrentMissionFish = RequiredEmotion;
-            UpdateIcon();
-        }
-
         if (MessageTimer > 0)
         {
             MessageTimer -= Time.deltaTime;
@@ -75,6 +68,10 @@ public class FishDelivery : MonoBehaviour
     void SetRandomRequiredEmotion()
     {
         if (PossibleEmotion.Length == 0) return;
+
+        if (RequiredEmotion == EmotionType.None)
+        SetRandomRequiredEmotion();
+
         int index = Random.Range(0, PossibleEmotion.Length);
         RequiredEmotion = PossibleEmotion[index];
     }

@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 
-public class OxygenManagement : MonoBehaviour
+public class OxygenManager : MonoBehaviour
 {
     [Header("Configurações de Oxigênio")]
     public float MaxOxygen = 100f;
@@ -16,7 +16,9 @@ public class OxygenManagement : MonoBehaviour
     public TextMeshProUGUI ResetText;
     public string DeathMessage = "Morto :(";
     public string ResetMessage = "Aperte R para voltar";
+    public GameObject HandsUI;
     private bool IsDead = false;
+    public Renderer HandsRenderer;
 
 
     void Start() 
@@ -75,12 +77,15 @@ public class OxygenManagement : MonoBehaviour
         }
     }
 
-    void Die()
+    public void Die()
     {
         IsDead = true;
         UpdateOxygenText();
+
+         if(HandsRenderer != null)
+         HandsRenderer.enabled = false;
         
-        PlayerMovement moveScript = GetComponent<PlayerMovement>();
+        PlayerWaterMovement moveScript = GetComponent<PlayerWaterMovement>();
         if (moveScript != null)
             {
                 moveScript.IsDead = true;

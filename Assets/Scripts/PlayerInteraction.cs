@@ -36,8 +36,6 @@ public class PlayerInteraction : MonoBehaviour
     public void OnInteract(InputAction.CallbackContext context)
     {
         if (!context.started) return;
-        
-        HandsAnimation.SetTrigger("Grab");
 
         if (focusedObject != null)
         {
@@ -46,6 +44,8 @@ public class PlayerInteraction : MonoBehaviour
                 focus.EndFocus();
             return; 
         }
+
+        HandsAnimation.SetTrigger("Grab");
         
         if (!CanInteract || ActualInteractiveObject == null)
         {
@@ -80,6 +80,18 @@ public class PlayerInteraction : MonoBehaviour
         if (Delivery != null)
         {
             Delivery.TryDeliver(this);
+        }
+
+        Projector Skip = ActualInteractiveObject.GetComponent<Projector>();
+        if (Skip != null)
+        {
+            Skip.Avancar();
+        }
+
+        Trash Lixo = ActualInteractiveObject.GetComponent<Trash>();
+        if (Lixo != null)
+        {
+            Lixo.Fora(this);
         }
     }
 

@@ -5000,7 +5000,7 @@ MonoBehaviour:
   IsDead: 0
   IsInteracting: 0
   HandsAnimation: {fileID: 487669814}
-  WaterGravityReduction: 50
+  WaterGravityReduction: 0.5
 --- !u!136 &1904847109
 CapsuleCollider:
   m_ObjectHideFlags: 0

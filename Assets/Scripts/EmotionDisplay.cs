@@ -23,23 +23,23 @@ public class EmotionDisplay : MonoBehaviour
 
         switch(current)
         {
-            case EmotionType.Happy:
+            case EmotionType.Felicidade:
             if (HappyIcon != null) HappyIcon.SetActive(true);
             break;
 
-            case EmotionType.Sad:
+            case EmotionType.Tristeza:
             if (SadIcon != null) SadIcon.SetActive(true);
             break;
 
-            case EmotionType.Angry:
+            case EmotionType.Raiva:
             if (AngryIcon != null) AngryIcon.SetActive(true);
             break;
 
-            case EmotionType.Fear:
+            case EmotionType.Medo:
             if (FearIcon != null) FearIcon.SetActive(true);
             break;
 
-            case EmotionType.Surprised:
+            case EmotionType.Surpresa:
             if (SurprisedIcon != null) SurprisedIcon.SetActive(true);
             break;
         }
