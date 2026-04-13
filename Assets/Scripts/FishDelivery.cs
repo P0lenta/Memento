@@ -21,6 +21,26 @@ public class FishDelivery : MonoBehaviour
     public float MessageDuration = 2f;
     private float MessageTimer = 0f;
 
+    [Header("Mensagens das missões")]
+    public string[] MissionsMessage = new string[]
+    {
+        "Sou hetero",
+        "Sou gay",
+        "Sou bi",
+        "Sou brksedu"
+    };
+
+    [Header ("Mensagens das entregas")]
+    public string[] CompleteMessage = new string[]
+    {
+        "Cura hetero",
+        "Cura gay",
+        "Cura bi",
+        "Cura brksedu"
+    };    
+
+    private static int CurrentEmotionIndex = 0;
+
     void Start()
     {
         if (MessageText != null) MessageText.gameObject.SetActive(false);
@@ -40,7 +60,7 @@ public class FishDelivery : MonoBehaviour
 
         if (EmotionManager.Instance.CurrentMissionFish == EmotionType.None)
         {
-            SetRandomRequiredEmotion();
+            SetRequiredEmotion();
             EmotionManager.Instance.CurrentMissionFish = RequiredEmotion;
         }
         else
@@ -65,15 +85,12 @@ public class FishDelivery : MonoBehaviour
         }
     }
 
-    void SetRandomRequiredEmotion()
+    void SetRequiredEmotion()
     {
         if (PossibleEmotion.Length == 0) return;
 
-        if (RequiredEmotion == EmotionType.None)
-        SetRandomRequiredEmotion();
-
-        int index = Random.Range(0, PossibleEmotion.Length);
-        RequiredEmotion = PossibleEmotion[index];
+        RequiredEmotion = PossibleEmotion[CurrentEmotionIndex];
+        CurrentEmotionIndex = (CurrentEmotionIndex + 1) % PossibleEmotion.Length;
     }
 
     void UpdateIcon()
@@ -88,10 +105,19 @@ public class FishDelivery : MonoBehaviour
     {
         if (EmotionManager.Instance.CurrentMissionFish == EmotionType.None)
         {   
-            SetRandomRequiredEmotion();
+            if (CurrentEmotionIndex >= 0 && CurrentEmotionIndex < MissionsMessage.Length)
+            {
+                ShowMessage(MissionsMessage[CurrentEmotionIndex]);
+            }
+            else 
+            {
+                ShowMessage(CompleteMessage[CurrentEmotionIndex]);
+            }
+            
+            SetRequiredEmotion();
             EmotionManager.Instance.CurrentMissionFish = RequiredEmotion;
             UpdateIcon();
-            ShowMessage($"Preciso do peixe {RequiredEmotion}");
+    
             return;
         }
 
@@ -112,10 +138,7 @@ public class FishDelivery : MonoBehaviour
                 Invoke(nameof(RevertMaterial), 2f);
             }
         }
-        else
-        {
-            ShowMessage($"Preciso do peixe {EmotionManager.Instance.CurrentMissionFish}");
-        }
+    
     }
 
     void RevertMaterial()
