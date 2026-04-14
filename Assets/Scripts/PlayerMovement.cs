@@ -34,18 +34,17 @@ public class PlayerMovement : MonoBehaviour
     {
         if (IsDead || IsInteracting) return;
 
-        Vector2 input = context.ReadValue<Vector2>();
-        moveInput = input.normalized * speed;
+            Vector2 input = context.ReadValue<Vector2>();
+            moveInput = input.normalized * speed;
 
-        if (moveInput.sqrMagnitude > 0.1f)
-        {
-            HandsAnimation.SetBool("IsMoving", true);
-        }
-        else
-        {
-            HandsAnimation.SetBool("IsMoving", false);
-        }
-
+            if (moveInput.sqrMagnitude > 0.1f)
+            {
+                HandsAnimation.SetBool("IsMoving", true);
+            }
+            else
+            {
+                HandsAnimation.SetBool("IsMoving", false);
+            }
     }
     
 

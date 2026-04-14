@@ -1801,6 +1801,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1309543963}
+  - {fileID: 1757609312}
   m_Father: {fileID: 1958548638}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &330585547
@@ -1823,7 +1824,7 @@ MonoBehaviour:
   m_RendererIndex: -1
   m_VolumeLayerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 65
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 1
@@ -3032,6 +3033,7 @@ MonoBehaviour:
   - {fileID: -1040357172, guid: 21bdd30c12c52a7d8ad878200969ba2c, type: 3}
   - {fileID: 1207136381, guid: 21bdd30c12c52a7d8ad878200969ba2c, type: 3}
   Intervalo: 5
+  Passou: 0
 --- !u!212 &555703528
 SpriteRenderer:
   serializedVersion: 2
@@ -5727,7 +5729,7 @@ GameObject:
   - component: {fileID: 1309543963}
   - component: {fileID: 1309543962}
   - component: {fileID: 1309543961}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Spot Light (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7610,6 +7612,55 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1742926730}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1757609311
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1757609312}
+  - component: {fileID: 1757609313}
+  m_Layer: 0
+  m_Name: Global Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1757609312
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757609311}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 330585546}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1757609313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757609311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Core.Runtime::UnityEngine.Rendering.Volume
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 6b6dfeab7c98ec7448ba9bc2e7088aa4, type: 2}
 --- !u!1 &1761890338
 GameObject:
   m_ObjectHideFlags: 0
@@ -8311,6 +8362,7 @@ GameObject:
   - component: {fileID: 1958548639}
   - component: {fileID: 1958548640}
   - component: {fileID: 1958548632}
+  - component: {fileID: 1958548641}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -8590,8 +8642,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1958548631}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.59, y: 1, z: 0}
+  m_LocalRotation: {x: -0.15367576, y: 0, z: 0, w: 0.98812133}
+  m_LocalPosition: {x: -15.9, y: 1, z: 4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8599,7 +8651,7 @@ Transform:
   - {fileID: 910905265}
   - {fileID: 330585546}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -17.68, y: 0, z: 0}
 --- !u!114 &1958548639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8640,6 +8692,20 @@ MonoBehaviour:
   focusedObject: {fileID: 0}
   HandsUI: {fileID: 1144724021}
   HandsAnimation: {fileID: 1376080166}
+--- !u!114 &1958548641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958548631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4e3372508755554f9eb25525f5a16bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TutorialTime
+  playerMovement: {fileID: 1958548633}
+  Timer: 3
 --- !u!1 &2013013403
 GameObject:
   m_ObjectHideFlags: 0

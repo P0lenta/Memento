@@ -8,6 +8,7 @@ public class Projector : MonoBehaviour
     private SpriteRenderer Renderer;
     private int Index = 0;
     private float Timer;
+    public float Passou = 0;
 
 
     void Start()
@@ -33,5 +34,6 @@ public class Projector : MonoBehaviour
         Index = (Index + 1) % Frames.Length;
         Renderer.sprite = Frames[Index];
         Timer = Intervalo;
+        Passou += 1f;
     }
 }
