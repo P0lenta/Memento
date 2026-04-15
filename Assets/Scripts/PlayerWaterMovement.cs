@@ -9,7 +9,7 @@ public class PlayerWaterMovement : MonoBehaviour
 
 [Header("Valores de velocidade")]
     public float speed = 10;              
-    public float jumpForce = 20;          
+    public float jumpForce = 3;          
     public float turnSpeedHorizontal = 0.3f; 
     public float turnSpeeVertical = 0.1f; 
 
@@ -26,6 +26,7 @@ public class PlayerWaterMovement : MonoBehaviour
     public bool IsDead = false;             
     public bool IsInteracting = false;
     private bool IsJumping = false;
+    private bool IsCrouching = false;
     public Animator HandsAnimation;
 
     private Vector3 moveInput;
@@ -62,7 +63,10 @@ public class PlayerWaterMovement : MonoBehaviour
     {
 
         float ReducedGravity = DefaultGravity * (WaterGravityPercent / 100);
-        rig.AddForce(Vector3.up * ReducedGravity, ForceMode.Acceleration);
+
+        if (IsCrouching) ReducedGravity = DefaultGravity;
+
+        if (!IsJumping) rig.AddForce(Vector3.up * ReducedGravity, ForceMode.Acceleration);   
 
         Vector3 vX = moveInput.x * transform.right;        
         Vector3 vY = rig.linearVelocity.y * transform.up;   
@@ -70,12 +74,9 @@ public class PlayerWaterMovement : MonoBehaviour
 
         rig.linearVelocity = vX + vY + vZ;
 
-        if (IsJumping == true)
+        if (IsJumping)
         {
-            rig.linearVelocity = new Vector3(
-                    rig.linearVelocity.x,
-                    jumpForce,
-                    rig.linearVelocity.z);
+            rig.linearVelocity = new Vector3(rig.linearVelocity.x, jumpForce, rig.linearVelocity.z);
         }
     }
 
@@ -83,14 +84,18 @@ public class PlayerWaterMovement : MonoBehaviour
     {
         if (IsDead || IsInteracting) return;
 
-        if (context.performed)
-        {
-             IsJumping = true;
-        }
-        if (context.canceled)
-        {
-            IsJumping = false;
-        }
+        if (context.performed) IsJumping = true;
+        
+        if (context.canceled) IsJumping = false;
+    }
+
+    public void OnCrouch(InputAction.CallbackContext context)
+    {
+        if (IsDead || IsInteracting) return;
+
+        if (context.performed) IsCrouching = true;
+
+        if (context.canceled) IsCrouching = false;
     }
 
     public void OnLook(InputAction.CallbackContext context)

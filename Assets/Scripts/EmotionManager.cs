@@ -9,6 +9,8 @@ public class EmotionManager : MonoBehaviour
     public EmotionType HeldFish = EmotionType.None;
 
     public System.Action<EmotionType> OnEmotionChanged;
+    public int CurrentMission = 0;
+    public int CurrentDay = 1;
 
 
     private void Awake()

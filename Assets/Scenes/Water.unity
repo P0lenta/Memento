@@ -2083,8 +2083,6 @@ MonoBehaviour:
   currentEmotion: 0
   CurrentMissionFish: 0
   HeldFish: 0
-  playerMovement: {fileID: 0}
-  Timer: 2
 --- !u!4 &614291046
 Transform:
   m_ObjectHideFlags: 0
@@ -5027,7 +5025,19 @@ MonoBehaviour:
     m_ActionId: 852140f2-7766-474d-8707-702459ba45f3
     m_ActionName: 'Player/Interact[/Keyboard/e,/Gamepad/buttonNorth]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1904847108}
+        m_TargetAssemblyTypeName: PlayerWaterMovement, Assembly-CSharp
+        m_MethodName: OnCrouch
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 27c5f898-bc57-4ee1-8800-db469aca5fe3
     m_ActionName: 'Player/Crouch[/Gamepad/buttonEast,/Keyboard/c]'
   - m_PersistentCalls:
@@ -5189,7 +5199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerWaterMovement
   playerModel: {fileID: 609579084}
   speed: 10
-  jumpForce: 5
+  jumpForce: 4
   turnSpeedHorizontal: 0.3
   turnSpeeVertical: 0.1
   minRotX: -30
@@ -5200,7 +5210,7 @@ MonoBehaviour:
   IsDead: 0
   IsInteracting: 0
   HandsAnimation: {fileID: 487669814}
-  WaterGravityPercent: 2
+  WaterGravityPercent: 10
 --- !u!136 &1904847109
 CapsuleCollider:
   m_ObjectHideFlags: 0

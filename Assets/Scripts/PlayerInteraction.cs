@@ -13,6 +13,21 @@ public class PlayerInteraction : MonoBehaviour
     public GameObject focusedObject = null;
     public GameObject HandsUI;
     public Animator HandsAnimation;
+    private bool IsInDialogue = false;
+    public static PlayerInteraction Instance {get; private set;}
+
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+    }
 
 
     void Start()
@@ -37,62 +52,43 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (!context.started) return;
 
+        if (GetComponent<PlayerWaterMovement>() ? .IsDead == true) return;
+
+        if (IsInDialogue)
+        {
+            DialogueManager.CheckNextLine();
+            return;
+        }
+
         if (focusedObject != null)
         {
             CameraFocus focus = focusedObject.GetComponent<CameraFocus>();
             if (focus != null)
                 focus.EndFocus();
-            return; 
+            return;
         }
 
         HandsAnimation.SetTrigger("Grab");
         
-        if (!CanInteract || ActualInteractiveObject == null)
-        {
-            return;
-        }
+        if (!CanInteract || ActualInteractiveObject == null) return;
 
-        EmotionGiver Giver = ActualInteractiveObject.GetComponent<EmotionGiver>();
-        if (Giver != null)
-        {
-            EmotionManager.Instance.SetEmotion(Giver.EmotionToGive);
-        }
+        DialogueManager Dialogue = ActualInteractiveObject.GetComponent<DialogueManager>();
+        if (Dialogue != null) Dialogue.StartDialogue();
 
         CameraFocus Focus = ActualInteractiveObject.GetComponent<CameraFocus>();
-            if (Focus != null)
-            {
-                Focus.StartFocus(this);
-            }
+            if (Focus != null) Focus.StartFocus(this);
 
         SceneChanger SceneChanger = ActualInteractiveObject.GetComponent<SceneChanger>();
-        if (SceneChanger != null)
-        {
-            SceneChanger.LoadScene();
-        }
+        if (SceneChanger != null) SceneChanger.LoadScene();
             
         FishCapture Fish = ActualInteractiveObject.GetComponent<FishCapture>();
-        if (Fish != null)
-        {
-            Fish.Interact(this);
-        }
-
-        FishDelivery Delivery = ActualInteractiveObject.GetComponent<FishDelivery>();
-        if (Delivery != null)
-        {
-            Delivery.TryDeliver(this);
-        }
+        if (Fish != null) Fish.Interact(this);
 
         Projector Skip = ActualInteractiveObject.GetComponent<Projector>();
-        if (Skip != null)
-        {
-            Skip.Avancar();
-        }
+        if (Skip != null) Skip.Avancar();
 
         Trash Lixo = ActualInteractiveObject.GetComponent<Trash>();
-        if (Lixo != null)
-        {
-            Lixo.Fora(this);
-        }
+        if (Lixo != null) Lixo.Fora(this);
     }
 
     void UpdateHoldingAnimation()
@@ -107,4 +103,8 @@ public class PlayerInteraction : MonoBehaviour
         }
     }
 
+    public void SetInDialogue(bool value)
+    {
+        IsInDialogue = value;
+    }
 }

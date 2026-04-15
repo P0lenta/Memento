@@ -4,19 +4,25 @@ public class TutorialTime : MonoBehaviour
 {
     public PlayerMovement playerMovement;
     public float Timer = 2f;
+    private bool CanWalk = false;
 
-    private static bool CanWalk = false;
-
-    void Awake()
+    void Start()
     {
         CanWalk = PlayerPrefs.GetInt("TutorialTime_Walked", 0) == 1;
-        playerMovement.IsInteracting = true;
+
+        if (!CanWalk)
+        {
+            playerMovement.IsInteracting = true;
+        }
+        else
+        {
+            playerMovement.IsInteracting = false;
+        }
     }
 
     void Update()
     {
-        if (!CanWalk && Timer > 0f)
-        {
+        if (CanWalk) return;
             Timer -= Time.deltaTime;
             if (Timer <= 0f)
             {
@@ -25,6 +31,5 @@ public class TutorialTime : MonoBehaviour
                 PlayerPrefs.SetInt("TutorialTime_Walked", 1);
                 PlayerPrefs.Save();
             }
-        }
     }
 }

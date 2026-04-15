@@ -18,6 +18,7 @@ public class OxygenManager : MonoBehaviour
     public string ResetMessage = "Aperte R para voltar";
     public GameObject HandsUI;
     private bool IsDead = false;
+    private string SceneToChange = "Submarine";
     public Renderer HandsRenderer;
 
 
@@ -85,12 +86,15 @@ public class OxygenManager : MonoBehaviour
          if(HandsRenderer != null)
          HandsRenderer.enabled = false;
         
-        PlayerWaterMovement moveScript = GetComponent<PlayerWaterMovement>();
-        if (moveScript != null)
+        PlayerWaterMovement MoveScript = GetComponent<PlayerWaterMovement>();
+        if (MoveScript != null)
             {
-                moveScript.IsDead = true;
-                moveScript.enabled = false;   
+                MoveScript.IsDead = true;
+                MoveScript.enabled = false;   
             }
+
+        PlayerInteraction Interaction = GetComponent<PlayerInteraction>();
+        if (Interaction != null) Interaction.enabled = false;
 
         Rigidbody rb = GetComponent<Rigidbody>();
         if (rb != null)
@@ -102,15 +106,22 @@ public class OxygenManager : MonoBehaviour
 
    public void OnReset(InputAction.CallbackContext context)
     {
+        
         if (context.started && IsDead)
         {
+            if (EmotionManager.Instance != null)
+            {
+                EmotionManager.Instance.SetEmotion(EmotionType.None);
+                EmotionManager.Instance.HeldFish = EmotionType.None;
+            }
+
             RestartScene();
         }
     }
 
     void RestartScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(SceneToChange);
     }   
 
 }
