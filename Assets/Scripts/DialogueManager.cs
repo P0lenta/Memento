@@ -25,7 +25,7 @@
             [Tooltip("Nenhuma condição anterior é verdadeira")]
             public bool IsExtra = false;    
 
-            [Tooltip("A missão foi concluída")]
+            [Tooltip("Completa a missão")]
             public bool CompletesMission = false;
         }
 
@@ -55,8 +55,7 @@
             CurrentLine = 0;
             IsActive = true;
             ShowCurrentLine();
-            PlayerInteraction Player = FindFirstObjectByType<PlayerInteraction>();
-            if (Player != null) Player.SetInDialogue(true);
+            PlayerInteraction.IsInDialogue = true;
         }
 
         private DialogueOption GetRightDialogue()
@@ -69,16 +68,16 @@
 
             for (int i = 0; i < Dialogues.Length; i++)
             {
-                DialogueOption d = Dialogues[i];
-                if (!d.IsExtra)
+                DialogueOption Didi = Dialogues[i];
+                if (!Didi.IsExtra)
                 {
-                    bool MissionOk = (d.RequiredMissionIndex == -1 || d.RequiredMissionIndex == CurrentMission);
-                    bool EmotionOk = (d.RequiredEmotion == EmotionType.None || d.RequiredEmotion == PlayerEmotion);
-                    bool FishOk = (d.RequiredHeldFish == EmotionType.None || d.RequiredHeldFish == HeldFish);
-                    bool DayOk = (d.RequiredDayIndex == -1 || d.RequiredDayIndex == 0 || d.RequiredDayIndex == CurrentDay);
+                    bool MissionOk = (Didi.RequiredMissionIndex == -1 || Didi.RequiredMissionIndex == CurrentMission);
+                    bool EmotionOk = (Didi.RequiredEmotion == EmotionType.None || Didi.RequiredEmotion == PlayerEmotion);
+                    bool FishOk = (Didi.RequiredHeldFish == EmotionType.None || Didi.RequiredHeldFish == HeldFish);
+                    bool DayOk = (Didi.RequiredDayIndex == -1 || Didi.RequiredDayIndex == 0 || Didi.RequiredDayIndex == CurrentDay);
                     
                     if (MissionOk && EmotionOk && FishOk && DayOk)
-                        return d;
+                        return Didi;
                 }
             }
 
@@ -122,8 +121,7 @@
             DialogueText.gameObject.SetActive(false);
             DialogueImage.gameObject.SetActive(false);
 
-            PlayerInteraction Player = FindFirstObjectByType<PlayerInteraction>();
-            if (Player != null) Player.SetInDialogue(false);
+            PlayerInteraction.IsInDialogue = false;
 
             CameraFocus Camera = GetComponent<CameraFocus>();
             if (Camera != null) Camera.EndFocus();
@@ -144,8 +142,6 @@
             }
 
             CurrentDialogue = null;
-            
-
         }
 
     }

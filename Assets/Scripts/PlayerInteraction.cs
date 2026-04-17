@@ -14,9 +14,20 @@ public class PlayerInteraction : MonoBehaviour
     public GameObject HandsUI;
     public Animator HandsAnimation;
     public GameObject ConfigPanel;
-    private bool IsInDialogue = false;
-    public static bool IsMenuOpen {get; private set;}
+    public GameObject ButtonsMenu;
+    public GameObject ConfirmBox;
     public static PlayerInteraction Instance {get; private set;}
+    public static bool IsMenuOpen {get; private set;}
+    public static bool IsConfirmationOpen { get; set; }
+    public static bool IsInDialogue { get; set; }
+
+    public static bool IsInputLocked 
+    {
+        get
+        {
+            return IsMenuOpen || IsConfirmationOpen || IsInDialogue;
+        }
+    }
 
     void Awake()
     {
@@ -31,6 +42,16 @@ public class PlayerInteraction : MonoBehaviour
         }
     }
 
+    void Start()
+    {
+        if (EmotionManager.Instance != null)
+        HeldFishEmotion = EmotionManager.Instance.HeldFish;
+        
+        UpdateHoldingAnimation();
+
+        IsMenuOpen = false;
+    }
+
     public void OnMenu(InputAction.CallbackContext context)
     {
         if (!context.started) return;
@@ -41,6 +62,8 @@ public class PlayerInteraction : MonoBehaviour
         
         IsMenuOpen = OpenMenu;
         CanInteract = !OpenMenu;
+
+        HandsUI.SetActive(!OpenMenu);
 
         PlayerMovement Movement = GetComponent<PlayerMovement>();
         if (Movement != null) 
@@ -58,15 +81,29 @@ public class PlayerInteraction : MonoBehaviour
             WaterMovement.IsInteracting = OpenMenu;
         }
 
+        if (OpenMenu)
+        {
+            if (ButtonsMenu != null) ButtonsMenu.SetActive(true);
+            if (ConfirmBox != null) ConfirmBox.SetActive(false);
+        }
+        else
+        {
+            if (ButtonsMenu != null) ButtonsMenu.SetActive(true);
+            if (ConfirmBox != null) ConfirmBox.SetActive(false);
+        }
+
     }
 
     public void CloseMenu()
     {
         if (ConfigPanel != null && ConfigPanel.activeSelf)
         {
+            if (ButtonsMenu != null) ButtonsMenu.SetActive(true);
+            if (ConfirmBox != null) ConfirmBox.SetActive(false);
             ConfigPanel.SetActive(false);
             IsMenuOpen = false;
             CanInteract = true;
+            HandsUI.SetActive(true);
 
         PlayerMovement Movement = GetComponent<PlayerMovement>();
         if (Movement != null) 
@@ -95,15 +132,6 @@ public class PlayerInteraction : MonoBehaviour
         Debug.Log("Peixe descartado");
     }
 
-
-    void Start()
-    {
-        if (EmotionManager.Instance != null)
-        HeldFishEmotion = EmotionManager.Instance.HeldFish;
-        
-        UpdateHoldingAnimation();
-    }
-
     public void SetHeldFish(EmotionType Fish)
     {
         HeldFishEmotion = Fish;
@@ -118,15 +146,15 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (!context.started) return;
 
-        if (IsMenuOpen) return;
-
-        if (GetComponent<PlayerWaterMovement>() ? .IsDead == true) return;
+        if (GetComponent<PlayerWaterMovement>()?.IsDead == true) return;
 
         if (IsInDialogue)
         {
             DialogueManager.CheckNextLine();
             return;
         }
+
+        if (IsInputLocked) return;
 
         if (focusedObject != null)
         {
@@ -147,7 +175,7 @@ public class PlayerInteraction : MonoBehaviour
             if (Focus != null) Focus.StartFocus(this);
 
         SceneChanger SceneChanger = ActualInteractiveObject.GetComponent<SceneChanger>();
-        if (SceneChanger != null) SceneChanger.LoadScene();
+        if (SceneChanger != null) SceneChanger.TryChangeScene(this);
             
         FishCapture Fish = ActualInteractiveObject.GetComponent<FishCapture>();
         if (Fish != null) Fish.Interact(this);

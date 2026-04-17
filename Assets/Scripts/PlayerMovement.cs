@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
     public bool IsInteracting = false;
     public Animator HandsAnimation;
 
-    private Vector3 moveInput;
+    private Vector3 MoveInput;
 
     void Start()
     {
@@ -42,12 +42,12 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        if (IsDead || IsInteracting) return;
+        if (IsDead || PlayerInteraction.IsInputLocked) return;
 
             Vector2 input = context.ReadValue<Vector2>();
-            moveInput = input.normalized * speed;
+            MoveInput = input.normalized * speed;
 
-            if (moveInput.sqrMagnitude > 0.1f)
+            if (MoveInput.sqrMagnitude > 0.1f)
             {
                 HandsAnimation.SetBool("IsMoving", true);
             }
@@ -60,33 +60,16 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector3 vX = moveInput.x * transform.right;        
+        Vector3 vX = MoveInput.x * transform.right;        
         Vector3 vY = rig.linearVelocity.y * transform.up;   
-        Vector3 vZ = moveInput.y * transform.forward;       
+        Vector3 vZ = MoveInput.y * transform.forward;       
 
         rig.linearVelocity = vX + vY + vZ;
     }
 
-    /*public void OnJump(InputAction.CallbackContext context)
-    {
-        if (IsDead || IsInteracting) return;
-
-        if (context.started)  
-        {
-            
-            if (Physics.Raycast(col.bounds.center, Vector3.down, col.bounds.extents.y * 1.1f, floorLayers))
-            {
-                rig.linearVelocity = new Vector3(
-                    rig.linearVelocity.x,
-                    jumpForce,
-                    rig.linearVelocity.z);
-            }
-        }
-    }*/
-
     public void OnLook(InputAction.CallbackContext context)
     {       
-        if (IsDead || IsInteracting) return;
+        if (IsDead || PlayerInteraction.IsInputLocked) return;
 
         Vector2 lookInput = context.ReadValue<Vector2>();  
         lookInput *= MouseSensibility;
@@ -108,7 +91,24 @@ public class PlayerMovement : MonoBehaviour
 
     public void StopMovement()
     {
-        moveInput = Vector3.zero;
+        MoveInput = Vector3.zero;
     }
+
+    /*public void OnJump(InputAction.CallbackContext context)
+    {
+        if (IsDead || IsInteracting) return;
+
+        if (context.started)  
+        {
+            
+            if (Physics.Raycast(col.bounds.center, Vector3.down, col.bounds.extents.y * 1.1f, floorLayers))
+            {
+                rig.linearVelocity = new Vector3(
+                    rig.linearVelocity.x,
+                    jumpForce,
+                    rig.linearVelocity.z);
+            }
+        }
+    }*/
 
 }

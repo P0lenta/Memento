@@ -15,3 +15,4 @@ public class Sensibility : MonoBehaviour
         PlayerPrefs.SetFloat ("Sensibilidade", Valor);
     }
 }
+    
