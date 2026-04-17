@@ -8,10 +8,10 @@ public class PlayerMovement : MonoBehaviour
     public GameObject playerModel;
 
 [Header("Valores de velocidade")]
-    public float speed = 10;              
-    public float jumpForce = 10;          
+    public float speed = 10;                    
     public float turnSpeedHorizontal = 0.3f; 
     public float turnSpeeVertical = 0.1f; 
+    public float MouseSensibility = 1f;
 
 [Header("Valores de câmera")]
     public float minRotX = -30;            
@@ -29,6 +29,16 @@ public class PlayerMovement : MonoBehaviour
     public Animator HandsAnimation;
 
     private Vector3 moveInput;
+
+    void Start()
+    {
+        GetSensibility();
+    }
+
+    public void GetSensibility()
+    {
+        MouseSensibility = PlayerPrefs.GetFloat("Sensibilidade", 1f);
+    }
 
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -57,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
         rig.linearVelocity = vX + vY + vZ;
     }
 
-    public void OnJump(InputAction.CallbackContext context)
+    /*public void OnJump(InputAction.CallbackContext context)
     {
         if (IsDead || IsInteracting) return;
 
@@ -72,13 +82,14 @@ public class PlayerMovement : MonoBehaviour
                     rig.linearVelocity.z);
             }
         }
-    }
+    }*/
 
     public void OnLook(InputAction.CallbackContext context)
     {       
         if (IsDead || IsInteracting) return;
 
         Vector2 lookInput = context.ReadValue<Vector2>();  
+        lookInput *= MouseSensibility;
 
         float rotY = transform.eulerAngles.y + lookInput.x * turnSpeedHorizontal;
         rotY = ClampAngle(rotY, -360, 360);
@@ -93,6 +104,11 @@ public class PlayerMovement : MonoBehaviour
         float start = (min + max) * 0.5f - 180;
         float floor = Mathf.FloorToInt((angle - start) / 360) * 360;
         return Mathf.Clamp(angle, min + floor, max + floor);
+    }
+
+    public void StopMovement()
+    {
+        moveInput = Vector3.zero;
     }
 
 }

@@ -93,9 +93,6 @@ public class OxygenManager : MonoBehaviour
                 MoveScript.enabled = false;   
             }
 
-        PlayerInteraction Interaction = GetComponent<PlayerInteraction>();
-        if (Interaction != null) Interaction.enabled = false;
-
         Rigidbody rb = GetComponent<Rigidbody>();
         if (rb != null)
         {

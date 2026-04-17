@@ -12,6 +12,7 @@ public class PlayerWaterMovement : MonoBehaviour
     public float jumpForce = 3;          
     public float turnSpeedHorizontal = 0.3f; 
     public float turnSpeeVertical = 0.1f; 
+    public float MouseSensibility = 1f;
 
 [Header("Valores de câmera")]
     public float minRotX = -30;            
@@ -38,12 +39,19 @@ public class PlayerWaterMovement : MonoBehaviour
 
     void Start()
     {
+        GetSensibility();
+
         rig.useGravity = false;
+    }
+
+    public void GetSensibility()
+    {
+        MouseSensibility = PlayerPrefs.GetFloat("Sensibilidade", 1f);
     }
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        if (IsDead || IsInteracting) return;
+        if (IsDead || PlayerInteraction.IsMenuOpen) return;
 
         Vector2 input = context.ReadValue<Vector2>();
         moveInput = input.normalized * speed;
@@ -61,6 +69,7 @@ public class PlayerWaterMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (IsDead || IsInteracting) return;
 
         float ReducedGravity = DefaultGravity * (WaterGravityPercent / 100);
 
@@ -104,6 +113,8 @@ public class PlayerWaterMovement : MonoBehaviour
 
         Vector2 lookInput = context.ReadValue<Vector2>();  
 
+        lookInput *= MouseSensibility;
+
         float rotY = transform.eulerAngles.y + lookInput.x * turnSpeedHorizontal;
         rotY = ClampAngle(rotY, -360, 360);
         transform.eulerAngles = new Vector3(0, rotY, 0);
@@ -117,6 +128,12 @@ public class PlayerWaterMovement : MonoBehaviour
         float start = (min + max) * 0.5f - 180;
         float floor = Mathf.FloorToInt((angle - start) / 360) * 360;
         return Mathf.Clamp(angle, min + floor, max + floor);
+    }
+
+    public void StopWaterMovement()
+    {
+        moveInput = Vector3.zero;
+        rig.linearVelocity = new Vector3(0, 0, 0);
     }
 
 }

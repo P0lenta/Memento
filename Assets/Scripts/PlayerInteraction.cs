@@ -13,7 +13,9 @@ public class PlayerInteraction : MonoBehaviour
     public GameObject focusedObject = null;
     public GameObject HandsUI;
     public Animator HandsAnimation;
+    public GameObject ConfigPanel;
     private bool IsInDialogue = false;
+    public static bool IsMenuOpen {get; private set;}
     public static PlayerInteraction Instance {get; private set;}
 
     void Awake()
@@ -27,6 +29,70 @@ public class PlayerInteraction : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+    }
+
+    public void OnMenu(InputAction.CallbackContext context)
+    {
+        if (!context.started) return;
+        if (ConfigPanel == null) return; 
+
+        bool OpenMenu = !ConfigPanel.activeSelf;
+        ConfigPanel.SetActive(OpenMenu);
+        
+        IsMenuOpen = OpenMenu;
+        CanInteract = !OpenMenu;
+
+        PlayerMovement Movement = GetComponent<PlayerMovement>();
+        if (Movement != null) 
+        {
+            Movement.StopMovement();
+            Movement.GetSensibility();
+            Movement.IsInteracting = OpenMenu;
+        }
+
+        PlayerWaterMovement WaterMovement = GetComponent<PlayerWaterMovement>();
+        if (WaterMovement != null) 
+        {
+            WaterMovement.StopWaterMovement();
+            WaterMovement.GetSensibility();
+            WaterMovement.IsInteracting = OpenMenu;
+        }
+
+    }
+
+    public void CloseMenu()
+    {
+        if (ConfigPanel != null && ConfigPanel.activeSelf)
+        {
+            ConfigPanel.SetActive(false);
+            IsMenuOpen = false;
+            CanInteract = true;
+
+        PlayerMovement Movement = GetComponent<PlayerMovement>();
+        if (Movement != null) 
+        {
+            Movement.StopMovement();
+            Movement.GetSensibility();
+            Movement.IsInteracting = false;
+        }
+
+        PlayerWaterMovement WaterMovement = GetComponent<PlayerWaterMovement>();
+        if (WaterMovement != null) 
+        {
+            WaterMovement.StopWaterMovement();
+            WaterMovement.GetSensibility();
+            WaterMovement.IsInteracting = false;
+        }
+        }
+    }
+
+    public void OnTrash(InputAction.CallbackContext context)
+    {
+        if (!context.started) return;
+
+        if (HeldFishEmotion != EmotionType.None)
+        SetHeldFish(EmotionType.None);
+        Debug.Log("Peixe descartado");
     }
 
 
@@ -51,6 +117,8 @@ public class PlayerInteraction : MonoBehaviour
     public void OnInteract(InputAction.CallbackContext context)
     {
         if (!context.started) return;
+
+        if (IsMenuOpen) return;
 
         if (GetComponent<PlayerWaterMovement>() ? .IsDead == true) return;
 
