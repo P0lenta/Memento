@@ -38,6 +38,7 @@ public class SceneChanger : MonoBehaviour
             else
             {
                 SceneManager.LoadScene(SceneName);
+                if (MusicManager.Instance != null) MusicManager.Instance.LoadSoundMenu();
             }
         }
     }
@@ -49,6 +50,8 @@ public class SceneChanger : MonoBehaviour
         SceneManager.LoadScene(SceneName);
 
         PlayerInteraction.IsConfirmationOpen = false;
+
+        if (MusicManager.Instance != null) MusicManager.Instance.LoadSoundMenu();
     }
     
     public void CancelConfirmation()

@@ -5,14 +5,13 @@ using UnityEngine.Audio;
 public class MusicManager : MonoBehaviour
 
 {
-    public Slider MusicSlider;
-    public Slider SFXSlider;
+
     public AudioMixer MasterMixer;
+    public static MusicManager Instance { get; private set; }
 
-    private float CurrentMusicVolume = 0.5f;
-    private float CurrentSFXVolume = 0.5f;
-
-    public static MusicManager Instance;
+    private const float DefaultVolume = 0.5f;
+    private float CurrentMusicVolume;
+    private float CurrentSFXVolume;
 
     void Awake()
     {
@@ -20,22 +19,37 @@ public class MusicManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            LoadSoundMenu();
         }
         else
         {
             Destroy(gameObject);
         }
 
-        if (PlayerPrefs.HasKey("VolumeMusic"))
-        CurrentMusicVolume = PlayerPrefs.GetFloat("VolumeMusic");
-        if (PlayerPrefs.HasKey("VolumeSFX"))
-        CurrentSFXVolume = PlayerPrefs.GetFloat("VolumeSFX");
+       LoadSoundMenu();
+    }
 
-        MusicSlider.value = CurrentMusicVolume;
-        SFXSlider.value = CurrentSFXVolume;
+    public void LoadSoundMenu()
+    {
+            CurrentMusicVolume = PlayerPrefs.GetFloat("VolumeMusic", DefaultVolume);
+            ApplyMusicVolume(CurrentMusicVolume);
+            CurrentSFXVolume = PlayerPrefs.GetFloat("VolumeSFX", DefaultVolume);
+            ApplySFXVolume(CurrentSFXVolume);
+    }
 
-        ApplyMusicVolume(CurrentMusicVolume);
-        ApplySFXVolume(CurrentSFXVolume);
+    public void SetupSlider(Slider VisualSlider, bool IsMusicSlider)
+    {
+        if (VisualSlider == null) return;
+        VisualSlider.value = IsMusicSlider ? CurrentMusicVolume : CurrentSFXVolume;
+
+        if (IsMusicSlider)
+        {
+            VisualSlider.onValueChanged.AddListener(OnSliderMusic);
+        }
+        else
+        {
+            VisualSlider.onValueChanged.AddListener(OnSliderSFX);
+        }
     }
 
     public void OnSliderMusic(float Volume)
@@ -44,23 +58,25 @@ public class MusicManager : MonoBehaviour
         ApplyMusicVolume(Volume);
         PlayerPrefs.SetFloat("VolumeMusic", Volume);
         PlayerPrefs.Save();
+        LoadSoundMenu();
     }
 
     public void OnSliderSFX(float Volume)
     {
         CurrentSFXVolume = Volume;
-          ApplySFXVolume(Volume);
-          PlayerPrefs.SetFloat("VolumeSFX", Volume);
+        ApplySFXVolume(Volume);
+        PlayerPrefs.SetFloat("VolumeSFX", Volume);
         PlayerPrefs.Save();
+        LoadSoundMenu();
     }
     
-    private void ApplyMusicVolume(float LinearVolume)
+    public void ApplyMusicVolume(float LinearVolume)
     {
         float dB = Mathf.Log10(Mathf.Max(LinearVolume, 0.0001f)) * 20f;
         MasterMixer.SetFloat("VolumeMusic", dB);
     }
 
-    private void ApplySFXVolume(float LinearVolume)
+    public void ApplySFXVolume(float LinearVolume)
     {
         float dB = Mathf.Log10(Mathf.Max(LinearVolume, 0.0001f)) * 20f;
         MasterMixer.SetFloat("VolumeSFX", dB);

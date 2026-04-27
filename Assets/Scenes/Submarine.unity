@@ -594,6 +594,7 @@ GameObject:
   - component: {fileID: 58955116}
   - component: {fileID: 58955115}
   - component: {fileID: 58955122}
+  - component: {fileID: 58955123}
   m_Layer: 0
   m_Name: SurprisedCylinder
   m_TagString: Untagged
@@ -636,6 +637,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
   InteractionText: {fileID: 1954950602}
   message: E
+  InteractionSound: {fileID: 58955123}
 --- !u!114 &58955117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -765,11 +767,108 @@ MonoBehaviour:
     RequiredEmotion: 0
     RequiredHeldFish: 0
     RequiredDayIndex: 0
-    IsExtra: 1
+    IsExtra: 0
     CompletesMission: 0
     EmotionToGive: 5
   DialogueText: {fileID: 95930983}
   DialogueImage: {fileID: 1834426189}
+--- !u!82 &58955123
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58955113}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -994303699366805881, guid: f33b28dbf35d64b41b9031c8908306f8, type: 2}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 3dea7481f471230478ce6504061f64a2, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &61978519
 GameObject:
   m_ObjectHideFlags: 0
@@ -1433,6 +1532,7 @@ GameObject:
   - component: {fileID: 159748695}
   - component: {fileID: 159748702}
   - component: {fileID: 159748704}
+  - component: {fileID: 159748705}
   m_Layer: 0
   m_Name: HappyCylinder
   m_TagString: Untagged
@@ -1454,6 +1554,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
   InteractionText: {fileID: 1954950602}
   message: E
+  InteractionSound: {fileID: 159748705}
 --- !u!114 &159748696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1598,37 +1699,124 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
   Dialogues:
   - lines:
+    - "Voc\xEA estava triste"
+    - "Por motivos de playtest, t\xE1 puto"
+    RequiredMissionIndex: -1
+    RequiredEmotion: 2
+    RequiredHeldFish: 0
+    RequiredDayIndex: 1
+    IsExtra: 0
+    CompletesMission: 0
+    EmotionToGive: 3
+  - lines:
     - "Voc\xEA decide ligar a TV"
     - O canal te deixa feliz
     RequiredMissionIndex: -1
     RequiredEmotion: 0
     RequiredHeldFish: 0
-    RequiredDayIndex: 0
-    IsExtra: 1
+    RequiredDayIndex: 1
+    IsExtra: 0
     CompletesMission: 0
     EmotionToGive: 1
-  - lines:
-    - "Voc\xEA estava triste"
-    - Ver alguma coisa alegra seu dia
-    RequiredMissionIndex: -1
-    RequiredEmotion: 2
-    RequiredHeldFish: 0
-    RequiredDayIndex: 0
-    IsExtra: 0
-    CompletesMission: 0
-    EmotionToGive: 0
-  - lines:
-    - "Voc\xEA estava triste"
-    - "Por motivos de playtest, t\xE1 puto"
-    RequiredMissionIndex: -1
-    RequiredEmotion: 0
-    RequiredHeldFish: 0
-    RequiredDayIndex: 2
-    IsExtra: 0
-    CompletesMission: 0
-    EmotionToGive: 3
   DialogueText: {fileID: 95930983}
   DialogueImage: {fileID: 1834426189}
+--- !u!82 &159748705
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159748694}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -994303699366805881, guid: f33b28dbf35d64b41b9031c8908306f8, type: 2}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 3dea7481f471230478ce6504061f64a2, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &245774187
 GameObject:
   m_ObjectHideFlags: 0
@@ -3110,6 +3298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
   InteractionText: {fileID: 1954950602}
   message: "Ir para \xC1gua"
+  InteractionSound: {fileID: 0}
 --- !u!65 &413873375
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3528,35 +3717,17 @@ MonoBehaviour:
     RequiredMissionIndex: 2
     RequiredEmotion: 0
     RequiredHeldFish: 0
-    RequiredDayIndex: 0
+    RequiredDayIndex: 1
     IsExtra: 0
     CompletesMission: 0
     EmotionToGive: 0
   - lines:
     - Obrigado pela entrega, ficarei putasso
     RequiredMissionIndex: 2
-    RequiredEmotion: 0
+    RequiredEmotion: 3
     RequiredHeldFish: 0
     RequiredDayIndex: 2
     IsExtra: 0
-    CompletesMission: 0
-    EmotionToGive: 0
-  - lines:
-    - Eu gostaria de um peixe puto
-    RequiredMissionIndex: 2
-    RequiredEmotion: 0
-    RequiredHeldFish: 3
-    RequiredDayIndex: 2
-    IsExtra: 0
-    CompletesMission: 1
-    EmotionToGive: 0
-  - lines:
-    - Peixe errado, truta :|
-    RequiredMissionIndex: -1
-    RequiredEmotion: 0
-    RequiredHeldFish: 0
-    RequiredDayIndex: 0
-    IsExtra: 1
     CompletesMission: 0
     EmotionToGive: 0
   DialogueText: {fileID: 95930983}
@@ -3575,6 +3746,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
   InteractionText: {fileID: 1954950602}
   message: "Abrir r\xE1dio"
+  InteractionSound: {fileID: 0}
 --- !u!114 &436523009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3884,6 +4056,7 @@ GameObject:
   - component: {fileID: 478308173}
   - component: {fileID: 478308172}
   - component: {fileID: 478308179}
+  - component: {fileID: 478308180}
   m_Layer: 0
   m_Name: SadCylinder
   m_TagString: Untagged
@@ -3926,6 +4099,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
   InteractionText: {fileID: 1954950602}
   message: E
+  InteractionSound: {fileID: 478308180}
 --- !u!114 &478308174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4055,11 +4229,108 @@ MonoBehaviour:
     RequiredEmotion: 0
     RequiredHeldFish: 0
     RequiredDayIndex: 0
-    IsExtra: 1
+    IsExtra: 0
     CompletesMission: 0
     EmotionToGive: 2
   DialogueText: {fileID: 95930983}
   DialogueImage: {fileID: 1834426189}
+--- !u!82 &478308180
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478308170}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -994303699366805881, guid: f33b28dbf35d64b41b9031c8908306f8, type: 2}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 3dea7481f471230478ce6504061f64a2, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &504334458
 GameObject:
   m_ObjectHideFlags: 0
@@ -4468,6 +4739,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
   InteractionText: {fileID: 1954950602}
   message: "Avan\xE7ar tutorial"
+  InteractionSound: {fileID: 0}
 --- !u!65 &555703526
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4599,8 +4871,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 159748701}
   - {fileID: 1554339870}
+  - {fileID: 159748701}
   - {fileID: 478308178}
   - {fileID: 718921154}
   - {fileID: 58955121}
@@ -5273,6 +5545,7 @@ GameObject:
   - component: {fileID: 718921149}
   - component: {fileID: 718921148}
   - component: {fileID: 718921155}
+  - component: {fileID: 718921156}
   m_Layer: 0
   m_Name: FearCylinder
   m_TagString: Untagged
@@ -5315,6 +5588,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
   InteractionText: {fileID: 1954950602}
   message: E
+  InteractionSound: {fileID: 718921156}
 --- !u!114 &718921150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5444,11 +5718,108 @@ MonoBehaviour:
     RequiredEmotion: 0
     RequiredHeldFish: 0
     RequiredDayIndex: 0
-    IsExtra: 1
+    IsExtra: 0
     CompletesMission: 0
     EmotionToGive: 4
   DialogueText: {fileID: 95930983}
   DialogueImage: {fileID: 1834426189}
+--- !u!82 &718921156
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718921146}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -994303699366805881, guid: f33b28dbf35d64b41b9031c8908306f8, type: 2}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 3dea7481f471230478ce6504061f64a2, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &736621559
 GameObject:
   m_ObjectHideFlags: 0
@@ -6626,6 +6997,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
   InteractionText: {fileID: 1954950602}
   message: Jogar peixe fora
+  InteractionSound: {fileID: 0}
 --- !u!65 &925107181
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7232,6 +7604,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
   InteractionText: {fileID: 1954950602}
   message: E
+  InteractionSound: {fileID: 0}
 --- !u!114 &1042818671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8700,7 +9073,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1934865513}
         m_TargetAssemblyTypeName: MusicManager, Assembly-CSharp
         m_MethodName: OnSliderMusic
         m_Mode: 0
@@ -9124,6 +9497,7 @@ GameObject:
   - component: {fileID: 1554339873}
   - component: {fileID: 1554339872}
   - component: {fileID: 1554339878}
+  - component: {fileID: 1554339879}
   m_Layer: 0
   m_Name: AngryCylinder
   m_TagString: Untagged
@@ -9181,6 +9555,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
   InteractionText: {fileID: 1954950602}
   message: E
+  InteractionSound: {fileID: 1554339879}
 --- !u!114 &1554339874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9294,12 +9669,109 @@ MonoBehaviour:
     RequiredMissionIndex: -1
     RequiredEmotion: 0
     RequiredHeldFish: 0
-    RequiredDayIndex: 0
-    IsExtra: 1
+    RequiredDayIndex: 1
+    IsExtra: 0
     CompletesMission: 0
-    EmotionToGive: 2
+    EmotionToGive: 3
   DialogueText: {fileID: 95930983}
   DialogueImage: {fileID: 1834426189}
+--- !u!82 &1554339879
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554339869}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -994303699366805881, guid: f33b28dbf35d64b41b9031c8908306f8, type: 2}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 3dea7481f471230478ce6504061f64a2, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1557143267
 GameObject:
   m_ObjectHideFlags: 0
@@ -11088,6 +11560,195 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &1785925636
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1785925644}
+  - component: {fileID: 1785925643}
+  - component: {fileID: 1785925642}
+  - component: {fileID: 1785925641}
+  - component: {fileID: 1785925640}
+  - component: {fileID: 1785925639}
+  - component: {fileID: 1785925638}
+  - component: {fileID: 1785925637}
+  m_Layer: 0
+  m_Name: Door
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!95 &1785925637
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785925636}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 89a1dcadce7abb64db330dde1c285da7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1785925638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785925636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0eeaa2084e3e9dd1a99772d17db29ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  InteractionText: {fileID: 1954950602}
+  message: E
+  InteractionSound: {fileID: 0}
+--- !u!114 &1785925639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785925636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9bd3c90297b0fd48b68fad79a2b7f82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  DoorRealCollider: {fileID: 1785925641}
+  DoorInteractionCollider: {fileID: 1785925640}
+  DoorAnimator: {fileID: 1785925637}
+--- !u!65 &1785925640
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785925636}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4.38, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &1785925641
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785925636}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1785925642
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785925636}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1785925643
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785925636}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1785925644
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785925636}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.79235, y: 2.7, z: 2.6227002}
+  m_LocalScale: {x: 1, y: 6, z: 6.88}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1804155936
 GameObject:
   m_ObjectHideFlags: 0
@@ -11124,6 +11785,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
   InteractionText: {fileID: 1954950602}
   message: E
+  InteractionSound: {fileID: 0}
 --- !u!65 &1804155939
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11964,6 +12626,7 @@ GameObject:
   - component: {fileID: 1934865511}
   - component: {fileID: 1934865510}
   - component: {fileID: 1934865513}
+  - component: {fileID: 1934865514}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -12015,9 +12678,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c097b03bfee866d28906d1edb79f9936, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MusicManager
+  MasterMixer: {fileID: 24100000, guid: f33b28dbf35d64b41b9031c8908306f8, type: 2}
+--- !u!114 &1934865514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1934865509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 837e55fd38e299e45a1501668efd2265, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MenuManagers
   MusicSlider: {fileID: 1400264244}
   SFXSlider: {fileID: 2044145556}
-  MasterMixer: {fileID: 24100000, guid: f33b28dbf35d64b41b9031c8908306f8, type: 2}
+  ConfigPanel: {fileID: 753548962}
 --- !u!1 &1954950600
 GameObject:
   m_ObjectHideFlags: 0
@@ -12492,14 +13168,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteraction
   HeldFishEmotion: 0
+  ConfigPanel: {fileID: 753548962}
+  ButtonsMenu: {fileID: 117881662}
+  ConfirmBox: {fileID: 1130949146}
+  MenuManager: {fileID: 1934865514}
   CanInteract: 0
   ActualInteractiveObject: {fileID: 0}
   focusedObject: {fileID: 0}
   HandsUI: {fileID: 1144724021}
   HandsAnimation: {fileID: 1376080166}
-  ConfigPanel: {fileID: 753548962}
-  ButtonsMenu: {fileID: 117881662}
-  ConfirmBox: {fileID: 1130949146}
 --- !u!114 &1958548641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13076,7 +13753,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1934865513}
         m_TargetAssemblyTypeName: MusicManager, Assembly-CSharp
         m_MethodName: OnSliderSFX
         m_Mode: 0
@@ -13896,19 +14573,20 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 832575519}
+  - {fileID: 673791982}
   - {fileID: 1934865511}
-  - {fileID: 1763651748}
-  - {fileID: 284771852}
-  - {fileID: 900547776}
+  - {fileID: 1804155943}
+  - {fileID: 925107185}
+  - {fileID: 436523015}
+  - {fileID: 413873379}
   - {fileID: 1958548638}
   - {fileID: 2075524921}
   - {fileID: 3728451}
   - {fileID: 947588536}
   - {fileID: 574269983}
   - {fileID: 1155096897}
-  - {fileID: 1804155943}
-  - {fileID: 925107185}
-  - {fileID: 436523015}
-  - {fileID: 413873379}
-  - {fileID: 673791982}
+  - {fileID: 1763651748}
+  - {fileID: 284771852}
+  - {fileID: 900547776}
+  - {fileID: 1785925644}
   - {fileID: 605665893}

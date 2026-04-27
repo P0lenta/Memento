@@ -7,15 +7,19 @@ public class PlayerInteraction : MonoBehaviour
     [Header("Emoção capturada")]
     public EmotionType HeldFishEmotion = EmotionType.None;
 
+    [Header("Referências")]
+    public GameObject ConfigPanel;
+    public GameObject ButtonsMenu;
+    public GameObject ConfirmBox;
+    public MenuManagers MenuManager;
+
+
     [Header("flags")]
     public bool CanInteract = false;
     public GameObject ActualInteractiveObject = null;
     public GameObject focusedObject = null;
     public GameObject HandsUI;
     public Animator HandsAnimation;
-    public GameObject ConfigPanel;
-    public GameObject ButtonsMenu;
-    public GameObject ConfirmBox;
     public static PlayerInteraction Instance {get; private set;}
     public static bool IsMenuOpen {get; private set;}
     public static bool IsConfirmationOpen { get; set; }
@@ -50,21 +54,32 @@ public class PlayerInteraction : MonoBehaviour
         
         UpdateHoldingAnimation();
 
+        ConfigPanel.SetActive(false);
         IsMenuOpen = false;
     }
 
     public void OnMenu(InputAction.CallbackContext context)
     {
-        if (!context.started) return;
-        if (ConfigPanel == null) return; 
+        if (!context.started || ConfigPanel == null || MenuManager == null) return;
         
+        if (IsInputLocked && !IsMenuOpen) return;
+
+        if (MenuManager != null)
+        {
+            MenuManager.ToggleMenu();
+            IsMenuOpen = ConfigPanel.activeSelf;
+        }
+        else if (ConfigPanel != null)
+        {
+            IsMenuOpen = !ConfigPanel.activeSelf;
+            ConfigPanel.SetActive(IsMenuOpen);
+        }
+
         if (ConfigPanel.activeSelf)
         {
             CloseMenu();
             return;
         }
-
-        if (IsInputLocked) return;
 
         bool OpenMenu = !ConfigPanel.activeSelf;
         ConfigPanel.SetActive(OpenMenu);
@@ -94,6 +109,8 @@ public class PlayerInteraction : MonoBehaviour
         {
             if (ButtonsMenu != null) ButtonsMenu.SetActive(true);
             if (ConfirmBox != null) ConfirmBox.SetActive(false);
+
+            if (MusicManager.Instance != null) MusicManager.Instance.LoadSoundMenu();
         }
         else
         {
@@ -114,21 +131,21 @@ public class PlayerInteraction : MonoBehaviour
             CanInteract = true;
             HandsUI.SetActive(true);
 
-        PlayerMovement Movement = GetComponent<PlayerMovement>();
-        if (Movement != null) 
-        {
-            Movement.StopMovement();
-            Movement.GetSensibility();
-            Movement.IsInteracting = false;
-        }
+            PlayerMovement Movement = GetComponent<PlayerMovement>();
+            if (Movement != null) 
+            {
+                Movement.StopMovement();
+                Movement.GetSensibility();
+                Movement.IsInteracting = false;
+            }
 
-        PlayerWaterMovement WaterMovement = GetComponent<PlayerWaterMovement>();
-        if (WaterMovement != null) 
-        {
-            WaterMovement.StopWaterMovement();
-            WaterMovement.GetSensibility();
-            WaterMovement.IsInteracting = false;
-        }
+            PlayerWaterMovement WaterMovement = GetComponent<PlayerWaterMovement>();
+            if (WaterMovement != null) 
+            {
+                WaterMovement.StopWaterMovement();
+                WaterMovement.GetSensibility();
+                WaterMovement.IsInteracting = false;
+            }
         }
     }
 
@@ -172,6 +189,12 @@ public class PlayerInteraction : MonoBehaviour
             return;
         }
 
+        if (ActualInteractiveObject != null)
+        {
+            Interactable InteractSound = ActualInteractiveObject.GetComponent<Interactable>();
+            if (InteractSound != null && InteractSound.InteractionSound != null) InteractSound.InteractionSound.Play();
+        }
+
         HandsAnimation.SetTrigger("Grab");
         
         if (!CanInteract || ActualInteractiveObject == null) return;
@@ -201,6 +224,9 @@ public class PlayerInteraction : MonoBehaviour
             if (Movement != null) Movement.StopMovement();
             Sleepy.Sleep();
         }
+
+        Door OpenningDoor = ActualInteractiveObject.GetComponent<Door>();
+        if (OpenningDoor != null) OpenningDoor.OpenDoor();
     }
 
     void UpdateHoldingAnimation()
