@@ -12,8 +12,20 @@ public class MusicManager : MonoBehaviour
     private float CurrentMusicVolume = 0.5f;
     private float CurrentSFXVolume = 0.5f;
 
+    public static MusicManager Instance;
+
     void Awake()
     {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
         if (PlayerPrefs.HasKey("VolumeMusic"))
         CurrentMusicVolume = PlayerPrefs.GetFloat("VolumeMusic");
         if (PlayerPrefs.HasKey("VolumeSFX"))

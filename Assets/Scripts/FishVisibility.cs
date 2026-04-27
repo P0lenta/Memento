@@ -4,6 +4,14 @@ public class FishVisibility : MonoBehaviour
 {
     public EmotionType EmotionAttached;
     public bool DisableMatch = false;
+    public int MinDay = 1;
+    public int MaxDay = 10;
+
+    void Start()
+    {
+        int Day = EmotionManager.Instance.CurrentDay;
+        if (Day < MinDay || Day > MaxDay) gameObject.SetActive(false);
+    }
 
     void Update()
     {

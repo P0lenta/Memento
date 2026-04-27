@@ -13,6 +13,7 @@ public class Interactable : MonoBehaviour
         {
          InteractionText.gameObject.SetActive(false);  
         }
+    
     }
 
     private void OnTriggerEnter (Collider other)

@@ -20,12 +20,13 @@ public class PlayerInteraction : MonoBehaviour
     public static bool IsMenuOpen {get; private set;}
     public static bool IsConfirmationOpen { get; set; }
     public static bool IsInDialogue { get; set; }
+    public static bool IsSleeping { get; set; }
 
     public static bool IsInputLocked 
     {
         get
         {
-            return IsMenuOpen || IsConfirmationOpen || IsInDialogue;
+            return IsMenuOpen || IsConfirmationOpen || IsInDialogue || IsSleeping;
         }
     }
 
@@ -56,6 +57,14 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (!context.started) return;
         if (ConfigPanel == null) return; 
+        
+        if (ConfigPanel.activeSelf)
+        {
+            CloseMenu();
+            return;
+        }
+
+        if (IsInputLocked) return;
 
         bool OpenMenu = !ConfigPanel.activeSelf;
         ConfigPanel.SetActive(OpenMenu);
@@ -129,7 +138,6 @@ public class PlayerInteraction : MonoBehaviour
 
         if (HeldFishEmotion != EmotionType.None)
         SetHeldFish(EmotionType.None);
-        Debug.Log("Peixe descartado");
     }
 
     public void SetHeldFish(EmotionType Fish)
@@ -172,7 +180,7 @@ public class PlayerInteraction : MonoBehaviour
         if (Dialogue != null) Dialogue.StartDialogue();
 
         CameraFocus Focus = ActualInteractiveObject.GetComponent<CameraFocus>();
-            if (Focus != null) Focus.StartFocus(this);
+        if (Focus != null) Focus.StartFocus(this);
 
         SceneChanger SceneChanger = ActualInteractiveObject.GetComponent<SceneChanger>();
         if (SceneChanger != null) SceneChanger.TryChangeScene(this);
@@ -185,6 +193,14 @@ public class PlayerInteraction : MonoBehaviour
 
         Trash Lixo = ActualInteractiveObject.GetComponent<Trash>();
         if (Lixo != null) Lixo.Fora(this);
+
+        Bed Sleepy = ActualInteractiveObject.GetComponent<Bed>();
+        if (Sleepy != null)
+        {
+            PlayerMovement Movement = GetComponent<PlayerMovement>();
+            if (Movement != null) Movement.StopMovement();
+            Sleepy.Sleep();
+        }
     }
 
     void UpdateHoldingAnimation()

@@ -27,6 +27,9 @@
 
             [Tooltip("Completa a missão")]
             public bool CompletesMission = false;
+
+            [Tooltip("Emoção que vai ser dada")]
+            public EmotionType EmotionToGive = EmotionType.None;
         }
 
         [Header("Diálogos")]
@@ -129,11 +132,7 @@
             Interactable Interaction = GetComponent<Interactable>();
             if (Interaction != null) Interaction.enabled = false;
 
-            EmotionGiver giver = GetComponent<EmotionGiver>();
-            if (giver != null)
-            {
-                EmotionManager.Instance.SetEmotion(giver.EmotionToGive);
-            }
+            if (ActiveDialogue != null && ActiveDialogue.EmotionToGive != EmotionType.None) EmotionManager.Instance.SetEmotion(ActiveDialogue.EmotionToGive);
 
             if (ActiveDialogue != null && ActiveDialogue.CompletesMission)
             {

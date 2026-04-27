@@ -37,6 +37,7 @@ public class CameraFocus : MonoBehaviour
                 PlayerRenderer.enabled = false;
             }
 
+            playerMovement.StopMovement();
 
             if(playerInteraction.HandsUI != null)
             {   

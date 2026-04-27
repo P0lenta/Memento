@@ -606,6 +606,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FishInteraction
   EmotionAttached: 4
   DisableMatch: 0
+  MinDay: 1
+  MaxDay: 10
 --- !u!135 &142700009
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1282,6 +1284,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FishInteraction
   EmotionAttached: 3
   DisableMatch: 0
+  MinDay: 1
+  MaxDay: 10
 --- !u!135 &372261899
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1846,6 +1850,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FishInteraction
   EmotionAttached: 2
   DisableMatch: 0
+  MinDay: 1
+  MaxDay: 10
 --- !u!135 &510617304
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2620,8 +2626,9 @@ GameObject:
   m_Component:
   - component: {fileID: 614291046}
   - component: {fileID: 614291045}
+  - component: {fileID: 614291047}
   m_Layer: 0
-  m_Name: EmotionManager
+  m_Name: Managers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2659,6 +2666,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &614291047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614291044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c097b03bfee866d28906d1edb79f9936, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MusicManager
+  MusicSlider: {fileID: 1441978193}
+  SFXSlider: {fileID: 1460135618}
+  MasterMixer: {fileID: 24100000, guid: f33b28dbf35d64b41b9031c8908306f8, type: 2}
 --- !u!1 &647514346
 GameObject:
   m_ObjectHideFlags: 0
@@ -2822,6 +2844,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a341de275a4d059408354b690ef33599, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneChanger
+  Require: 0
+  SceneConfirmPanel: {fileID: 0}
   SceneName: Submarine
 --- !u!1 &652301423
 GameObject:
@@ -3309,6 +3333,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FishInteraction
   EmotionAttached: 5
   DisableMatch: 0
+  MinDay: 1
+  MaxDay: 10
 --- !u!135 &830090391
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3647,6 +3673,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a341de275a4d059408354b690ef33599, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneChanger
+  Require: 0
+  SceneConfirmPanel: {fileID: 0}
   SceneName: Menu
 --- !u!114 &863857994
 MonoBehaviour:
@@ -5220,6 +5248,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FishInteraction
   EmotionAttached: 1
   DisableMatch: 0
+  MinDay: 1
+  MaxDay: 10
 --- !u!135 &1322336402
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6647,6 +6677,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a341de275a4d059408354b690ef33599, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneChanger
+  Require: 0
+  SceneConfirmPanel: {fileID: 0}
   SceneName: Water
 --- !u!4 &1625320663
 Transform:
@@ -8590,11 +8622,11 @@ SceneRoots:
   m_Roots:
   - {fileID: 1523311476}
   - {fileID: 1444836600}
+  - {fileID: 614291046}
   - {fileID: 1904847111}
   - {fileID: 2079898458}
   - {fileID: 1401103711}
   - {fileID: 647514353}
-  - {fileID: 614291046}
   - {fileID: 1625320663}
   - {fileID: 1840490875}
   - {fileID: 542023176}
