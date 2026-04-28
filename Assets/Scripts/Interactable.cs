@@ -27,7 +27,7 @@ public class Interactable : MonoBehaviour
          PlayerInteraction playerInteraction = other.GetComponent<PlayerInteraction>();
             if (playerInteraction != null)
             {
-                playerInteraction.CanInteract = true;
+                PlayerInteraction.CanInteract = true;
                 playerInteraction.ActualInteractiveObject = gameObject; 
             }
             if (InteractionText != null)
@@ -44,7 +44,7 @@ public class Interactable : MonoBehaviour
              PlayerInteraction playerInteraction = other.GetComponent<PlayerInteraction>();
             if (playerInteraction != null)
             {
-                playerInteraction.CanInteract = false;
+                PlayerInteraction.CanInteract = false;
                 playerInteraction.ActualInteractiveObject = null;
             }
 

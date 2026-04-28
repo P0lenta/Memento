@@ -8,23 +8,20 @@ public class PlayerInteraction : MonoBehaviour
     public EmotionType HeldFishEmotion = EmotionType.None;
 
     [Header("Referências")]
-    public GameObject ConfigPanel;
-    public GameObject ButtonsMenu;
-    public GameObject ConfirmBox;
-    public MenuManagers MenuManager;
-
-
-    [Header("flags")]
-    public bool CanInteract = false;
     public GameObject ActualInteractiveObject = null;
     public GameObject focusedObject = null;
     public GameObject HandsUI;
+    public MenuManagers MenuManager;
     public Animator HandsAnimation;
-    public static PlayerInteraction Instance {get; private set;}
-    public static bool IsMenuOpen {get; private set;}
+
+
+    [Header("flags")]
+    public static PlayerInteraction Instance { get; private set; } 
+    public static bool IsMenuOpen;
     public static bool IsConfirmationOpen { get; set; }
     public static bool IsInDialogue { get; set; }
     public static bool IsSleeping { get; set; }
+    public static bool CanInteract = false;
 
     public static bool IsInputLocked 
     {
@@ -49,104 +46,23 @@ public class PlayerInteraction : MonoBehaviour
 
     void Start()
     {
+        IsMenuOpen = false;
+        IsConfirmationOpen = false;
+        IsInDialogue = false;
+        IsSleeping = false;
+        CanInteract = true;
         if (EmotionManager.Instance != null)
         HeldFishEmotion = EmotionManager.Instance.HeldFish;
         
         UpdateHoldingAnimation();
-
-        ConfigPanel.SetActive(false);
-        IsMenuOpen = false;
     }
 
     public void OnMenu(InputAction.CallbackContext context)
     {
-        if (!context.started || ConfigPanel == null || MenuManager == null) return;
-        
-        if (IsInputLocked && !IsMenuOpen) return;
-
-        if (MenuManager != null)
-        {
-            MenuManager.ToggleMenu();
-            IsMenuOpen = ConfigPanel.activeSelf;
-        }
-        else if (ConfigPanel != null)
-        {
-            IsMenuOpen = !ConfigPanel.activeSelf;
-            ConfigPanel.SetActive(IsMenuOpen);
-        }
-
-        if (ConfigPanel.activeSelf)
-        {
-            CloseMenu();
-            return;
-        }
-
-        bool OpenMenu = !ConfigPanel.activeSelf;
-        ConfigPanel.SetActive(OpenMenu);
-        
-        IsMenuOpen = OpenMenu;
-        CanInteract = !OpenMenu;
-
-        HandsUI.SetActive(!OpenMenu);
-
-        PlayerMovement Movement = GetComponent<PlayerMovement>();
-        if (Movement != null) 
-        {
-            Movement.StopMovement();
-            Movement.GetSensibility();
-            Movement.IsInteracting = OpenMenu;
-        }
-
-        PlayerWaterMovement WaterMovement = GetComponent<PlayerWaterMovement>();
-        if (WaterMovement != null) 
-        {
-            WaterMovement.StopWaterMovement();
-            WaterMovement.GetSensibility();
-            WaterMovement.IsInteracting = OpenMenu;
-        }
-
-        if (OpenMenu)
-        {
-            if (ButtonsMenu != null) ButtonsMenu.SetActive(true);
-            if (ConfirmBox != null) ConfirmBox.SetActive(false);
-
-            if (MusicManager.Instance != null) MusicManager.Instance.LoadSoundMenu();
-        }
-        else
-        {
-            if (ButtonsMenu != null) ButtonsMenu.SetActive(true);
-            if (ConfirmBox != null) ConfirmBox.SetActive(false);
-        }
-
-    }
-
-    public void CloseMenu()
-    {
-        if (ConfigPanel != null && ConfigPanel.activeSelf)
-        {
-            if (ButtonsMenu != null) ButtonsMenu.SetActive(true);
-            if (ConfirmBox != null) ConfirmBox.SetActive(false);
-            ConfigPanel.SetActive(false);
-            IsMenuOpen = false;
-            CanInteract = true;
-            HandsUI.SetActive(true);
-
-            PlayerMovement Movement = GetComponent<PlayerMovement>();
-            if (Movement != null) 
-            {
-                Movement.StopMovement();
-                Movement.GetSensibility();
-                Movement.IsInteracting = false;
-            }
-
-            PlayerWaterMovement WaterMovement = GetComponent<PlayerWaterMovement>();
-            if (WaterMovement != null) 
-            {
-                WaterMovement.StopWaterMovement();
-                WaterMovement.GetSensibility();
-                WaterMovement.IsInteracting = false;
-            }
-        }
+        if (!context.started) return;
+        Debug.Log("OnMenu chamado");
+        if (MenuManager != null) MenuManager.ToggleMenu();
+        if (MenuManager == null) Debug.Log("Menu manager nulo no OnMenu");
     }
 
     public void OnTrash(InputAction.CallbackContext context)

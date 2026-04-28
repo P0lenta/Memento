@@ -10,8 +10,8 @@ public class MusicManager : MonoBehaviour
     public static MusicManager Instance { get; private set; }
 
     private const float DefaultVolume = 0.5f;
-    private float CurrentMusicVolume;
-    private float CurrentSFXVolume;
+    public float CurrentMusicVolume { get; private set; }
+    public float CurrentSFXVolume { get; private set; }
 
     void Awake()
     {
@@ -25,40 +25,34 @@ public class MusicManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-       LoadSoundMenu();
     }
 
     public void LoadSoundMenu()
     {
-            CurrentMusicVolume = PlayerPrefs.GetFloat("VolumeMusic", DefaultVolume);
-            ApplyMusicVolume(CurrentMusicVolume);
-            CurrentSFXVolume = PlayerPrefs.GetFloat("VolumeSFX", DefaultVolume);
-            ApplySFXVolume(CurrentSFXVolume);
+        Debug.Log("=== LoadSoundMenu ===");
+        CurrentMusicVolume = PlayerPrefs.GetFloat("VolumeMusic", DefaultVolume);
+        CurrentSFXVolume = PlayerPrefs.GetFloat("VolumeSFX", DefaultVolume);
+        Debug.Log($"Carregou MusicVolume = {CurrentMusicVolume}, SFXVolume = {CurrentSFXVolume}");
+        ApplyMusicVolume(CurrentMusicVolume);
+        ApplySFXVolume(CurrentSFXVolume);
     }
 
-    public void SetupSlider(Slider VisualSlider, bool IsMusicSlider)
+    public void SetupSlider(UnityEngine.UI.Slider VisualSlider, bool IsMusicSlider)
     {
         if (VisualSlider == null) return;
+        VisualSlider.onValueChanged.RemoveAllListeners();
         VisualSlider.value = IsMusicSlider ? CurrentMusicVolume : CurrentSFXVolume;
-
-        if (IsMusicSlider)
-        {
-            VisualSlider.onValueChanged.AddListener(OnSliderMusic);
-        }
-        else
-        {
-            VisualSlider.onValueChanged.AddListener(OnSliderSFX);
-        }
+        if (IsMusicSlider) VisualSlider.onValueChanged.AddListener(OnSliderMusic);
+        else VisualSlider.onValueChanged.AddListener(OnSliderSFX);
     }
 
     public void OnSliderMusic(float Volume)
     {
+        Debug.Log($"OnSliderMusic recebido: {Volume}");
         CurrentMusicVolume = Volume;
         ApplyMusicVolume(Volume);
         PlayerPrefs.SetFloat("VolumeMusic", Volume);
         PlayerPrefs.Save();
-        LoadSoundMenu();
     }
 
     public void OnSliderSFX(float Volume)
@@ -67,7 +61,6 @@ public class MusicManager : MonoBehaviour
         ApplySFXVolume(Volume);
         PlayerPrefs.SetFloat("VolumeSFX", Volume);
         PlayerPrefs.Save();
-        LoadSoundMenu();
     }
     
     public void ApplyMusicVolume(float LinearVolume)

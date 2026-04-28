@@ -528,9 +528,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1958548640}
-        m_TargetAssemblyTypeName: PlayerInteraction, Assembly-CSharp
-        m_MethodName: CloseMenu
+      - m_Target: {fileID: 185655643}
+        m_TargetAssemblyTypeName: MenuManagers, Assembly-CSharp
+        m_MethodName: CloseConfigPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1338,10 +1338,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1130949146}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 185655643}
+        m_TargetAssemblyTypeName: MenuManagers, Assembly-CSharp
+        m_MethodName: CloseConfirmExitPanel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1349,18 +1349,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 117881662}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &100183090
 MonoBehaviour:
@@ -1817,6 +1805,55 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &185655642
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 185655644}
+  - component: {fileID: 185655643}
+  m_Layer: 0
+  m_Name: MenuManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &185655643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185655642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 837e55fd38e299e45a1501668efd2265, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MenuManagers
+  ConfigPanel: {fileID: 753548962}
+  ConfirmExitPanel: {fileID: 1130949146}
+  ButtonsMenu: {fileID: 117881662}
+  MusicSlider: {fileID: 1400264244}
+  SFXSlider: {fileID: 2044145556}
+--- !u!4 &185655644
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185655642}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 379.76767, y: 132.14426, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &245774187
 GameObject:
   m_ObjectHideFlags: 0
@@ -7286,22 +7323,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1130949146}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 117881662}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 185655643}
+        m_TargetAssemblyTypeName: MenuManagers, Assembly-CSharp
+        m_MethodName: OpenConfirmExitPanel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -9073,15 +9098,15 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1934865513}
-        m_TargetAssemblyTypeName: MusicManager, Assembly-CSharp
-        m_MethodName: OnSliderMusic
+      - m_Target: {fileID: 185655643}
+        m_TargetAssemblyTypeName: MenuManagers, Assembly-CSharp
+        m_MethodName: OnMusicSlider
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
+          m_FloatArgument: 0.5
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -12626,7 +12651,6 @@ GameObject:
   - component: {fileID: 1934865511}
   - component: {fileID: 1934865510}
   - component: {fileID: 1934865513}
-  - component: {fileID: 1934865514}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -12679,21 +12703,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MusicManager
   MasterMixer: {fileID: 24100000, guid: f33b28dbf35d64b41b9031c8908306f8, type: 2}
---- !u!114 &1934865514
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1934865509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 837e55fd38e299e45a1501668efd2265, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MenuManagers
-  MusicSlider: {fileID: 1400264244}
-  SFXSlider: {fileID: 2044145556}
-  ConfigPanel: {fileID: 753548962}
 --- !u!1 &1954950600
 GameObject:
   m_ObjectHideFlags: 0
@@ -13168,14 +13177,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteraction
   HeldFishEmotion: 0
-  ConfigPanel: {fileID: 753548962}
-  ButtonsMenu: {fileID: 117881662}
-  ConfirmBox: {fileID: 1130949146}
-  MenuManager: {fileID: 1934865514}
-  CanInteract: 0
   ActualInteractiveObject: {fileID: 0}
   focusedObject: {fileID: 0}
   HandsUI: {fileID: 1144724021}
+  MenuManager: {fileID: 185655643}
   HandsAnimation: {fileID: 1376080166}
 --- !u!114 &1958548641
 MonoBehaviour:
@@ -13753,15 +13758,15 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1934865513}
-        m_TargetAssemblyTypeName: MusicManager, Assembly-CSharp
-        m_MethodName: OnSliderSFX
+      - m_Target: {fileID: 185655643}
+        m_TargetAssemblyTypeName: MenuManagers, Assembly-CSharp
+        m_MethodName: OnSFXSlider
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
+          m_FloatArgument: 0.5
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -14575,13 +14580,13 @@ SceneRoots:
   - {fileID: 832575519}
   - {fileID: 673791982}
   - {fileID: 1934865511}
+  - {fileID: 185655644}
   - {fileID: 1804155943}
   - {fileID: 925107185}
   - {fileID: 436523015}
   - {fileID: 413873379}
   - {fileID: 1958548638}
   - {fileID: 2075524921}
-  - {fileID: 3728451}
   - {fileID: 947588536}
   - {fileID: 574269983}
   - {fileID: 1155096897}
@@ -14590,3 +14595,4 @@ SceneRoots:
   - {fileID: 900547776}
   - {fileID: 1785925644}
   - {fileID: 605665893}
+  - {fileID: 3728451}

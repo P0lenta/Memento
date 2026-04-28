@@ -11,9 +11,14 @@ public class EmotionDisplay : MonoBehaviour
 
     void Update()
     {
-        if (EmotionManager.Instance == null) return;
+        if (EmotionManager.Instance == null)
+        {
+            Debug.LogError("EmotionManager.Instance é nulo!");
+        return;
+        }
 
         EmotionType current = EmotionManager.Instance.GetCurrentEmotion();
+        Debug.Log($"Emoção atual: {current}");
 
         if (HappyIcon != null) HappyIcon.SetActive(false);
         if (SadIcon != null) SadIcon.SetActive(false);
