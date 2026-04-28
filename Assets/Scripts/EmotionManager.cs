@@ -11,6 +11,7 @@ public class EmotionManager : MonoBehaviour
     public System.Action<EmotionType> OnEmotionChanged;
     public int CurrentMission = 0;
     public int CurrentDay = 1;
+    public bool IsMapUnlocked = false;
 
 
     private void Awake()

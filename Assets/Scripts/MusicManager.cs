@@ -29,10 +29,8 @@ public class MusicManager : MonoBehaviour
 
     public void LoadSoundMenu()
     {
-        Debug.Log("=== LoadSoundMenu ===");
         CurrentMusicVolume = PlayerPrefs.GetFloat("VolumeMusic", DefaultVolume);
         CurrentSFXVolume = PlayerPrefs.GetFloat("VolumeSFX", DefaultVolume);
-        Debug.Log($"Carregou MusicVolume = {CurrentMusicVolume}, SFXVolume = {CurrentSFXVolume}");
         ApplyMusicVolume(CurrentMusicVolume);
         ApplySFXVolume(CurrentSFXVolume);
     }
@@ -48,7 +46,6 @@ public class MusicManager : MonoBehaviour
 
     public void OnSliderMusic(float Volume)
     {
-        Debug.Log($"OnSliderMusic recebido: {Volume}");
         CurrentMusicVolume = Volume;
         ApplyMusicVolume(Volume);
         PlayerPrefs.SetFloat("VolumeMusic", Volume);

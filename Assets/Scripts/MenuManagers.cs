@@ -67,6 +67,7 @@ public class MenuManagers : MonoBehaviour
             watermovement.GetSensibility();
             watermovement.IsInteracting = true;
         }
+
     }
 
     public void CloseConfigPanel()
@@ -95,18 +96,21 @@ public class MenuManagers : MonoBehaviour
             watermovement.GetSensibility();
             watermovement.IsInteracting = false;
         }
+
     }
 
     public void OpenConfirmExitPanel()
     {
         if (ConfirmExitPanel != null) ConfirmExitPanel.SetActive(true);
         if (ButtonsMenu != null) ButtonsMenu.SetActive(false);
+
     }
 
     public void CloseConfirmExitPanel()
     {
         if (ConfirmExitPanel != null) ConfirmExitPanel.SetActive(false);
         if (ButtonsMenu != null) ButtonsMenu.SetActive(true);
+
     }
 
     public void RefreshSlider()

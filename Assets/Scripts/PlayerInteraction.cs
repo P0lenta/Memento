@@ -13,6 +13,7 @@ public class PlayerInteraction : MonoBehaviour
     public GameObject HandsUI;
     public MenuManagers MenuManager;
     public Animator HandsAnimation;
+    public MapShower MapController;
 
 
     [Header("flags")]
@@ -21,13 +22,14 @@ public class PlayerInteraction : MonoBehaviour
     public static bool IsConfirmationOpen { get; set; }
     public static bool IsInDialogue { get; set; }
     public static bool IsSleeping { get; set; }
+    public static bool IsInMap { get; set; }
     public static bool CanInteract = false;
 
     public static bool IsInputLocked 
     {
         get
         {
-            return IsMenuOpen || IsConfirmationOpen || IsInDialogue || IsSleeping;
+            return IsMenuOpen || IsConfirmationOpen || IsInDialogue || IsSleeping || IsInMap;
         }
     }
 
@@ -60,9 +62,9 @@ public class PlayerInteraction : MonoBehaviour
     public void OnMenu(InputAction.CallbackContext context)
     {
         if (!context.started) return;
-        Debug.Log("OnMenu chamado");
         if (MenuManager != null) MenuManager.ToggleMenu();
-        if (MenuManager == null) Debug.Log("Menu manager nulo no OnMenu");
+
+        if (MapController != null) MapController.CloseMapWithEsc();
     }
 
     public void OnTrash(InputAction.CallbackContext context)
@@ -71,6 +73,12 @@ public class PlayerInteraction : MonoBehaviour
 
         if (HeldFishEmotion != EmotionType.None)
         SetHeldFish(EmotionType.None);
+    }
+
+    public void OnMap(InputAction.CallbackContext context)
+    {
+        if (!context.started) return;
+        if (MapController != null) MapController.OpenMap();
     }
 
     public void SetHeldFish(EmotionType Fish)

@@ -30,6 +30,9 @@
 
             [Tooltip("Emoção que vai ser dada")]
             public EmotionType EmotionToGive = EmotionType.None;
+
+            [Tooltip("ELe vai liberar o mapa")]
+            public bool UnlocksMap = false;
         }
 
         [Header("Diálogos")]
@@ -59,6 +62,8 @@
             IsActive = true;
             ShowCurrentLine();
             PlayerInteraction.IsInDialogue = true;
+
+            if (Chosen.UnlocksMap && EmotionManager.Instance != null) EmotionManager.Instance.IsMapUnlocked = true;
         }
 
         private DialogueOption GetRightDialogue()
