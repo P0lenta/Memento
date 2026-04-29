@@ -68,6 +68,8 @@ public class MenuManagers : MonoBehaviour
             watermovement.IsInteracting = true;
         }
 
+        PlayerInteraction.Instance?.RefreshHandsUIVisibility();
+
     }
 
     public void CloseConfigPanel()
@@ -97,6 +99,8 @@ public class MenuManagers : MonoBehaviour
             watermovement.IsInteracting = false;
         }
 
+        PlayerInteraction.Instance?.RefreshHandsUIVisibility();
+
     }
 
     public void OpenConfirmExitPanel()
@@ -104,12 +108,16 @@ public class MenuManagers : MonoBehaviour
         if (ConfirmExitPanel != null) ConfirmExitPanel.SetActive(true);
         if (ButtonsMenu != null) ButtonsMenu.SetActive(false);
 
+        PlayerInteraction.Instance?.RefreshHandsUIVisibility();
+
     }
 
     public void CloseConfirmExitPanel()
     {
         if (ConfirmExitPanel != null) ConfirmExitPanel.SetActive(false);
         if (ButtonsMenu != null) ButtonsMenu.SetActive(true);
+
+        PlayerInteraction.Instance?.RefreshHandsUIVisibility();
 
     }
 

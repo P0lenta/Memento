@@ -11,8 +11,8 @@ public class PlayerInteraction : MonoBehaviour
     public GameObject ActualInteractiveObject = null;
     public GameObject focusedObject = null;
     public GameObject HandsUI;
-    public MenuManagers MenuManager;
     public Animator HandsAnimation;
+    public MenuManagers MenuManager;
     public MapShower MapController;
 
 
@@ -24,6 +24,7 @@ public class PlayerInteraction : MonoBehaviour
     public static bool IsSleeping { get; set; }
     public static bool IsInMap { get; set; }
     public static bool CanInteract = false;
+    private Renderer[] HandsRenderers;
 
     public static bool IsInputLocked 
     {
@@ -53,8 +54,12 @@ public class PlayerInteraction : MonoBehaviour
         IsInDialogue = false;
         IsSleeping = false;
         CanInteract = true;
-        if (EmotionManager.Instance != null)
-        HeldFishEmotion = EmotionManager.Instance.HeldFish;
+
+        if (EmotionManager.Instance != null) HeldFishEmotion = EmotionManager.Instance.HeldFish;
+
+        HandsRenderers = HandsUI.GetComponentsInChildren<Renderer>();
+        
+        RefreshHandsUIVisibility();
         
         UpdateHoldingAnimation();
     }
@@ -118,8 +123,6 @@ public class PlayerInteraction : MonoBehaviour
             Interactable InteractSound = ActualInteractiveObject.GetComponent<Interactable>();
             if (InteractSound != null && InteractSound.InteractionSound != null) InteractSound.InteractionSound.Play();
         }
-
-        HandsAnimation.SetTrigger("Grab");
         
         if (!CanInteract || ActualInteractiveObject == null) return;
 
@@ -133,7 +136,11 @@ public class PlayerInteraction : MonoBehaviour
         if (SceneChanger != null) SceneChanger.TryChangeScene(this);
             
         FishCapture Fish = ActualInteractiveObject.GetComponent<FishCapture>();
-        if (Fish != null) Fish.Interact(this);
+        if (Fish != null) 
+        {
+            Fish.Interact(this);
+            HandsAnimation.SetTrigger("Grab");
+        }
 
         Projector Skip = ActualInteractiveObject.GetComponent<Projector>();
         if (Skip != null) Skip.Avancar();
@@ -157,13 +164,23 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (HeldFishEmotion == EmotionType.None)
         {
-         HandsAnimation.SetBool("IsHolding", false);   
+            HandsAnimation.SetBool("IsHolding", false);
         }
         else
         {
             HandsAnimation.SetBool("IsHolding", true);
         }
     }
+
+    public void RefreshHandsUIVisibility()
+    {
+    bool visible = !IsInputLocked;
+    foreach (var rend in HandsRenderers)
+    {
+        if (rend != null)
+            rend.enabled = visible;
+    }
+}
 
     public void SetInDialogue(bool value)
     {

@@ -52,7 +52,6 @@ public class FishDelivery : MonoBehaviour
         EmotionManager.Instance.CurrentMission++;
         CurrentEmotionIndex = EmotionManager.Instance.CurrentMission;
         EmotionManager.Instance.IsMapUnlocked = false;
-        Debug.Log("Map is locked");
 
         if (CurrentEmotionIndex < PossibleEmotion.Length) StartNextMission();
     }
@@ -62,7 +61,6 @@ public class FishDelivery : MonoBehaviour
         if (PossibleEmotion.Length == 0) return;
         RequiredEmotion = PossibleEmotion[CurrentEmotionIndex];
         EmotionManager.Instance.CurrentMissionFish = RequiredEmotion;
-        Debug.Log("Map is unlocked");
     }
 
     

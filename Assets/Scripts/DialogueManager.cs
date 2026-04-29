@@ -63,6 +63,8 @@
             ShowCurrentLine();
             PlayerInteraction.IsInDialogue = true;
 
+            PlayerInteraction.Instance?.RefreshHandsUIVisibility();
+
             if (Chosen.UnlocksMap && EmotionManager.Instance != null) EmotionManager.Instance.IsMapUnlocked = true;
         }
 
@@ -130,6 +132,7 @@
             DialogueImage.gameObject.SetActive(false);
 
             PlayerInteraction.IsInDialogue = false;
+            PlayerInteraction.Instance?.RefreshHandsUIVisibility();
 
             CameraFocus Camera = GetComponent<CameraFocus>();
             if (Camera != null) Camera.EndFocus();

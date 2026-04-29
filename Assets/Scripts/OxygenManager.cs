@@ -45,12 +45,16 @@ public class OxygenManager : MonoBehaviour
         float TaxaTotal = DecreaseRate + Accelerate;
 
         if (IsDead) return;
-        CurrentOxygen -= TaxaTotal * Time.deltaTime;
 
-        if (CurrentOxygen <= 0f)
+        if (!PlayerInteraction.IsInputLocked)
         {
-            CurrentOxygen = 0;
-            Die();
+            CurrentOxygen -= TaxaTotal * Time.deltaTime;
+
+            if (CurrentOxygen <= 0f)
+            {
+                CurrentOxygen = 0;
+                Die();
+            }   
         }
 
         UpdateOxygenText();
@@ -99,6 +103,9 @@ public class OxygenManager : MonoBehaviour
             rb.linearVelocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
         }
+
+        PlayerInteraction.Instance?.RefreshHandsUIVisibility();
+
     } 
 
    public void OnReset(InputAction.CallbackContext context)

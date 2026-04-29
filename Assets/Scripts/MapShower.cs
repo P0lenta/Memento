@@ -60,6 +60,8 @@ public class MapShower : MonoBehaviour
             watermovement.IsInteracting = true;
         }
 
+        PlayerInteraction.Instance?.RefreshHandsUIVisibility();
+
     }
 
     public void CloseMap()
@@ -84,6 +86,8 @@ public class MapShower : MonoBehaviour
             watermovement.StopWaterMovement();
             watermovement.IsInteracting = false;
         }
+
+        PlayerInteraction.Instance?.RefreshHandsUIVisibility();
     }
 
     public void CloseMapWithEsc()
