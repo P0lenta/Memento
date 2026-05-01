@@ -45,6 +45,8 @@ public class MenuManagers : MonoBehaviour
         RefreshSlider();
 
         ConfigPanel.SetActive(true);
+
+        UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(null);
         
         if (ButtonsMenu != null) ButtonsMenu.SetActive(true);
         if (ConfirmExitPanel != null) ConfirmExitPanel.SetActive(false);
