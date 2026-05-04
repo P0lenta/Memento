@@ -1,21 +1,51 @@
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class MapShower : MonoBehaviour
 {
     [Header("Referências")]
     public GameObject MapBackground;
     public GameObject MapRadius;
+    public GameObject MapHelper;
     public RectTransform MapRadiusLocation;
 
     private bool IsMapOpen = false;
 
     [Header("Valores de X, Y e Z")]
     public Vector3[] FishLocations;
-    
+
+    [Header ("Ajudantes")]
+    public TextMeshProUGUI HelperText;
+    public string[] CollectFishMessages;
+    public Sprite[] CollectImages;
+    public Image HelperImage;
+
     void Start()
     {
         MapBackground.SetActive(false);
         MapRadius.SetActive(false);
+        MapHelper.SetActive(false);
+    }
+
+    private void UpdateMapHelpers()
+    {
+        if (HelperImage == null || CollectImages.Length == 0) return;
+
+        if (!EmotionManager.Instance.IsMapUnlocked)
+        {
+            HelperImage.sprite = CollectImages[0];
+            if (HelperText != null) HelperText.text = CollectFishMessages[0];
+            return;
+        }
+
+        int MissionIndex = EmotionManager.Instance.CurrentMission;
+
+        int HelperMissionIndex = MissionIndex + 1;
+
+        if (HelperMissionIndex >= 0 && HelperMissionIndex < CollectImages.Length) HelperImage.sprite = CollectImages[HelperMissionIndex];
+        if (HelperText != null && CollectFishMessages != null && MissionIndex < CollectFishMessages.Length) 
+        HelperText.text = CollectFishMessages[HelperMissionIndex];
     }
 
     public void OpenMap()
@@ -28,12 +58,15 @@ public class MapShower : MonoBehaviour
 
         if (PlayerInteraction.IsInputLocked) return;
 
+        UpdateMapHelpers();
+
         IsMapOpen = true;
 
         PlayerInteraction.IsInMap = true;
         
         MapBackground.SetActive(true);
         MapRadius.SetActive(true);
+        MapHelper.SetActive(true);
 
         if (!EmotionManager.Instance.IsMapUnlocked)
         {
@@ -68,6 +101,7 @@ public class MapShower : MonoBehaviour
     {
         MapBackground.SetActive(false);
         MapRadius.SetActive(false);
+        MapHelper.SetActive(false);
 
         PlayerInteraction.IsInMap = false;
 

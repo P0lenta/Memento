@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
@@ -12,7 +13,7 @@ public class OxygenManager : MonoBehaviour
     public float Accelerate = 0f;
 
     [Header("UI")]
-    public TextMeshProUGUI OxygenText; 
+    public Image OxygenFill;
     public TextMeshProUGUI ResetText;
     public string DeathMessage = "Morto :(";
     public string ResetMessage = "Aperte R para voltar";
@@ -25,7 +26,7 @@ public class OxygenManager : MonoBehaviour
     void Start() 
     {
         CurrentOxygen = MaxOxygen;
-        UpdateOxygenText(); 
+        if (ResetText != null) ResetText.text = "";
     }
 
     public void OnAccelerate(InputAction.CallbackContext context)
@@ -57,38 +58,18 @@ public class OxygenManager : MonoBehaviour
             }   
         }
 
-        UpdateOxygenText();
-    }
+        if (OxygenFill != null) OxygenFill.fillAmount = CurrentOxygen / MaxOxygen;
 
-    void UpdateOxygenText()
-    {
-        if (OxygenText == null) return;
-
-        if (IsDead)
-        {
-            OxygenText.text = DeathMessage;
-            if (ResetText != null)
-            {
-                ResetText.text = ResetMessage;
-            }
-        }
-        else
-        {                        
-            OxygenText.text = CurrentOxygen.ToString("F0") + "%";
-            if (ResetText != null)
-            {
-                ResetText.text = "";
-            }
-        }
+        if (!IsDead && ResetText != null && ResetText.text != "") ResetText.text = "";
     }
 
     public void Die()
     {
         IsDead = true;
-        UpdateOxygenText();
 
-         if(HandsRenderer != null)
-         HandsRenderer.enabled = false;
+         if(HandsRenderer != null) HandsRenderer.enabled = false;
+
+         if (ResetText != null) ResetText.text = DeathMessage + "\n" + ResetMessage;
         
         PlayerWaterMovement MoveScript = GetComponent<PlayerWaterMovement>();
         if (MoveScript != null)
