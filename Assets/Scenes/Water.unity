@@ -9433,7 +9433,7 @@ MonoBehaviour:
   CurrentOxygen: 0
   DecreaseRate: 1
   Accelerate: 0
-  OxygenText: {fileID: 729028215}
+  OxygenFill: {fileID: 0}
   ResetText: {fileID: 1567486835}
   DeathMessage: Morto :(
   ResetMessage: Aperte R para voltar
