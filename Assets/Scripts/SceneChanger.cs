@@ -26,6 +26,7 @@ public class SceneChanger : MonoBehaviour
             if (CurrentEmotion == EmotionType.None)
             {
                 if (SceneConfirmPanel != null) SceneConfirmPanel.SetActive(true);
+                UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(null);
                 PlayerInteraction.IsConfirmationOpen = true;
 
                 PlayerMovement Move = player.GetComponent<PlayerMovement>();

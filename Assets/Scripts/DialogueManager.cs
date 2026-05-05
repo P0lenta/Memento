@@ -1,5 +1,6 @@
     using UnityEngine;
     using TMPro;
+    using System.Collections; 
 
     public class DialogueManager : MonoBehaviour
     {
@@ -31,7 +32,7 @@
             [Tooltip("Emoção que vai ser dada")]
             public EmotionType EmotionToGive = EmotionType.None;
 
-            [Tooltip("ELe vai liberar o mapa")]
+            [Tooltip("Ele vai liberar o mapa")]
             public bool UnlocksMap = false;
         }
 
@@ -39,9 +40,19 @@
         public DialogueOption[] Dialogues;
 
         [Header("Configurações de UI")]
-        public TextMeshProUGUI DialogueText;
+        public TextMeshProUGUI DialogueText;    
         public GameObject DialogueImage;
 
+        [Header ("Animação máquina de escrever")]
+        public float TypingSpeed = 0.05f;
+        public bool CanSkip = true;
+
+        [Header ("Efeito sonoro digitação")]
+        public AudioClip TypingSound;
+
+        private Coroutine TypingCoroutine;
+        private string FullText;
+        private bool IsTyping = false;
         private int CurrentLine = 0;
         private bool IsActive = false;
         private static DialogueOption ActiveDialogue;
@@ -102,20 +113,58 @@
 
         private void ShowCurrentLine()
         {
-            if (DialogueText ==  null) return;
-            if (DialogueImage ==  null) return;
+            if (DialogueText ==  null || DialogueImage ==  null) return;
+
+            FullText = ActiveDialogue.lines[CurrentLine];
+
+            if (TypingCoroutine != null) StopCoroutine(TypingCoroutine);
+            TypingCoroutine = StartCoroutine(TypeWriterEffect());
 
             DialogueText.text = ActiveDialogue.lines[CurrentLine];
             DialogueText.gameObject.SetActive(true);
             DialogueImage.gameObject.SetActive(true);
         }
 
+        private IEnumerator TypeWriterEffect()
+        {
+            IsTyping = true;
+            DialogueText.maxVisibleCharacters = 0;
+            DialogueText.text = FullText;
+            DialogueText.gameObject.SetActive(true);
+            DialogueImage.SetActive(true);
+
+            for (int i = 1; i <= FullText.Length; i++)
+            {
+                DialogueText.maxVisibleCharacters = i;
+                yield return new WaitForSeconds(TypingSpeed);
+            }
+
+            IsTyping = false;
+            TypingCoroutine = null;
+        }
+
         public void NextLine()
         {
             if (!IsActive) return;
+
+            if (IsTyping && CanSkip)
+            {
+                SkipTyping();
+                return;
+            }
+
             CurrentLine++;
             if (CurrentLine >= ActiveDialogue.lines.Length) EndDialogue();
             else ShowCurrentLine();
+        }
+
+        private void SkipTyping()
+        {
+            if (TypingCoroutine != null) StopCoroutine(TypingCoroutine);
+
+            DialogueText.maxVisibleCharacters = FullText.Length;
+            IsTyping = false;
+            TypingCoroutine = null;
         }
 
         public static void CheckNextLine()
