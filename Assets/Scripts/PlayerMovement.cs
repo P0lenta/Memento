@@ -24,9 +24,10 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask floorLayers; 
 
 [Header("Flags")]
-    public bool IsDead = false;             
-    public bool IsInteracting = false;
+    public bool IsDead = false;
     public Animator HandsAnimation;
+    public bool IsMovementLocked = false;
+    public bool IsTutorialRunning = false;
 
     private Vector3 MoveInput;
 
@@ -42,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        if (IsDead || PlayerInteraction.IsInputLocked) return;
+        if (IsDead || PlayerInteraction.IsInputLocked || IsMovementLocked) return;
 
             Vector2 input = context.ReadValue<Vector2>();
             MoveInput = input.normalized * speed;
@@ -69,7 +70,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnLook(InputAction.CallbackContext context)
     {       
-        if (IsDead || PlayerInteraction.IsInputLocked) return;
+        if (IsDead || PlayerInteraction.IsInputLocked || IsMovementLocked) return;
 
         Vector2 lookInput = context.ReadValue<Vector2>();  
         lookInput *= MouseSensibility;
@@ -92,6 +93,11 @@ public class PlayerMovement : MonoBehaviour
     public void StopMovement()
     {
         MoveInput = Vector3.zero;
+    }
+
+    void Update()
+    {
+        IsMovementLocked = IsTutorialRunning;
     }
 
     /*public void OnJump(InputAction.CallbackContext context)

@@ -9,7 +9,6 @@ public class FishVisibility : MonoBehaviour
     {
         if (EmotionManager.Instance == null) return;
 
-        Debug.Log($"[FishVisibility] Nome: {gameObject.name}, Emoção: {EmotionManager.Instance.GetCurrentEmotion()}, Emoção exigida: {EmotionAttached}");
 
         if (!IsHard && EmotionManager.Instance.CurrentMission > 4)
         {
@@ -25,7 +24,6 @@ public class FishVisibility : MonoBehaviour
 
 
         bool Visibility = (EmotionManager.Instance.GetCurrentEmotion() == EmotionAttached);
-        Debug.Log($"[FishVisibility] Visibilidade calculada: {Visibility} (emoção atual == {EmotionAttached})");
         
         gameObject.SetActive(Visibility);
     }

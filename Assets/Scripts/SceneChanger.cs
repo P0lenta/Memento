@@ -29,6 +29,9 @@ public class SceneChanger : MonoBehaviour
                 UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(null);
                 PlayerInteraction.IsConfirmationOpen = true;
 
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+
                 PlayerMovement Move = player.GetComponent<PlayerMovement>();
                 if (Move != null) Move.StopMovement();
 
@@ -59,5 +62,8 @@ public class SceneChanger : MonoBehaviour
     {
         if (SceneConfirmPanel != null) SceneConfirmPanel.SetActive(false);
         PlayerInteraction.IsConfirmationOpen = false;
-        }
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
 }

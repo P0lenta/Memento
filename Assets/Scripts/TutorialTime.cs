@@ -3,7 +3,6 @@ using UnityEngine;
 public class TutorialTime : MonoBehaviour
 {
     public PlayerMovement playerMovement;
-    public float Timer = 2f;
     private bool CanWalk = false;
 
     void Start()
@@ -12,24 +11,21 @@ public class TutorialTime : MonoBehaviour
 
         if (!CanWalk)
         {
-            playerMovement.IsInteracting = true;
+            playerMovement.IsTutorialRunning = true;
         }
         else
         {
-            playerMovement.IsInteracting = false;
+            playerMovement.IsTutorialRunning = false;
         }
     }
 
-    void Update()
+    public void LiberateWalk()
     {
         if (CanWalk) return;
-            Timer -= Time.deltaTime;
-            if (Timer <= 0f)
-            {
-                playerMovement.IsInteracting = false;
-                CanWalk = true;
-                PlayerPrefs.SetInt("TutorialTime_Walked", 1);
-                PlayerPrefs.Save();
-            }
+
+        CanWalk = true;
+        playerMovement.IsTutorialRunning = false;
+        PlayerPrefs.SetInt("TutorialTime_Walked", 1);
+        PlayerPrefs.Save();
     }
 }

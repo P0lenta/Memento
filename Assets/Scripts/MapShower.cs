@@ -83,7 +83,7 @@ public class MapShower : MonoBehaviour
         if (movement != null)
         {
             movement.StopMovement();
-            movement.IsInteracting = true;
+            movement.IsMovementLocked = true;
         }
 
         PlayerWaterMovement watermovement = FindFirstObjectByType<PlayerWaterMovement>();
@@ -111,7 +111,7 @@ public class MapShower : MonoBehaviour
         if (movement != null)
         {
             movement.StopMovement();
-            movement.IsInteracting = false;
+            movement.IsMovementLocked = false;
         }
 
         PlayerWaterMovement watermovement = FindFirstObjectByType<PlayerWaterMovement>();

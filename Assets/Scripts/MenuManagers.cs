@@ -59,7 +59,7 @@ public class MenuManagers : MonoBehaviour
         {
             movement.StopMovement();
             movement.GetSensibility();
-            movement.IsInteracting = true;
+            movement.IsMovementLocked = true;
         }
 
         PlayerWaterMovement watermovement = FindFirstObjectByType<PlayerWaterMovement>();
@@ -72,6 +72,7 @@ public class MenuManagers : MonoBehaviour
 
         PlayerInteraction.Instance?.RefreshHandsUIVisibility();
 
+        RefreshCursor();
     }
 
     public void CloseConfigPanel()
@@ -90,7 +91,7 @@ public class MenuManagers : MonoBehaviour
         {
             movement.StopMovement();
             movement.GetSensibility();
-            movement.IsInteracting = false;
+            movement.IsMovementLocked = false;
         }
 
         PlayerWaterMovement watermovement = FindFirstObjectByType<PlayerWaterMovement>();
@@ -103,6 +104,8 @@ public class MenuManagers : MonoBehaviour
 
         PlayerInteraction.Instance?.RefreshHandsUIVisibility();
 
+        RefreshCursor();
+
     }
 
     public void OpenConfirmExitPanel()
@@ -112,6 +115,8 @@ public class MenuManagers : MonoBehaviour
 
         PlayerInteraction.Instance?.RefreshHandsUIVisibility();
 
+        RefreshCursor();
+
     }
 
     public void CloseConfirmExitPanel()
@@ -120,6 +125,8 @@ public class MenuManagers : MonoBehaviour
         if (ButtonsMenu != null) ButtonsMenu.SetActive(true);
 
         PlayerInteraction.Instance?.RefreshHandsUIVisibility();
+
+        RefreshCursor();
 
     }
 
@@ -142,6 +149,14 @@ public class MenuManagers : MonoBehaviour
         public void OnSFXSlider(float Value)
     {
         if (MusicManager.Instance != null) MusicManager.Instance.OnSliderSFX(Value);
+    }
+
+    private void RefreshCursor()
+    {
+        bool MenuAberto = PlayerInteraction.IsMenuOpen || (ConfirmExitPanel != null && ConfirmExitPanel.activeSelf);
+
+        Cursor.lockState = MenuAberto ? CursorLockMode.None : CursorLockMode.Locked;
+        Cursor.visible = MenuAberto;
     }
 
 }

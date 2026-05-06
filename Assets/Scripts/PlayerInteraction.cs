@@ -4,12 +4,13 @@ using TMPro;
 
 public class PlayerInteraction : MonoBehaviour
 {
-    [Header("Emoção capturada")]
+    [Header("Tipo de peixe capturado")]
     public EmotionType HeldFishEmotion = EmotionType.None;
 
     [Header("Referências")]
     public GameObject ActualInteractiveObject = null;
     public GameObject focusedObject = null;
+    public FishModelEntry[] FishModels;
     public GameObject HandsUI;
     public Animator HandsAnimation;
     public MenuManagers MenuManager;
@@ -55,13 +56,35 @@ public class PlayerInteraction : MonoBehaviour
         IsSleeping = false;
         CanInteract = true;
 
-        if (EmotionManager.Instance != null) HeldFishEmotion = EmotionManager.Instance.HeldFish;
+        if (EmotionManager.Instance != null) 
+        {
+            HeldFishEmotion = EmotionManager.Instance.HeldFish;
 
+            if (HeldFishEmotion != EmotionType.None)
+            {
+                bool isHard = EmotionManager.Instance.CurrentMission > 4;
+                 Debug.Log($"Tentando restaurar peixe: {HeldFishEmotion}, isHard: {isHard}");
+                foreach (var entry in FishModels)
+                {
+                     Debug.Log($"Entry: {entry.Emotion}, {entry.IsHard}, Model: {entry.Model?.name}");
+                    if (entry.Emotion == HeldFishEmotion && entry.IsHard == isHard)
+                    {
+                        entry.Model.SetActive(true);
+                        Debug.Log($"Modelo restaurado: {entry.Model.name}");
+                        break;
+                    }
+                }
+            }
+
+        }
         HandsRenderers = HandsUI.GetComponentsInChildren<Renderer>();
         
         RefreshHandsUIVisibility();
         
         UpdateHoldingAnimation();
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     public void OnMenu(InputAction.CallbackContext context)
@@ -89,13 +112,47 @@ public class PlayerInteraction : MonoBehaviour
     public void SetHeldFish(EmotionType Fish)
     {
         HeldFishEmotion = Fish;
-        if (EmotionManager.Instance != null)
+
+        if (EmotionManager.Instance != null) EmotionManager.Instance.HeldFish = Fish;
+
+        foreach (var entry in FishModels) entry.Model.SetActive(false);
+
+        if (Fish == EmotionType.None) UpdateHoldingAnimation();
+    }
+
+    public void OnHoldingAnimationEvent()
+    {
+        Debug.Log($"OnHoldingAnimationEvent chamado! Emoção: {HeldFishEmotion}");
+        
+        if (HeldFishEmotion == EmotionType.None)
         {
-            EmotionManager.Instance.HeldFish = Fish;
+            Debug.Log("Emoção é None, saindo...");
+            return;
+        }
+
+        bool isHard = EmotionManager.Instance != null && EmotionManager.Instance.CurrentMission > 4;
+        Debug.Log($"isHard: {isHard}");
+
+        foreach (var entry in FishModels)
+        {
+            Debug.Log($"Checando entry: {entry.Emotion}, {entry.IsHard}, match: {entry.Emotion == HeldFishEmotion && entry.IsHard == isHard}");
+            if (entry.Emotion == HeldFishEmotion && entry.IsHard == isHard)
+            {
+                entry.Model.SetActive(true);
+                Debug.Log($"Modelo ativado: {entry.Model.name}");
+            }
         }
 
         UpdateHoldingAnimation();
     }
+
+    public void OnClick(InputAction.CallbackContext context)
+    {
+        if (!context.started) return;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+    
     public void OnInteract(InputAction.CallbackContext context)
     {
         if (!context.started) return;
@@ -139,6 +196,7 @@ public class PlayerInteraction : MonoBehaviour
         if (Fish != null) 
         {
             Fish.Interact(this);
+            Debug.Log("Disparando trigger Grab!");
             HandsAnimation.SetTrigger("Grab");
         }
 

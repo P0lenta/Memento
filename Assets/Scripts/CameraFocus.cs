@@ -46,7 +46,7 @@ public class CameraFocus : MonoBehaviour
             }
 
             
-        playerMovement.IsInteracting = true;
+        playerMovement.IsMovementLocked = true;
         playerInteraction.enabled = false;
 
         playerInteraction.focusedObject = gameObject;
@@ -81,7 +81,7 @@ public class CameraFocus : MonoBehaviour
 
         PlayerRenderer.enabled = true;
         HandRenderer.enabled = true;
-        playerMovement.IsInteracting = false;
+        playerMovement.IsMovementLocked = false;
         playerInteraction.enabled = true;
         playerInteraction.HandsUI.SetActive(true);
 

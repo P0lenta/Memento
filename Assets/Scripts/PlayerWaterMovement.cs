@@ -37,6 +37,7 @@ public class PlayerWaterMovement : MonoBehaviour
 
         rig.useGravity = false;
         rig.linearDamping = WaterDrag;
+
     }
 
     public void GetSensibility()
@@ -54,7 +55,8 @@ public class PlayerWaterMovement : MonoBehaviour
     {
         if (IsDead || PlayerInteraction.IsInputLocked) return;
 
-        MoveInput = context.ReadValue<Vector2>();
+        Vector2 input = context.ReadValue<Vector2>();
+        MoveInput = new Vector3(input.x, 0, input.y);
 
     }
 
@@ -105,7 +107,7 @@ public class PlayerWaterMovement : MonoBehaviour
         Vector3 CamFoward = CamTransform.forward;
         Vector3 CamRight = CamTransform.right;
 
-        Vector3 MoveDirection = (CamFoward * MoveInput.y + CamRight * MoveInput.x).normalized;
+        Vector3 MoveDirection = (CamFoward * MoveInput.z + CamRight * MoveInput.x).normalized;
 
         Vector3 TargetVelocity = MoveDirection * MoveSpeed;
 
