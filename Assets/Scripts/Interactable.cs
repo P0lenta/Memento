@@ -12,10 +12,7 @@ public class Interactable : MonoBehaviour
 
     void Start()
     {
-        if (InteractionText != null)
-        {
-         InteractionText.gameObject.SetActive(false);  
-        }
+        if (InteractionText != null) InteractionText.gameObject.SetActive(false);  
     }
 
     private void OnTriggerEnter (Collider other)
@@ -38,6 +35,30 @@ public class Interactable : MonoBehaviour
             
         }
 
+        private void OnTriggerStay(Collider other)
+    {
+        if (!gameObject.activeInHierarchy) return;
+        if (!other.CompareTag("Player")) return;
+
+        PlayerInteraction Player = other.GetComponent<PlayerInteraction>();
+        if (Player == null) return;
+
+        if (Player.ActualInteractiveObject == null)
+        {
+            Player.ActualInteractiveObject = gameObject;
+            return;
+        }
+
+        float DistanciaAtual = Vector3.Distance(other.transform.position, Player.ActualInteractiveObject.transform.position);
+        float DistanciaEsse = Vector3.Distance(other.transform.position, transform.position);
+
+        if (DistanciaEsse < DistanciaAtual)
+        {
+            Player.ActualInteractiveObject = gameObject;
+            if (InteractionText != null) InteractionText.text = message;
+        }
+    }
+
     private void OnTriggerExit (Collider other)
     {
         if (!other.CompareTag("Player")) return;
@@ -48,19 +69,14 @@ public class Interactable : MonoBehaviour
                 playerInteraction.ActualInteractiveObject = null;
             }
 
-            if (InteractionText != null)
-            {
-                InteractionText.gameObject.SetActive(false);
-            }
+            if (InteractionText != null) InteractionText.gameObject.SetActive(false);
         
     }
 
     private void OnDisable()
     {
-        if (InteractionText != null)
-        {
-            InteractionText.gameObject.SetActive(false);
-        }
+        if (InteractionText != null) InteractionText.gameObject.SetActive(false);
     }
+
 
 }

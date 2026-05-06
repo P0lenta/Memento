@@ -12,6 +12,7 @@ public class EmotionManager : MonoBehaviour
     public int CurrentMission = 0;
     public int CurrentDay = 1;
     public bool IsMapUnlocked = false;
+    public string LastScene = "";
 
 
     private void Awake()

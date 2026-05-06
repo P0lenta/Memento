@@ -51,6 +51,8 @@ public class SceneChanger : MonoBehaviour
     {
         PlayerInteraction.IsConfirmationOpen = false;
 
+        if (EmotionManager.Instance != null) EmotionManager.Instance.LastScene = SceneManager.GetActiveScene().name;
+
         SceneManager.LoadScene(SceneName);
 
         PlayerInteraction.IsConfirmationOpen = false;
