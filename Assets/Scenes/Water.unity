@@ -10408,6 +10408,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 17.923342
       objectReference: {fileID: 0}
+    - target: {fileID: -1308162933895141315, guid: ed771e14fcf1d1a4186c76f69205a5f5, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 085783af593521c4097175532fee892c, type: 2}
     - target: {fileID: -1063094714816996356, guid: ed771e14fcf1d1a4186c76f69205a5f5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -89.98021
@@ -10436,6 +10440,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 11.141122
       objectReference: {fileID: 0}
+    - target: {fileID: -396629873740867219, guid: ed771e14fcf1d1a4186c76f69205a5f5, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 085783af593521c4097175532fee892c, type: 2}
     - target: {fileID: 467795910565800048, guid: ed771e14fcf1d1a4186c76f69205a5f5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0.05821337
