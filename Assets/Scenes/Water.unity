@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0.11129405, g: 0.29852015, b: 0.38679248, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.064
@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: fbe74c3995f773941abff01025dacd1f, type: 2}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -4762,8 +4762,16 @@ PrefabInstance:
       value: Terrain (1)
       objectReference: {fileID: 0}
     - target: {fileID: 4497342563643234857, guid: 23878c452d56dee468f6be2832bf4fa2, type: 3}
+      propertyPath: m_DrawInstanced
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4497342563643234857, guid: 23878c452d56dee468f6be2832bf4fa2, type: 3}
       propertyPath: m_HeightmapPixelError
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6846336893549851034, guid: 23878c452d56dee468f6be2832bf4fa2, type: 3}
+      propertyPath: m_ProvidesContacts
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
