@@ -91,4 +91,20 @@ public class CameraFocus : MonoBehaviour
 
         IsFocused = false;
     }
+
+    [ContextMenu("Capturar posição atual da câmera")]
+    void CaptureCurrentCameraPosition()
+{
+    PlayerMovement movement = FindFirstObjectByType<PlayerMovement>();
+    if (movement == null || movement.camTransform == null)
+    {
+        Debug.Log("PlayerMovement ou câmera não encontrados!");
+        return;
+    }
+
+    cameraPosition = movement.camTransform.position;
+    cameraRotation = movement.camTransform.eulerAngles;
+
+    Debug.Log($"Posição capturada: {cameraPosition}, Rotação: {cameraRotation}");
+}
 }
