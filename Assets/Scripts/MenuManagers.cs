@@ -153,6 +153,8 @@ public class MenuManagers : MonoBehaviour
 
     private void RefreshCursor()
     {
+        if (PlayerInteraction.Instance == null) return;
+
         bool MenuAberto = PlayerInteraction.IsMenuOpen || (ConfirmExitPanel != null && ConfirmExitPanel.activeSelf);
 
         Cursor.lockState = MenuAberto ? CursorLockMode.None : CursorLockMode.Locked;
