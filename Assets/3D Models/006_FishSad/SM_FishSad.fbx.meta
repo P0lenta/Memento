@@ -3,7 +3,12 @@ guid: bf61b7104522dc94f9655c5b99158096
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FISH4_MAT
+    second: {fileID: 2100000, guid: a480fdc41dc161848bdb7bd5a2a6b9a5, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
