@@ -165,4 +165,14 @@ public class MenuManagers : MonoBehaviour
         Cursor.visible = MenuAberto;
     }
 
+    public void DeleteSave()
+    {
+        PlayerPrefs.SetInt("CurrentMission", 0);
+        PlayerPrefs.SetInt("CurrentDay", 1);
+        PlayerPrefs.SetInt("IsMapUnlocked", 0);
+        PlayerPrefs.Save();
+
+        CloseConfigPanel();
+    }
+
 }

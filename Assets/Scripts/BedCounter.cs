@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BedCounter : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class BedCounter : MonoBehaviour
     {
         EmotionManager.Instance.CurrentDay++;
         Debug.Log("Contador de dias aumentado");
+        EndBuild();
     } 
 
     public void OnFadeComplete()
@@ -23,5 +25,12 @@ public class BedCounter : MonoBehaviour
         PlayerInteraction.IsSleeping = false;
         EmotionManager.Instance.HeldFish = EmotionType.None;
         EmotionManager.Instance.SetEmotion(EmotionType.None);
+    }
+
+    public void EndBuild()
+    {
+        if (EmotionManager.Instance.CurrentDay <= 3) return;
+        SceneManager.LoadScene("Credits");
+
     }
 }
