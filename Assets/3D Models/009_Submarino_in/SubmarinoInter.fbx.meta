@@ -1,29 +1,9 @@
 fileFormatVersion: 2
-guid: ef4ed10b49f60bb42a6f7cbb9d996592
+guid: c2e4ddd1205a3524395212ede31e9537
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Lights_M
-    second: {fileID: 2100000, guid: cb516b40ac64c4247a402d24d2ed1cc2, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Mob1_Quarto_M
-    second: {fileID: 2100000, guid: 1196885cedef8d84a976867b62770661, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Mob2_Quarto_M
-    second: {fileID: 2100000, guid: 2e72f3f98fd450249bbc3e8ce884ace2, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: PortasLam_Corredor_M
-    second: {fileID: 2100000, guid: 6067bb7a8ad239b4c9dec4c4102086a6, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
