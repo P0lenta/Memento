@@ -15,6 +15,7 @@ public class PlayerInteraction : MonoBehaviour
     public Animator HandsAnimation;
     public MenuManagers MenuManager;
     public MapShower MapController;
+    public GameObject InteractionImage;
 
 
     [Header("flags")]
@@ -82,6 +83,8 @@ public class PlayerInteraction : MonoBehaviour
         RefreshHandsUIVisibility();
         
         UpdateHoldingAnimation();
+
+        SetInteractionImageVisible(false);
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -183,6 +186,8 @@ public class PlayerInteraction : MonoBehaviour
         
         if (!CanInteract || ActualInteractiveObject == null) return;
 
+        SetInteractionImageVisible(false);
+
         DialogueManager Dialogue = ActualInteractiveObject.GetComponent<DialogueManager>();
         if (Dialogue != null) Dialogue.StartDialogue();
 
@@ -243,5 +248,10 @@ public class PlayerInteraction : MonoBehaviour
     public void SetInDialogue(bool value)
     {
         IsInDialogue = value;
+    }
+
+    public void SetInteractionImageVisible(bool visible)
+    {
+        if (InteractionImage != null) InteractionImage.SetActive(visible);
     }
 }

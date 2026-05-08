@@ -18,6 +18,7 @@ public class Interactable : MonoBehaviour
     private void OnTriggerEnter (Collider other)
     {
         if (!gameObject.activeInHierarchy) return;
+        Debug.Log($"OnTriggerEnter chamado em {gameObject.name}");
 
         if (!other.CompareTag("Player")) return;
 
@@ -27,16 +28,23 @@ public class Interactable : MonoBehaviour
                 PlayerInteraction.CanInteract = true;
                 playerInteraction.ActualInteractiveObject = gameObject; 
             }
-            if (InteractionText != null)
+
+            if (!PlayerInteraction.IsInputLocked)
             {
+                if (InteractionText != null)
+                {
                 InteractionText.text = message;
                 InteractionText.gameObject.SetActive(true);
+                }
+
+                PlayerInteraction.Instance?.SetInteractionImageVisible(true);
             }
             
         }
 
         private void OnTriggerStay(Collider other)
     {
+        if (!enabled) return;
         if (!gameObject.activeInHierarchy) return;
         if (!other.CompareTag("Player")) return;
 
@@ -57,6 +65,8 @@ public class Interactable : MonoBehaviour
             Player.ActualInteractiveObject = gameObject;
             if (InteractionText != null) InteractionText.text = message;
         }
+
+        if (!PlayerInteraction.IsInputLocked) PlayerInteraction.Instance?.SetInteractionImageVisible(true);
     }
 
     private void OnTriggerExit (Collider other)
@@ -70,12 +80,16 @@ public class Interactable : MonoBehaviour
             }
 
             if (InteractionText != null) InteractionText.gameObject.SetActive(false);
+
+            PlayerInteraction.Instance?.SetInteractionImageVisible(false);
         
     }
 
     private void OnDisable()
     {
+
         if (InteractionText != null) InteractionText.gameObject.SetActive(false);
+
     }
 
 

@@ -58,6 +58,8 @@ public class SceneChanger : MonoBehaviour
         PlayerInteraction.IsConfirmationOpen = false;
 
         if (MusicManager.Instance != null) MusicManager.Instance.LoadSoundMenu();
+
+        EmotionManager.Instance.Save();
     }
     
     public void CancelConfirmation()

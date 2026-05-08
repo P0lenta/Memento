@@ -41,6 +41,8 @@ public class MenuManagers : MonoBehaviour
     public void OpenConfigPanel()
     {
         if (ConfigPanel == null) return;
+        
+        EmotionManager.Instance.Save();
 
         RefreshSlider();
 
@@ -79,6 +81,8 @@ public class MenuManagers : MonoBehaviour
     {
         if (ConfigPanel == null) return;
         ConfigPanel.SetActive(false);
+
+        EmotionManager.Instance.Save();
 
         if (ButtonsMenu != null) ButtonsMenu.SetActive(true);
         if (ConfirmExitPanel != null) ConfirmExitPanel.SetActive(false);

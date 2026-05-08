@@ -75,6 +75,7 @@
             PlayerInteraction.IsInDialogue = true;
 
             PlayerInteraction.Instance?.RefreshHandsUIVisibility();
+            PlayerInteraction.Instance?.SetInteractionImageVisible(false);
 
             if (Chosen.UnlocksMap && EmotionManager.Instance != null) EmotionManager.Instance.IsMapUnlocked = true;
         }

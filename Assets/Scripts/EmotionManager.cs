@@ -26,6 +26,8 @@ public class EmotionManager : MonoBehaviour
         {
             DontDestroyOnLoad (gameObject);
         }
+
+        Load();
     }
 
     public EmotionType GetCurrentEmotion()
@@ -38,6 +40,21 @@ public class EmotionManager : MonoBehaviour
         if (currentEmotion == newEmotion) return;
         currentEmotion = newEmotion;
         OnEmotionChanged?.Invoke(currentEmotion);
+    }
+
+    public void Save()
+    {
+        PlayerPrefs.SetInt("CurrentMission", CurrentMission);
+        PlayerPrefs.SetInt("CurrentDay", CurrentDay);
+        PlayerPrefs.SetInt("IsMapUnlocked", IsMapUnlocked ? 1 : 0);
+        PlayerPrefs.Save();
+    }
+
+    public void Load()
+    {
+        CurrentMission = PlayerPrefs.GetInt("CurrentMission", 0);
+        CurrentDay = PlayerPrefs.GetInt("CurrentDay", 1);
+        IsMapUnlocked = PlayerPrefs.GetInt("IsMapUnlocked", 0) == 1;
     }
 
 }
