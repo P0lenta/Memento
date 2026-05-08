@@ -29,11 +29,18 @@ public class PlayerMovement : MonoBehaviour
     public bool IsMovementLocked = false;
     public bool IsTutorialRunning = false;
 
+[Header("Som de passos")]
+    public AudioSource FootSteps;
+    public float FootsInverval = 0.5f;
+    private float FootsTimer = 0f;
+
     private Vector3 MoveInput;
 
     void Start()
     {
         GetSensibility();
+
+        if (FootSteps == null) FootSteps = GetComponent<AudioSource>();
     }
 
     public void GetSensibility()
@@ -98,7 +105,25 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         IsMovementLocked = IsTutorialRunning;
+
+        bool IsInGround = Physics.Raycast(transform.position, Vector3.down, 1.1f, floorLayers);
+
+        if (IsInGround && MoveInput.sqrMagnitude > 0.1f && !PlayerInteraction.IsInputLocked)
+        {
+            FootsTimer -= Time.deltaTime;
+            if (FootsTimer <= 0f)
+            {
+                FootSteps.Play();
+                FootsTimer = FootsInverval;
+            }
+        }
+        else
+        {
+            FootsTimer = 0f;
+        }
     }
+
+    
 
     /*public void OnJump(InputAction.CallbackContext context)
     {

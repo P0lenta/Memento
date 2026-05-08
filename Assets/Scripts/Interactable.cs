@@ -92,5 +92,15 @@ public class Interactable : MonoBehaviour
 
     }
 
+    public void PlayerInteractionSound()
+    {
+        if (InteractionSound != null) InteractionSound.Play();
+    }
+
+    public void StopInteractionSound()
+    {
+        if (InteractionSound != null) InteractionSound.Stop();
+    }
+
 
 }

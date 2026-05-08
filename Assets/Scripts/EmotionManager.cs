@@ -46,7 +46,6 @@ public class EmotionManager : MonoBehaviour
     {
         PlayerPrefs.SetInt("CurrentMission", CurrentMission);
         PlayerPrefs.SetInt("CurrentDay", CurrentDay);
-        PlayerPrefs.SetInt("IsMapUnlocked", IsMapUnlocked ? 1 : 0);
         PlayerPrefs.Save();
     }
 
@@ -54,7 +53,6 @@ public class EmotionManager : MonoBehaviour
     {
         CurrentMission = PlayerPrefs.GetInt("CurrentMission", 0);
         CurrentDay = PlayerPrefs.GetInt("CurrentDay", 1);
-        IsMapUnlocked = PlayerPrefs.GetInt("IsMapUnlocked", 0) == 1;
     }
 
 }

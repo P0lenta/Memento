@@ -15,9 +15,14 @@ public class BedCounter : MonoBehaviour
 
     public void IncreaseDay()
     {
+        if (EmotionManager.Instance.CurrentDay == 2)
+        {
+            EndBuild();
+            return;
+        }
+
         EmotionManager.Instance.CurrentDay++;
         Debug.Log("Contador de dias aumentado");
-        EndBuild();
     } 
 
     public void OnFadeComplete()
@@ -29,8 +34,9 @@ public class BedCounter : MonoBehaviour
 
     public void EndBuild()
     {
-        if (EmotionManager.Instance.CurrentDay <= 3) return;
+        Debug.Log("EndBuild chamado");
         SceneManager.LoadScene("Credits");
-
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }

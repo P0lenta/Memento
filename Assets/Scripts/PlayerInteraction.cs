@@ -16,6 +16,7 @@ public class PlayerInteraction : MonoBehaviour
     public MenuManagers MenuManager;
     public MapShower MapController;
     public GameObject InteractionImage;
+    private AudioSource CurrentInteractionSound;
 
 
     [Header("flags")]
@@ -181,7 +182,11 @@ public class PlayerInteraction : MonoBehaviour
         if (ActualInteractiveObject != null)
         {
             Interactable InteractSound = ActualInteractiveObject.GetComponent<Interactable>();
-            if (InteractSound != null && InteractSound.InteractionSound != null) InteractSound.InteractionSound.Play();
+            if (InteractSound != null && InteractSound.InteractionSound != null)
+            {
+                CurrentInteractionSound = InteractSound.InteractionSound;
+                CurrentInteractionSound.Play();
+            }
         }
         
         if (!CanInteract || ActualInteractiveObject == null) return;
@@ -253,5 +258,11 @@ public class PlayerInteraction : MonoBehaviour
     public void SetInteractionImageVisible(bool visible)
     {
         if (InteractionImage != null) InteractionImage.SetActive(visible);
+    }
+
+    public void StopCurrentInteractionSound()
+    {
+        if (CurrentInteractionSound != null && CurrentInteractionSound.isPlaying) CurrentInteractionSound.Stop();
+        CurrentInteractionSound = null;
     }
 }

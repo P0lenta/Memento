@@ -48,7 +48,7 @@
         public bool CanSkip = true;
 
         [Header ("Efeito sonoro digitação")]
-        public AudioClip TypingSound;
+        public AudioSource TypingSound;
 
         private Coroutine TypingCoroutine;
         private string FullText;
@@ -157,6 +157,7 @@
             CurrentLine++;
             if (CurrentLine >= ActiveDialogue.lines.Length) EndDialogue();
             else ShowCurrentLine();
+            TypingSound.Play();
         }
 
         private void SkipTyping()
@@ -197,6 +198,8 @@
                 FishDelivery Delivery = GetComponent<FishDelivery>();
                 if (Delivery != null) Delivery.CompleteDelivery();
             }
+
+            PlayerInteraction.Instance?.StopCurrentInteractionSound();
 
             CurrentDialogue = null;
         }

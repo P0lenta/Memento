@@ -82,8 +82,6 @@ public class MenuManagers : MonoBehaviour
         if (ConfigPanel == null) return;
         ConfigPanel.SetActive(false);
 
-        EmotionManager.Instance.Save();
-
         if (ButtonsMenu != null) ButtonsMenu.SetActive(true);
         if (ConfirmExitPanel != null) ConfirmExitPanel.SetActive(false);
 
@@ -173,6 +171,8 @@ public class MenuManagers : MonoBehaviour
         PlayerPrefs.Save();
 
         CloseConfigPanel();
+
+        EmotionManager.Instance.Load();
     }
 
 }

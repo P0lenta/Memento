@@ -8,6 +8,7 @@ public class MapShower : MonoBehaviour
     public GameObject MapBackground;
     public GameObject MapRadius;
     public GameObject MapHelper;
+    public GameObject MapCompass;
     public RectTransform MapRadiusLocation;
 
     private bool IsMapOpen = false;
@@ -67,6 +68,7 @@ public class MapShower : MonoBehaviour
         MapBackground.SetActive(true);
         MapRadius.SetActive(true);
         MapHelper.SetActive(true);
+        if (MapCompass != null) MapCompass.SetActive(true);
 
         if (!EmotionManager.Instance.IsMapUnlocked)
         {
@@ -102,6 +104,7 @@ public class MapShower : MonoBehaviour
         MapBackground.SetActive(false);
         MapRadius.SetActive(false);
         MapHelper.SetActive(false);
+        if (MapCompass != null) MapCompass.SetActive(false);
 
         PlayerInteraction.IsInMap = false;
 
