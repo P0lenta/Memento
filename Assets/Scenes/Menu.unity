@@ -733,7 +733,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1929317010}
         m_TargetAssemblyTypeName: MenuManagers, Assembly-CSharp
         m_MethodName: OnSFXSlider
         m_Mode: 0
@@ -3994,7 +3994,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1929317010}
         m_TargetAssemblyTypeName: MenuManagers, Assembly-CSharp
         m_MethodName: OnMusicSlider
         m_Mode: 0
@@ -4583,7 +4583,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Build 2.0
+  m_text: Build 2.1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
