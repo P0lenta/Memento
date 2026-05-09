@@ -43,7 +43,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 13
-  m_BakeOnSceneLoad: 0
+  m_BakeOnSceneLoad: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -14072,7 +14072,7 @@ MonoBehaviour:
     - Como foi? Profundo? Imagino.
     - "Meu pedido est\xE1 feito? ... Ah, ai est\xE1.!"
     - ... Agora eu me lembro.
-    - "Eu fiquei em sil\xEAnio... quando n\xE3o devia."
+    - "Eu fiquei em sil\xEAncio... quando n\xE3o devia."
     - Nunca mais.
     RequiredMissionIndex: 2
     RequiredEmotion: 0
