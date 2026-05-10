@@ -42,7 +42,7 @@ public class MenuManagers : MonoBehaviour
     {
         if (ConfigPanel == null) return;
         
-        EmotionManager.Instance.Save();
+        if (EmotionManager.Instance != null) EmotionManager.Instance.Save();
 
         RefreshSlider();
 
@@ -165,10 +165,9 @@ public class MenuManagers : MonoBehaviour
 
     public void DeleteSave()
     {
-        PlayerPrefs.SetInt("CurrentMission", 0);
-        PlayerPrefs.SetInt("CurrentDay", 1);
-        PlayerPrefs.SetInt("IsMapUnlocked", 0);
+        PlayerPrefs.DeleteAll();
         PlayerPrefs.Save();
+        if (EmotionManager.Instance != null) EmotionManager.Instance.Load();
 
         CloseConfigPanel();
 

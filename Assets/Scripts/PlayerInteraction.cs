@@ -58,27 +58,8 @@ public class PlayerInteraction : MonoBehaviour
         IsSleeping = false;
         CanInteract = true;
 
-        if (EmotionManager.Instance != null) 
-        {
-            HeldFishEmotion = EmotionManager.Instance.HeldFish;
+        if (EmotionManager.Instance != null) HeldFishEmotion = EmotionManager.Instance.HeldFish;
 
-            if (HeldFishEmotion != EmotionType.None)
-            {
-                bool isHard = EmotionManager.Instance.CurrentMission > 4;
-                 Debug.Log($"Tentando restaurar peixe: {HeldFishEmotion}, isHard: {isHard}");
-                foreach (var entry in FishModels)
-                {
-                     Debug.Log($"Entry: {entry.Emotion}, {entry.IsHard}, Model: {entry.Model?.name}");
-                    if (entry.Emotion == HeldFishEmotion && entry.IsHard == isHard)
-                    {
-                        entry.Model.SetActive(true);
-                        Debug.Log($"Modelo restaurado: {entry.Model.name}");
-                        break;
-                    }
-                }
-            }
-
-        }
         HandsRenderers = HandsUI.GetComponentsInChildren<Renderer>();
         
         RefreshHandsUIVisibility();
@@ -89,6 +70,22 @@ public class PlayerInteraction : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+    }
+
+    void Update()
+    {
+        if (HeldFishEmotion == EmotionType.None) return;
+
+        bool isHard = EmotionManager.Instance != null && EmotionManager.Instance.CurrentMission > 4;
+
+        foreach (var Entry in FishModels)
+        {
+            if (Entry.Emotion == HeldFishEmotion && Entry.IsHard == isHard)
+            {
+                Entry.Model.SetActive(true);
+                return;
+            }
+        }
     }
 
     public void OnMenu(InputAction.CallbackContext context)
@@ -115,6 +112,7 @@ public class PlayerInteraction : MonoBehaviour
 
     public void SetHeldFish(EmotionType Fish)
     {
+
         HeldFishEmotion = Fish;
 
         if (EmotionManager.Instance != null) EmotionManager.Instance.HeldFish = Fish;
@@ -126,25 +124,13 @@ public class PlayerInteraction : MonoBehaviour
 
     public void OnHoldingAnimationEvent()
     {
-        Debug.Log($"OnHoldingAnimationEvent chamado! Emoção: {HeldFishEmotion}");
-        
-        if (HeldFishEmotion == EmotionType.None)
-        {
-            Debug.Log("Emoção é None, saindo...");
-            return;
-        }
+        if (HeldFishEmotion == EmotionType.None) return;
 
         bool isHard = EmotionManager.Instance != null && EmotionManager.Instance.CurrentMission > 4;
-        Debug.Log($"isHard: {isHard}");
 
         foreach (var entry in FishModels)
         {
-            Debug.Log($"Checando entry: {entry.Emotion}, {entry.IsHard}, match: {entry.Emotion == HeldFishEmotion && entry.IsHard == isHard}");
-            if (entry.Emotion == HeldFishEmotion && entry.IsHard == isHard)
-            {
-                entry.Model.SetActive(true);
-                Debug.Log($"Modelo ativado: {entry.Model.name}");
-            }
+            if (entry.Emotion == HeldFishEmotion && entry.IsHard == isHard) entry.Model.SetActive(true);
         }
 
         UpdateHoldingAnimation();
@@ -153,8 +139,11 @@ public class PlayerInteraction : MonoBehaviour
     public void OnClick(InputAction.CallbackContext context)
     {
         if (!context.started) return;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        if (Cursor.lockState != CursorLockMode.Locked)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
     }
     
     public void OnInteract(InputAction.CallbackContext context)
@@ -206,7 +195,6 @@ public class PlayerInteraction : MonoBehaviour
         if (Fish != null) 
         {
             Fish.Interact(this);
-            Debug.Log("Disparando trigger Grab!");
             HandsAnimation.SetTrigger("Grab");
         }
 
@@ -242,13 +230,11 @@ public class PlayerInteraction : MonoBehaviour
 
     public void RefreshHandsUIVisibility()
     {
-    bool visible = !IsInputLocked;
-    foreach (var rend in HandsRenderers)
-    {
-        if (rend != null)
-            rend.enabled = visible;
+        foreach (var Rend in HandsRenderers)
+        {
+            if (Rend != null) Rend.enabled = !IsInputLocked;
+        }
     }
-}
 
     public void SetInDialogue(bool value)
     {
@@ -265,4 +251,5 @@ public class PlayerInteraction : MonoBehaviour
         if (CurrentInteractionSound != null && CurrentInteractionSound.isPlaying) CurrentInteractionSound.Stop();
         CurrentInteractionSound = null;
     }
+
 }
