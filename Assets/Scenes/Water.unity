@@ -75193,7 +75193,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4497342563643234857, guid: 23878c452d56dee468f6be2832bf4fa2, type: 3}
       propertyPath: m_DetailObjectDensity
-      value: 1
+      value: 0.786
       objectReference: {fileID: 0}
     - target: {fileID: 4497342563643234857, guid: 23878c452d56dee468f6be2832bf4fa2, type: 3}
       propertyPath: m_HeightmapPixelError
@@ -75205,7 +75205,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4497342563643234857, guid: 23878c452d56dee468f6be2832bf4fa2, type: 3}
       propertyPath: m_DetailObjectDistance
-      value: 237
+      value: 167
       objectReference: {fileID: 0}
     - target: {fileID: 4497342563643234857, guid: 23878c452d56dee468f6be2832bf4fa2, type: 3}
       propertyPath: m_TreeBillboardDistance

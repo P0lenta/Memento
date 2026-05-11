@@ -141,16 +141,16 @@
 
         private void UpdateCurrentImage()
         {
-            if (LineImageObject == null) return;
+            if (LineImage == null) return;
 
-            if (ActiveDialogue.LineImage != null && ActiveDialogue.LineImage.Length > CurrentLine && LineImage != null)
+            if (ActiveDialogue.LineSprites != null && ActiveDialogue.LineSprites.Length > CurrentLine && ActiveDialogue.LineSprites[CurrentLine] != null)
             {
-                LineImageObject.sprite = LineImage[CurrentLine];
-                LineImageObject.SetActive(true);
+                LineImage.sprite = ActiveDialogue.LineSprites[CurrentLine];
+                if (LineImageObject != null) LineImageObject.SetActive(true);
             }
             else
             {
-                LineImageObject.SetActive(false);
+                if (LineImageObject != null) LineImageObject.SetActive(false);
             }
         }
 
