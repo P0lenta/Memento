@@ -11,6 +11,12 @@ public class WaypointManager : MonoBehaviour
     public bool IsLooping;
     public bool IsRandom;
     private int CurrentPoint = 0;
+    private float InitialMoveSpeed;
+
+    void Start()
+    {
+        InitialMoveSpeed = MoveSpeed;
+    }
 
     void Update()
     {
@@ -41,6 +47,15 @@ public class WaypointManager : MonoBehaviour
                     }      
                 }
 
+        }
+
+        if (PlayerInteraction.IsInputLocked)
+        {
+            MoveSpeed = 0;
+        }
+        else
+        {
+            MoveSpeed = InitialMoveSpeed;
         }
 
     }

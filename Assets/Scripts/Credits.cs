@@ -15,9 +15,8 @@ public class Credits : MonoBehaviour
         rectTransform = GetComponent<RectTransform>();
     }
 
-    public void OnSkip (InputAction.CallbackContext context)
+    public void OnSkip ()
     {
-        if (!context.started) return;
         SceneManager.LoadScene(NextScene);
     }
 

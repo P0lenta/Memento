@@ -194,7 +194,12 @@ public class MenuManagers : MonoBehaviour
     {
         PlayerPrefs.DeleteAll();
         PlayerPrefs.Save();
-        if (EmotionManager.Instance != null) EmotionManager.Instance.Load();
+        if (EmotionManager.Instance != null) 
+        {
+            EmotionManager.Instance.HeldFish = EmotionType.None;
+            EmotionManager.Instance.SetEmotion(EmotionType.None);
+            EmotionManager.Instance.Load();
+        }
 
         CloseConfigPanel();
     }
