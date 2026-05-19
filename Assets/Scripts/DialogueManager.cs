@@ -82,7 +82,6 @@
             ActiveDialogue = Chosen;
             CurrentLine = 0;
             IsActive = true;
-            LineImageObject.SetActive(true);
             ShowCurrentLine();
             PlayerInteraction.IsInDialogue = true;
 

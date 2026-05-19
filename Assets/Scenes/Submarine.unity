@@ -795,6 +795,7 @@ MonoBehaviour:
     - Era o que ela dizia...
     - "Voc\xEA coloca o p\xE9, e sente algo estranho."
     - "Era para a \xE1gua estar t\xE3o gelada?"
+    LineSprites: []
     RequiredMissionIndex: -1
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -808,6 +809,7 @@ MonoBehaviour:
     - "At\xE9 que, por alguns segundos\u2026voc\xEA lembra da chuva naquele dia."
     - "Gritos abafados. Sirenes. \xC1gua vermelha escorrendo pela rua."
     - "Voc\xEA fecha o chuveiro r\xE1pido demais."
+    LineSprites: []
     RequiredMissionIndex: -1
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -818,6 +820,8 @@ MonoBehaviour:
     UnlocksMap: 0
   DialogueText: {fileID: 95930983}
   DialogueImage: {fileID: 1834426189}
+  LineImageObject: {fileID: 0}
+  LineImage: {fileID: 0}
   TypingSpeed: 0.05
   CanSkip: 1
   TypingSound: {fileID: 58955124}
@@ -2042,6 +2046,7 @@ MonoBehaviour:
     - "\u201CN\xE3o importa quanto tempo demore.  Voc\xEA sempre encontra o caminho
       de volta.\u201D"
     - "Voc\xEA sorri sem perceber."
+    LineSprites: []
     RequiredMissionIndex: -1
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -2056,6 +2061,7 @@ MonoBehaviour:
     - "\u201CPromete que volta inteiro.\u201D"
     - "Voc\xEA l\xEA a frase v\xE1rias vezes."
     - "Nenhum dos dois sabia o que \u201Cinteiro\u201D significava naquela \xE9poca."
+    LineSprites: []
     RequiredMissionIndex: -1
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -2066,6 +2072,8 @@ MonoBehaviour:
     UnlocksMap: 0
   DialogueText: {fileID: 95930983}
   DialogueImage: {fileID: 1834426189}
+  LineImageObject: {fileID: 0}
+  LineImage: {fileID: 0}
   TypingSpeed: 0.05
   CanSkip: 1
   TypingSound: {fileID: 159748706}
@@ -13596,6 +13604,7 @@ MonoBehaviour:
     - Era...
     - "Sobre estar com algu\xE9m..."
     - Obrigada.
+    LineSprites: []
     RequiredMissionIndex: 0
     RequiredEmotion: 0
     RequiredHeldFish: 1
@@ -13617,6 +13626,7 @@ MonoBehaviour:
     - Mas agora parece distante... vazio.
     - Talvez... felicidade?
     - Tente ficar feliz, e me alcance o peixe que aparecer.
+    LineSprites: []
     RequiredMissionIndex: 0
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -13635,6 +13645,7 @@ MonoBehaviour:
     - ... Eu me lembro agora.
     - "N\xE3o era s\xF3 dor... Era algu\xE9m que eu amava."
     - Obrigada.
+    LineSprites: []
     RequiredMissionIndex: 1
     RequiredEmotion: 0
     RequiredHeldFish: 2
@@ -13656,6 +13667,7 @@ MonoBehaviour:
     - Eu preciso da tristeza.
     - Por favor.
     - Desligo.
+    LineSprites: []
     RequiredMissionIndex: 1
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -13673,6 +13685,7 @@ MonoBehaviour:
     - "Voc\xEA n\xE3o recebe sinal de volta."
     - "Parece que ningu\xE9m precisa mais de voc\xEA."
     - "Seria bom dormir, voc\xEA j\xE1 trabalhou muito."
+    LineSprites: []
     RequiredMissionIndex: 2
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -13691,6 +13704,7 @@ MonoBehaviour:
     - ... Agora eu me lembro.
     - "Eu fiquei em sil\xEAncio... quando n\xE3o devia."
     - Nunca mais.
+    LineSprites: []
     RequiredMissionIndex: 2
     RequiredEmotion: 0
     RequiredHeldFish: 3
@@ -13709,6 +13723,7 @@ MonoBehaviour:
     - Mas mesmo depois de tudo aquilo... nada vem.
     - "Nossos pecados s\xE3o realmente t\xE3o profundos que s\xF3 o mar p\xF4de ocult\xE1-los?"
     - "Eu quero sentir isso, eu mere\xE7o."
+    LineSprites: []
     RequiredMissionIndex: 2
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -13728,6 +13743,7 @@ MonoBehaviour:
     - "Eu n\xE3o esperava por isso..."
     - "\xC9 estranho... mas \xE9 bom."
     - Fico grato.
+    LineSprites: []
     RequiredMissionIndex: 3
     RequiredEmotion: 0
     RequiredHeldFish: 5
@@ -13745,6 +13761,7 @@ MonoBehaviour:
     - 'Bem, eis o meu pedido: Nada me pega de surpresa mais.'
     - "Tudo parece... previs\xEDvel demais."
     - "Voc\xEA pode me ajudar, eu sei que pode. Quebra essa por mim."
+    LineSprites: []
     RequiredMissionIndex: 3
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -13762,6 +13779,7 @@ MonoBehaviour:
     - "T\xE3o bom que n\xE3o precisam mais de voc\xEA."
     - "V\xE1 dormir, seus monstros merecem falar com voc\xEA, a s\xF3s."
     - "(Fazer isso encerrar\xE1 a build)."
+    LineSprites: []
     RequiredMissionIndex: 4
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -13772,6 +13790,8 @@ MonoBehaviour:
     UnlocksMap: 0
   DialogueText: {fileID: 95930983}
   DialogueImage: {fileID: 1834426189}
+  LineImageObject: {fileID: 0}
+  LineImage: {fileID: 0}
   TypingSpeed: 0.05
   CanSkip: 1
   TypingSound: {fileID: 0}
@@ -14238,7 +14258,7 @@ MonoBehaviour:
   - c0Lete O P3ixE XXXXA.
   - c0Lete O P3ixE.
   CollectImages:
-  - {fileID: 0}
+  - {fileID: 21300000, guid: d649d0d2bd005ac01a9fa0ecda571a23, type: 3}
   - {fileID: 21300000, guid: 85a54c6909bf78342bb9f8b09c8beb33, type: 3}
   - {fileID: 21300000, guid: 8d92dc53d03f86440a97d80d655e130a, type: 3}
   - {fileID: 21300000, guid: c7197fc67e30c177b87baba5b13563d3, type: 3}
@@ -14445,7 +14465,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.5, y: 2, z: 1.6}
+  m_Size: {x: 1, y: 2, z: 0.89}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &478308173
 MonoBehaviour:
@@ -14485,7 +14505,7 @@ Transform:
   m_GameObject: {fileID: 478308170}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.436, y: -1.27073, z: -0.305}
+  m_LocalPosition: {x: 14.436, y: -1.27073, z: -0.558}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14509,6 +14529,7 @@ MonoBehaviour:
     - "N\xE3o faz muito tempo desde que voc\xEA ouviu pela \xFAltima vez."
     - "Mesmo assim\u2026 o sentimento de ouvir a voz dessa pessoa ainda aperta seu
       peito."
+    LineSprites: []
     RequiredMissionIndex: -1
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -14526,6 +14547,7 @@ MonoBehaviour:
     - "Voc\xEA n\xE3o lembra dessa parte."
     - A fita continua girando.
     - "Pela primeira vez em muito tempo\u2026 suas m\xE3os tremem."
+    LineSprites: []
     RequiredMissionIndex: -1
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -14536,6 +14558,8 @@ MonoBehaviour:
     UnlocksMap: 0
   DialogueText: {fileID: 95930983}
   DialogueImage: {fileID: 1834426189}
+  LineImageObject: {fileID: 0}
+  LineImage: {fileID: 0}
   TypingSpeed: 0.05
   CanSkip: 1
   TypingSound: {fileID: 478308181}
@@ -21307,6 +21331,7 @@ MonoBehaviour:
     - "Voc\xEA olha pela passagem do perisc\xF3pio como sempre faz."
     - "Por um instante, voc\xEA pode jurar que algo estava olhando para voc\xEA de
       volta, mesmo n\xE3o sabendo exatamente o que era. "
+    LineSprites: []
     RequiredMissionIndex: -1
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -21320,6 +21345,7 @@ MonoBehaviour:
     - Nenhum movimento incomum.
     - "Voc\xEA continua olhando por alguns segundos."
     - Depois volta ao trabalho.
+    LineSprites: []
     RequiredMissionIndex: -1
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -21330,6 +21356,8 @@ MonoBehaviour:
     UnlocksMap: 0
   DialogueText: {fileID: 95930983}
   DialogueImage: {fileID: 1834426189}
+  LineImageObject: {fileID: 0}
+  LineImage: {fileID: 0}
   TypingSpeed: 0.05
   CanSkip: 1
   TypingSound: {fileID: 718921156}
@@ -58639,7 +58667,6 @@ GameObject:
   - component: {fileID: 1554339878}
   - component: {fileID: 1554339879}
   - component: {fileID: 1554339880}
-  - component: {fileID: 1554339881}
   m_Layer: 0
   m_Name: Photo
   m_TagString: Untagged
@@ -58681,7 +58708,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 2, z: 2}
+  m_Size: {x: 2, y: 2, z: 1.33}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1554339873
 MonoBehaviour:
@@ -58728,6 +58755,9 @@ MonoBehaviour:
   - lines:
     - O rosto na foto levemente rasgado ainda te incomoda.
     - "N\xE3o pela aus\xEAncia, mas pelo o que voc\xEA fez antes dele sumir."
+    LineSprites:
+    - {fileID: 21300000, guid: 30c19795378f1144385156cbe6567913, type: 3}
+    - {fileID: 21300000, guid: e3ec40784bcad824ca069ffc2ea1aa8b, type: 3}
     RequiredMissionIndex: -1
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -58744,6 +58774,7 @@ MonoBehaviour:
     - "Por alguns segundos\u2026  "
     - A culpa fica quieta.
     - "E s\xF3 sobra a boa mem\xF3ria."
+    LineSprites: []
     RequiredMissionIndex: -1
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -58754,6 +58785,8 @@ MonoBehaviour:
     UnlocksMap: 0
   DialogueText: {fileID: 95930983}
   DialogueImage: {fileID: 1834426189}
+  LineImageObject: {fileID: 1915540539}
+  LineImage: {fileID: 1915540541}
   TypingSpeed: 0.05
   CanSkip: 1
   TypingSound: {fileID: 1554339880}
@@ -58953,27 +58986,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1554339881
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1554339869}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e64a6ec2cafc6e4fb915ad811113273, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ImageShower
-  DialogueSprites:
-  - {fileID: 21300000, guid: e3ec40784bcad824ca069ffc2ea1aa8b, type: 3}
-  - {fileID: 21300000, guid: b02dce6691d722b41802296b86dbfbed, type: 3}
-  - {fileID: 21300000, guid: 30c19795378f1144385156cbe6567913, type: 3}
-  - {fileID: 21300000, guid: a15e27c91c7dc8d48805436f6502a60a, type: 3}
-  - {fileID: 21300000, guid: cd59a8c1e6eb82f49948aa15138c5576, type: 3}
-  DialogueImage: {fileID: 1915540541}
-  ImageObject: {fileID: 794678314}
-  Dialogue: {fileID: 1554339878}
 --- !u!1 &1562966280
 GameObject:
   m_ObjectHideFlags: 0
@@ -59826,6 +59838,7 @@ MonoBehaviour:
     - "Voc\xEA l\xEA algumas p\xE1ginas."
     - "As palavras entram\u2026e saem da cabe\xE7a logo depois."
     - "Segunda-feira \xE9 um p\xE9ssimo dia para ler."
+    LineSprites: []
     RequiredMissionIndex: -1
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -59840,6 +59853,7 @@ MonoBehaviour:
     - "Voc\xEA reconhece algumas anota\xE7\xF5es nas margens."
     - Sua letra.
     - "Voc\xEA fecha o livro com for\xE7a."
+    LineSprites: []
     RequiredMissionIndex: -1
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -59850,6 +59864,8 @@ MonoBehaviour:
     UnlocksMap: 0
   DialogueText: {fileID: 95930983}
   DialogueImage: {fileID: 1834426189}
+  LineImageObject: {fileID: 0}
+  LineImage: {fileID: 0}
   TypingSpeed: 0.05
   CanSkip: 1
   TypingSound: {fileID: 1692760903}
@@ -65514,7 +65530,7 @@ Transform:
   m_GameObject: {fileID: 1804155936}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.56, y: 0.65, z: -0.82}
+  m_LocalPosition: {x: -4.69, y: 0.65, z: -1.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

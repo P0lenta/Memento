@@ -32616,7 +32616,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 12f4a51dcdc70225691354e6ac118331, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8612e43720459c75bae619ec90664a7f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -180851,7 +180851,7 @@ MonoBehaviour:
   - c0Lete O P3ixE XXXXA.
   - c0Lete O P3ixE.
   CollectImages:
-  - {fileID: 0}
+  - {fileID: 21300000, guid: d649d0d2bd005ac01a9fa0ecda571a23, type: 3}
   - {fileID: 21300000, guid: 85a54c6909bf78342bb9f8b09c8beb33, type: 3}
   - {fileID: 21300000, guid: 8d92dc53d03f86440a97d80d655e130a, type: 3}
   - {fileID: 21300000, guid: c7197fc67e30c177b87baba5b13563d3, type: 3}
