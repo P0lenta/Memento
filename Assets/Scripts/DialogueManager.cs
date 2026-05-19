@@ -1,5 +1,6 @@
     using UnityEngine;
     using TMPro;
+    using UnityEngine.UI;
     using System.Collections; 
 
     public class DialogueManager : MonoBehaviour
@@ -10,6 +11,9 @@
         {
             [Tooltip("Frases do diálogo")]
             public string[] lines;
+
+            [Tooltip("Sprites do diálogo")]
+            public Sprite[] LineSprites;
 
             [Tooltip("Índice da missão necessária")]
             public int RequiredMissionIndex = -1;
@@ -42,6 +46,8 @@
         [Header("Configurações de UI")]
         public TextMeshProUGUI DialogueText;    
         public GameObject DialogueImage;
+        public GameObject LineImageObject;
+        public Image LineImage;
 
         [Header ("Animação máquina de escrever")]
         public float TypingSpeed = 0.05f;
@@ -53,14 +59,19 @@
         private Coroutine TypingCoroutine;
         private string FullText;
         private bool IsTyping = false;
-        private int CurrentLine = 0;
-        private bool IsActive = false;
+        public int CurrentLine = 0;
+        public bool IsActive = false;
         private static DialogueOption ActiveDialogue;
         private static DialogueManager CurrentDialogue;
 
+        void Start()
+        {
+            LineImageObject.SetActive(false);
+        }
+
         public void StartDialogue()
         {
-
+            
             if (CurrentDialogue != null) CurrentDialogue.EndDialogue();
 
             CurrentDialogue = this;
@@ -124,6 +135,22 @@
             DialogueText.text = ActiveDialogue.lines[CurrentLine];
             DialogueText.gameObject.SetActive(true);
             DialogueImage.gameObject.SetActive(true);
+            UpdateCurrentImage();
+        }
+
+        private void UpdateCurrentImage()
+        {
+            if (LineImage == null) return;
+
+            if (ActiveDialogue.LineSprites != null && ActiveDialogue.LineSprites.Length > CurrentLine && ActiveDialogue.LineSprites[CurrentLine] != null)
+            {
+                LineImage.sprite = ActiveDialogue.LineSprites[CurrentLine];
+                if (LineImageObject != null) LineImageObject.SetActive(true);
+            }
+            else
+            {
+                if (LineImageObject != null) LineImageObject.SetActive(false);
+            }
         }
 
         private IEnumerator TypeWriterEffect()
@@ -181,6 +208,8 @@
             if (DialogueImage == null) return;
             DialogueText.gameObject.SetActive(false);
             DialogueImage.gameObject.SetActive(false);
+
+            if (LineImageObject != null) LineImageObject.SetActive(false);
 
             PlayerInteraction.IsInDialogue = false;
             PlayerInteraction.Instance?.RefreshHandsUIVisibility();

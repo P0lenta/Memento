@@ -218,6 +218,7 @@ RectTransform:
   - {fileID: 1954950601}
   - {fileID: 1089575054}
   - {fileID: 458734444}
+  - {fileID: 794678315}
   - {fileID: 736621560}
   - {fileID: 753548963}
   - {fileID: 114975606}
@@ -794,6 +795,7 @@ MonoBehaviour:
     - Era o que ela dizia...
     - "Voc\xEA coloca o p\xE9, e sente algo estranho."
     - "Era para a \xE1gua estar t\xE3o gelada?"
+    LineSprites: []
     RequiredMissionIndex: -1
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -807,6 +809,7 @@ MonoBehaviour:
     - "At\xE9 que, por alguns segundos\u2026voc\xEA lembra da chuva naquele dia."
     - "Gritos abafados. Sirenes. \xC1gua vermelha escorrendo pela rua."
     - "Voc\xEA fecha o chuveiro r\xE1pido demais."
+    LineSprites: []
     RequiredMissionIndex: -1
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -817,9 +820,13 @@ MonoBehaviour:
     UnlocksMap: 0
   DialogueText: {fileID: 95930983}
   DialogueImage: {fileID: 1834426189}
+  LineImageObject: {fileID: 0}
+  LineImage: {fileID: 0}
   TypingSpeed: 0.05
   CanSkip: 1
   TypingSound: {fileID: 58955124}
+  CurrentLine: 0
+  IsActive: 0
 --- !u!82 &58955123
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2039,6 +2046,7 @@ MonoBehaviour:
     - "\u201CN\xE3o importa quanto tempo demore.  Voc\xEA sempre encontra o caminho
       de volta.\u201D"
     - "Voc\xEA sorri sem perceber."
+    LineSprites: []
     RequiredMissionIndex: -1
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -2053,6 +2061,7 @@ MonoBehaviour:
     - "\u201CPromete que volta inteiro.\u201D"
     - "Voc\xEA l\xEA a frase v\xE1rias vezes."
     - "Nenhum dos dois sabia o que \u201Cinteiro\u201D significava naquela \xE9poca."
+    LineSprites: []
     RequiredMissionIndex: -1
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -2063,9 +2072,13 @@ MonoBehaviour:
     UnlocksMap: 0
   DialogueText: {fileID: 95930983}
   DialogueImage: {fileID: 1834426189}
+  LineImageObject: {fileID: 0}
+  LineImage: {fileID: 0}
   TypingSpeed: 0.05
   CanSkip: 1
   TypingSound: {fileID: 159748706}
+  CurrentLine: 0
+  IsActive: 0
 --- !u!82 &159748705
 AudioSource:
   m_ObjectHideFlags: 0
@@ -13591,6 +13604,7 @@ MonoBehaviour:
     - Era...
     - "Sobre estar com algu\xE9m..."
     - Obrigada.
+    LineSprites: []
     RequiredMissionIndex: 0
     RequiredEmotion: 0
     RequiredHeldFish: 1
@@ -13612,6 +13626,7 @@ MonoBehaviour:
     - Mas agora parece distante... vazio.
     - Talvez... felicidade?
     - Tente ficar feliz, e me alcance o peixe que aparecer.
+    LineSprites: []
     RequiredMissionIndex: 0
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -13630,6 +13645,7 @@ MonoBehaviour:
     - ... Eu me lembro agora.
     - "N\xE3o era s\xF3 dor... Era algu\xE9m que eu amava."
     - Obrigada.
+    LineSprites: []
     RequiredMissionIndex: 1
     RequiredEmotion: 0
     RequiredHeldFish: 2
@@ -13651,6 +13667,7 @@ MonoBehaviour:
     - Eu preciso da tristeza.
     - Por favor.
     - Desligo.
+    LineSprites: []
     RequiredMissionIndex: 1
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -13668,6 +13685,7 @@ MonoBehaviour:
     - "Voc\xEA n\xE3o recebe sinal de volta."
     - "Parece que ningu\xE9m precisa mais de voc\xEA."
     - "Seria bom dormir, voc\xEA j\xE1 trabalhou muito."
+    LineSprites: []
     RequiredMissionIndex: 2
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -13686,6 +13704,7 @@ MonoBehaviour:
     - ... Agora eu me lembro.
     - "Eu fiquei em sil\xEAncio... quando n\xE3o devia."
     - Nunca mais.
+    LineSprites: []
     RequiredMissionIndex: 2
     RequiredEmotion: 0
     RequiredHeldFish: 3
@@ -13704,6 +13723,7 @@ MonoBehaviour:
     - Mas mesmo depois de tudo aquilo... nada vem.
     - "Nossos pecados s\xE3o realmente t\xE3o profundos que s\xF3 o mar p\xF4de ocult\xE1-los?"
     - "Eu quero sentir isso, eu mere\xE7o."
+    LineSprites: []
     RequiredMissionIndex: 2
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -13723,6 +13743,7 @@ MonoBehaviour:
     - "Eu n\xE3o esperava por isso..."
     - "\xC9 estranho... mas \xE9 bom."
     - Fico grato.
+    LineSprites: []
     RequiredMissionIndex: 3
     RequiredEmotion: 0
     RequiredHeldFish: 5
@@ -13740,6 +13761,7 @@ MonoBehaviour:
     - 'Bem, eis o meu pedido: Nada me pega de surpresa mais.'
     - "Tudo parece... previs\xEDvel demais."
     - "Voc\xEA pode me ajudar, eu sei que pode. Quebra essa por mim."
+    LineSprites: []
     RequiredMissionIndex: 3
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -13757,6 +13779,7 @@ MonoBehaviour:
     - "T\xE3o bom que n\xE3o precisam mais de voc\xEA."
     - "V\xE1 dormir, seus monstros merecem falar com voc\xEA, a s\xF3s."
     - "(Fazer isso encerrar\xE1 a build)."
+    LineSprites: []
     RequiredMissionIndex: 4
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -13767,9 +13790,13 @@ MonoBehaviour:
     UnlocksMap: 0
   DialogueText: {fileID: 95930983}
   DialogueImage: {fileID: 1834426189}
+  LineImageObject: {fileID: 0}
+  LineImage: {fileID: 0}
   TypingSpeed: 0.05
   CanSkip: 1
   TypingSound: {fileID: 0}
+  CurrentLine: 0
+  IsActive: 0
 --- !u!114 &436523008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14231,7 +14258,7 @@ MonoBehaviour:
   - c0Lete O P3ixE XXXXA.
   - c0Lete O P3ixE.
   CollectImages:
-  - {fileID: 0}
+  - {fileID: 21300000, guid: d649d0d2bd005ac01a9fa0ecda571a23, type: 3}
   - {fileID: 21300000, guid: 85a54c6909bf78342bb9f8b09c8beb33, type: 3}
   - {fileID: 21300000, guid: 8d92dc53d03f86440a97d80d655e130a, type: 3}
   - {fileID: 21300000, guid: c7197fc67e30c177b87baba5b13563d3, type: 3}
@@ -14438,7 +14465,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.5, y: 2, z: 1.6}
+  m_Size: {x: 1, y: 2, z: 0.89}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &478308173
 MonoBehaviour:
@@ -14478,7 +14505,7 @@ Transform:
   m_GameObject: {fileID: 478308170}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.436, y: -1.27073, z: -0.305}
+  m_LocalPosition: {x: 14.436, y: -1.27073, z: -0.558}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14502,6 +14529,7 @@ MonoBehaviour:
     - "N\xE3o faz muito tempo desde que voc\xEA ouviu pela \xFAltima vez."
     - "Mesmo assim\u2026 o sentimento de ouvir a voz dessa pessoa ainda aperta seu
       peito."
+    LineSprites: []
     RequiredMissionIndex: -1
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -14519,6 +14547,7 @@ MonoBehaviour:
     - "Voc\xEA n\xE3o lembra dessa parte."
     - A fita continua girando.
     - "Pela primeira vez em muito tempo\u2026 suas m\xE3os tremem."
+    LineSprites: []
     RequiredMissionIndex: -1
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -14529,9 +14558,13 @@ MonoBehaviour:
     UnlocksMap: 0
   DialogueText: {fileID: 95930983}
   DialogueImage: {fileID: 1834426189}
+  LineImageObject: {fileID: 0}
+  LineImage: {fileID: 0}
   TypingSpeed: 0.05
   CanSkip: 1
   TypingSound: {fileID: 478308181}
+  CurrentLine: 0
+  IsActive: 0
 --- !u!82 &478308180
 AudioSource:
   m_ObjectHideFlags: 0
@@ -21298,6 +21331,7 @@ MonoBehaviour:
     - "Voc\xEA olha pela passagem do perisc\xF3pio como sempre faz."
     - "Por um instante, voc\xEA pode jurar que algo estava olhando para voc\xEA de
       volta, mesmo n\xE3o sabendo exatamente o que era. "
+    LineSprites: []
     RequiredMissionIndex: -1
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -21311,6 +21345,7 @@ MonoBehaviour:
     - Nenhum movimento incomum.
     - "Voc\xEA continua olhando por alguns segundos."
     - Depois volta ao trabalho.
+    LineSprites: []
     RequiredMissionIndex: -1
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -21321,9 +21356,13 @@ MonoBehaviour:
     UnlocksMap: 0
   DialogueText: {fileID: 95930983}
   DialogueImage: {fileID: 1834426189}
+  LineImageObject: {fileID: 0}
+  LineImage: {fileID: 0}
   TypingSpeed: 0.05
   CanSkip: 1
   TypingSound: {fileID: 718921156}
+  CurrentLine: 0
+  IsActive: 0
 --- !u!82 &718921156
 AudioSource:
   m_ObjectHideFlags: 0
@@ -22437,6 +22476,42 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8005167752821193875, guid: ef4ed10b49f60bb42a6f7cbb9d996592, type: 3}
   m_PrefabInstance: {fileID: 1030647960}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &794678314
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 794678315}
+  m_Layer: 5
+  m_Name: Images
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &794678315
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794678314}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1915540540}
+  m_Father: {fileID: 3728451}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &797660613
 GameObject:
   m_ObjectHideFlags: 0
@@ -28314,7 +28389,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.06477031, y: -0.84569746, z: 0.24924155, w: 0.4674177}
   m_LocalPosition: {x: 0.02, y: 0.1432, z: -0.062}
-  m_LocalScale: {x: 6.7, y: 6.7, z: 6.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1225811939}
@@ -68385,7 +68460,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 2, z: 2}
+  m_Size: {x: 2, y: 2, z: 1.33}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1554339873
 MonoBehaviour:
@@ -68432,6 +68507,9 @@ MonoBehaviour:
   - lines:
     - O rosto na foto levemente rasgado ainda te incomoda.
     - "N\xE3o pela aus\xEAncia, mas pelo o que voc\xEA fez antes dele sumir."
+    LineSprites:
+    - {fileID: 21300000, guid: 30c19795378f1144385156cbe6567913, type: 3}
+    - {fileID: 21300000, guid: e3ec40784bcad824ca069ffc2ea1aa8b, type: 3}
     RequiredMissionIndex: -1
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -68448,6 +68526,7 @@ MonoBehaviour:
     - "Por alguns segundos\u2026  "
     - A culpa fica quieta.
     - "E s\xF3 sobra a boa mem\xF3ria."
+    LineSprites: []
     RequiredMissionIndex: -1
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -68458,9 +68537,13 @@ MonoBehaviour:
     UnlocksMap: 0
   DialogueText: {fileID: 95930983}
   DialogueImage: {fileID: 1834426189}
+  LineImageObject: {fileID: 1915540539}
+  LineImage: {fileID: 1915540541}
   TypingSpeed: 0.05
   CanSkip: 1
   TypingSound: {fileID: 1554339880}
+  CurrentLine: 0
+  IsActive: 0
 --- !u!82 &1554339879
 AudioSource:
   m_ObjectHideFlags: 0
@@ -69507,6 +69590,7 @@ MonoBehaviour:
     - "Voc\xEA l\xEA algumas p\xE1ginas."
     - "As palavras entram\u2026e saem da cabe\xE7a logo depois."
     - "Segunda-feira \xE9 um p\xE9ssimo dia para ler."
+    LineSprites: []
     RequiredMissionIndex: -1
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -69521,6 +69605,7 @@ MonoBehaviour:
     - "Voc\xEA reconhece algumas anota\xE7\xF5es nas margens."
     - Sua letra.
     - "Voc\xEA fecha o livro com for\xE7a."
+    LineSprites: []
     RequiredMissionIndex: -1
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -69531,9 +69616,13 @@ MonoBehaviour:
     UnlocksMap: 0
   DialogueText: {fileID: 95930983}
   DialogueImage: {fileID: 1834426189}
+  LineImageObject: {fileID: 0}
+  LineImage: {fileID: 0}
   TypingSpeed: 0.05
   CanSkip: 1
   TypingSound: {fileID: 1692760903}
+  CurrentLine: 0
+  IsActive: 0
 --- !u!65 &1692760905
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -75193,7 +75282,7 @@ Transform:
   m_GameObject: {fileID: 1804155936}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.56, y: 0.65, z: -0.82}
+  m_LocalPosition: {x: -4.69, y: 0.65, z: -1.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -80750,6 +80839,81 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6933400897493803042, guid: ef4ed10b49f60bb42a6f7cbb9d996592, type: 3}
+--- !u!1 &1915540539
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1915540540}
+  - component: {fileID: 1915540542}
+  - component: {fileID: 1915540541}
+  m_Layer: 5
+  m_Name: DialogueImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1915540540
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915540539}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 794678315}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 300, y: 300}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1915540541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915540539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1915540542
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915540539}
+  m_CullTransparentMesh: 1
 --- !u!1 &1920933769 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1303774481499192940, guid: ef4ed10b49f60bb42a6f7cbb9d996592, type: 3}

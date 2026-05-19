@@ -6,6 +6,8 @@ public class MenuManagers : MonoBehaviour
     [Header("Painéis de UI")]
     public GameObject ConfigPanel;
     public GameObject ConfirmExitPanel;
+    public GameObject AudioPanel;
+    public GameObject ControlPanel;
     public GameObject ButtonsMenu;
 
     [Header("Slider de Áudio")]
@@ -44,6 +46,7 @@ public class MenuManagers : MonoBehaviour
         
         if (EmotionManager.Instance != null) EmotionManager.Instance.Save();
 
+        BackToMain();
         RefreshSlider();
 
         ConfigPanel.SetActive(true);
@@ -132,6 +135,30 @@ public class MenuManagers : MonoBehaviour
 
     }
 
+    public void OpenAudioPanel()
+    {
+        if (AudioPanel != null) AudioPanel.SetActive(true);
+        if (ButtonsMenu != null) ButtonsMenu.SetActive(false);
+        if (ControlPanel != null) ControlPanel.SetActive(false);
+        if (ConfirmExitPanel != null) ConfirmExitPanel.SetActive(false);
+    }
+
+        public void OpenControlPanel()
+    {
+        if (AudioPanel != null) AudioPanel.SetActive(false);
+        if (ButtonsMenu != null) ButtonsMenu.SetActive(false);
+        if (ControlPanel != null) ControlPanel.SetActive(true);
+        if (ConfirmExitPanel != null) ConfirmExitPanel.SetActive(false);
+    }
+
+    public void BackToMain()
+    {
+        if (AudioPanel != null) AudioPanel.SetActive(false);
+        if (ButtonsMenu != null) ButtonsMenu.SetActive(true);
+        if (ControlPanel != null) ControlPanel.SetActive(false);
+        if (ConfirmExitPanel != null) ConfirmExitPanel.SetActive(false);
+    }
+
     public void RefreshSlider()
     {
         if (MusicManager.Instance == null) return;
@@ -170,8 +197,6 @@ public class MenuManagers : MonoBehaviour
         if (EmotionManager.Instance != null) EmotionManager.Instance.Load();
 
         CloseConfigPanel();
-
-        EmotionManager.Instance.Load();
     }
 
 }
