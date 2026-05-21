@@ -29,6 +29,9 @@ public class PlayerInteraction : MonoBehaviour
     public static bool CanInteract = false;
     private Renderer[] HandsRenderers;
 
+    [Header("Distância para interagir")]
+    public float InteractionDistance = 1.5f;
+
     public static bool IsInputLocked 
     {
         get
@@ -74,18 +77,9 @@ public class PlayerInteraction : MonoBehaviour
 
     void Update()
     {
-        if (HeldFishEmotion == EmotionType.None) return;
+        if (HeldFishEmotion != EmotionType.None) CheckActualFish();
 
-        bool isHard = EmotionManager.Instance != null && EmotionManager.Instance.CurrentMission > 4;
-
-        foreach (var Entry in FishModels)
-        {
-            if (Entry.Emotion == HeldFishEmotion && Entry.IsHard == isHard)
-            {
-                Entry.Model.SetActive(true);
-                return;
-            }
-        }
+        if (!IsInputLocked) CheckInteractable();
     }
 
     public void OnMenu(InputAction.CallbackContext context)
@@ -252,4 +246,50 @@ public class PlayerInteraction : MonoBehaviour
         CurrentInteractionSound = null;
     }
 
+    void CheckActualFish()
+    {
+        bool isHard = EmotionManager.Instance != null && EmotionManager.Instance.CurrentMission > 4;
+
+        foreach (var Entry in FishModels)
+        {
+            if (Entry.Emotion == HeldFishEmotion && Entry.IsHard == isHard)
+            {
+                Entry.Model.SetActive(true);
+                return;
+            }
+        }
+    }
+
+    void CheckInteractable()
+    {
+        RaycastHit hit;
+
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, InteractionDistance))
+        {
+            Interactable interactable = hit.collider.GetComponent<Interactable>();
+
+            if (interactable != null && interactable.enabled && interactable.gameObject.activeInHierarchy)
+            {
+                if (ActualInteractiveObject != interactable.gameObject && ActualInteractiveObject != null)
+                {
+                    Interactable interactable_anterior = ActualInteractiveObject.GetComponent<Interactable>();
+                    if (interactable_anterior != null) interactable_anterior.OnLostFocus();    
+                }
+                ActualInteractiveObject = interactable.gameObject;
+                CanInteract = true;
+                interactable.OnGainFocus();
+
+                return;
+            }
+
+        }
+
+        if (ActualInteractiveObject != null)
+        {
+            Interactable interactable_anterior = ActualInteractiveObject.GetComponent<Interactable>();
+            if (interactable_anterior != null) interactable_anterior.OnLostFocus();   
+            ActualInteractiveObject = null;
+            CanInteract = false;
+        }
+    }
 }

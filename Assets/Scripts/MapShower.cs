@@ -25,7 +25,7 @@ public class MapShower : MonoBehaviour
     void Start()
     {
         MapBackground.SetActive(false);
-        MapRadius.SetActive(false);
+        if (MapRadius != null) MapRadius.SetActive(false);
         MapHelper.SetActive(false);
     }
 
@@ -66,19 +66,19 @@ public class MapShower : MonoBehaviour
         PlayerInteraction.IsInMap = true;
         
         MapBackground.SetActive(true);
-        MapRadius.SetActive(true);
+        if (MapRadius != null) MapRadius.SetActive(true);
         MapHelper.SetActive(true);
         if (MapCompass != null) MapCompass.SetActive(true);
 
         if (!EmotionManager.Instance.IsMapUnlocked)
         {
-            MapRadiusLocation.localPosition = FishLocations[0];
+            if (MapRadius != null) MapRadiusLocation.localPosition = FishLocations[0];
         }
         else
         {
             int Index = EmotionManager.Instance.CurrentMission + 1;
 
-            MapRadiusLocation.localPosition = FishLocations[Index];
+            if (MapRadius != null) MapRadiusLocation.localPosition = FishLocations[Index];
         }
 
         PlayerMovement movement = FindFirstObjectByType<PlayerMovement>();
@@ -102,7 +102,7 @@ public class MapShower : MonoBehaviour
     public void CloseMap()
     {
         MapBackground.SetActive(false);
-        MapRadius.SetActive(false);
+        if (MapRadius != null) MapRadius.SetActive(false);
         MapHelper.SetActive(false);
         if (MapCompass != null) MapCompass.SetActive(false);
 

@@ -41,8 +41,8 @@ public class SceneChanger : MonoBehaviour
             } 
             else
             {
-                SceneManager.LoadScene(SceneName);
                 if (MusicManager.Instance != null) MusicManager.Instance.LoadSoundMenu();
+                FadeTransition.Instance.StartFade(SceneName);
             }
         }
     }
@@ -53,13 +53,13 @@ public class SceneChanger : MonoBehaviour
 
         if (EmotionManager.Instance != null) EmotionManager.Instance.LastScene = SceneManager.GetActiveScene().name;
 
-        SceneManager.LoadScene(SceneName);
-
         PlayerInteraction.IsConfirmationOpen = false;
 
         if (MusicManager.Instance != null) MusicManager.Instance.LoadSoundMenu();
 
         EmotionManager.Instance.Save();
+
+        FadeTransition.Instance.StartFade(SceneName);
     }
     
     public void CancelConfirmation()

@@ -66,7 +66,7 @@
 
         void Start()
         {
-            LineImageObject.SetActive(false);
+            if (LineImageObject != null) LineImageObject.SetActive(false);
         }
 
         public void StartDialogue()
