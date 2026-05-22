@@ -58,13 +58,13 @@ MonoBehaviour:
   FishLocations:
   - {x: -210, y: 10, z: 0}
   - {x: -135, y: 110, z: 0}
-  - {x: -310, y: 35, z: 0}
-  - {x: -310, y: 35, z: 0}
+  - {x: 0, y: -80, z: 0}
   - {x: -310, y: -35, z: 0}
   - {x: -270, y: 100, z: 0}
   HelperText: {fileID: 3321868910525095974}
   CollectFishMessages:
   - "Interaja com o r\xE1dio."
+  - "V\xE1 dormir"
   - Colete o peixe feliz.
   - Colete o peixe triste.
   - Colete o peixe raiva.
@@ -77,6 +77,7 @@ MonoBehaviour:
   - c0Lete O P3ixE.
   CollectImages:
   - {fileID: 21300000, guid: d649d0d2bd005ac01a9fa0ecda571a23, type: 3}
+  - {fileID: 21300000, guid: 7748af615450432e98763afdfc024cf8, type: 3}
   - {fileID: 21300000, guid: 85a54c6909bf78342bb9f8b09c8beb33, type: 3}
   - {fileID: 21300000, guid: 8d92dc53d03f86440a97d80d655e130a, type: 3}
   - {fileID: 21300000, guid: c7197fc67e30c177b87baba5b13563d3, type: 3}

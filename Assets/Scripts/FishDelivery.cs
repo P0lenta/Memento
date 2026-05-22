@@ -24,8 +24,8 @@ public class FishDelivery : MonoBehaviour
                 EmotionType.Felicidade,
                 EmotionType.Tristeza,
                 EmotionType.Raiva,
-                EmotionType.Medo,
-                EmotionType.Surpresa
+                EmotionType.Surpresa,
+                EmotionType.Medo
             };
         }
 

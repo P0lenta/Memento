@@ -36,6 +36,7 @@ public class BedCounter : MonoBehaviour
     public void IncreaseDay()
     {
         EmotionManager.Instance.CurrentDay++;
+        EmotionManager.Instance.IsTimeToBed = false;
         DayPassed = true;
         Debug.Log("Contador de dias aumentado");
     } 

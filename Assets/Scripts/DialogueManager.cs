@@ -38,6 +38,9 @@
 
             [Tooltip("Ele vai liberar o mapa")]
             public bool UnlocksMap = false;
+
+            [Tooltip("É o texto para dormir")]
+            public bool BedTime = false;
         }
 
         [Header("Diálogos")]
@@ -89,6 +92,7 @@
             PlayerInteraction.Instance?.SetInteractionImageVisible(false);
 
             if (Chosen.UnlocksMap && EmotionManager.Instance != null) EmotionManager.Instance.IsMapUnlocked = true;
+            if (Chosen.BedTime && EmotionManager.Instance != null) EmotionManager.Instance.IsTimeToBed = true;
         }
 
         private DialogueOption GetRightDialogue()
@@ -217,8 +221,8 @@
             CameraFocus Camera = GetComponent<CameraFocus>();
             if (Camera != null) Camera.EndFocus();
 
-            Interactable Interaction = GetComponent<Interactable>();
-            if (Interaction != null) Interaction.enabled = false;
+            /*Interactable Interaction = GetComponent<Interactable>();
+            if (Interaction != null) Interaction.enabled = false;*/
 
             if (ActiveDialogue != null && ActiveDialogue.EmotionToGive != EmotionType.None) EmotionManager.Instance.SetEmotion(ActiveDialogue.EmotionToGive);
 

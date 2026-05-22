@@ -33,6 +33,14 @@ public class MapShower : MonoBehaviour
     {
         if (HelperImage == null || CollectImages.Length == 0) return;
 
+        if (EmotionManager.Instance.IsTimeToBed)
+        {
+            HelperImage.sprite = CollectImages[1];
+            if (HelperText != null) HelperText.text = CollectFishMessages[1];
+            return;
+        }
+
+
         if (!EmotionManager.Instance.IsMapUnlocked)
         {
             HelperImage.sprite = CollectImages[0];
@@ -42,10 +50,14 @@ public class MapShower : MonoBehaviour
 
         int MissionIndex = EmotionManager.Instance.CurrentMission;
 
-        int HelperMissionIndex = MissionIndex + 1;
+        int HelperMissionIndex = MissionIndex + 2;
 
-        if (HelperMissionIndex >= 0 && HelperMissionIndex < CollectImages.Length) HelperImage.sprite = CollectImages[HelperMissionIndex];
-        if (HelperText != null && CollectFishMessages != null && MissionIndex < CollectFishMessages.Length) 
+        if (HelperMissionIndex >= 0 && HelperMissionIndex < CollectImages.Length) 
+        HelperImage.sprite = CollectImages[HelperMissionIndex];
+
+        if (HelperText != null && 
+        HelperMissionIndex >=0 && 
+        MissionIndex < CollectFishMessages.Length) 
         HelperText.text = CollectFishMessages[HelperMissionIndex];
     }
 

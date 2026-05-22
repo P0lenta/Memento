@@ -21343,15 +21343,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4992cba522119d04ca4af0c1aaf3124a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 241
+      value: 235.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4992cba522119d04ca4af0c1aaf3124a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 371.0006
+      value: 366
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4992cba522119d04ca4af0c1aaf3124a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.040618896
+      value: 22.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4992cba522119d04ca4af0c1aaf3124a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -46623,7 +46623,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000030517578, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &562523664
@@ -62800,6 +62800,22 @@ PrefabInstance:
       propertyPath: MapRadiusLocation
       value: 
       objectReference: {fileID: 562523663}
+    - target: {fileID: 1959817033450126187, guid: e93ebf6033b4ebe4594bc27aeb0d824d, type: 3}
+      propertyPath: FishLocations.Array.data[2].x
+      value: -80
+      objectReference: {fileID: 0}
+    - target: {fileID: 1959817033450126187, guid: e93ebf6033b4ebe4594bc27aeb0d824d, type: 3}
+      propertyPath: FishLocations.Array.data[2].y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1959817033450126187, guid: e93ebf6033b4ebe4594bc27aeb0d824d, type: 3}
+      propertyPath: FishLocations.Array.data[5].x
+      value: -310
+      objectReference: {fileID: 0}
+    - target: {fileID: 1959817033450126187, guid: e93ebf6033b4ebe4594bc27aeb0d824d, type: 3}
+      propertyPath: FishLocations.Array.data[5].y
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 2160240120858700611, guid: e93ebf6033b4ebe4594bc27aeb0d824d, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 4
@@ -103263,6 +103279,7 @@ MonoBehaviour:
   CurrentMission: 0
   CurrentDay: 1
   IsMapUnlocked: 0
+  IsTimeToBed: 0
   LastScene: 
 --- !u!4 &1079207095
 Transform:
