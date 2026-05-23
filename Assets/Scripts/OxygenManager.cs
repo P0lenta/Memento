@@ -1,7 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
-using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 
 public class OxygenManager : MonoBehaviour
@@ -14,19 +12,17 @@ public class OxygenManager : MonoBehaviour
 
     [Header("UI")]
     public Image OxygenFill;
-    public TextMeshProUGUI ResetText;
-    public string DeathMessage = "Morto :(";
-    public string ResetMessage = "Aperte R para voltar";
     public GameObject HandsUI;
     private bool IsDead = false;
-    private string SceneToChange = "Submarine";
     public Renderer HandsRenderer;
+    
+    [Header("Animação")]
+    public DeathTransition deathTransition;
 
 
     void Start() 
     {
         CurrentOxygen = MaxOxygen;
-        if (ResetText != null) ResetText.text = "";
     }
 
     public void OnAccelerate(InputAction.CallbackContext context)
@@ -59,17 +55,15 @@ public class OxygenManager : MonoBehaviour
         }
 
         if (OxygenFill != null) OxygenFill.fillAmount = CurrentOxygen / MaxOxygen;
-
-        if (!IsDead && ResetText != null && ResetText.text != "") ResetText.text = "";
     }
 
     public void Die()
     {
+        if (IsDead) return;
+
         IsDead = true;
 
          if(HandsRenderer != null) HandsRenderer.enabled = false;
-
-         if (ResetText != null) ResetText.text = DeathMessage + "\n" + ResetMessage;
         
         PlayerWaterMovement MoveScript = GetComponent<PlayerWaterMovement>();
         if (MoveScript != null)
@@ -87,26 +81,6 @@ public class OxygenManager : MonoBehaviour
 
         PlayerInteraction.Instance?.RefreshHandsUIVisibility();
 
+        if (deathTransition != null) deathTransition.StartDeath();
     } 
-
-   public void OnReset(InputAction.CallbackContext context)
-    {
-        
-        if (context.started && IsDead)
-        {
-            if (EmotionManager.Instance != null)
-            {
-                EmotionManager.Instance.SetEmotion(EmotionType.None);
-                EmotionManager.Instance.HeldFish = EmotionType.None;
-            }
-
-            RestartScene();
-        }
-    }
-
-    void RestartScene()
-    {
-        SceneManager.LoadScene(SceneToChange);
-    }   
-
 }

@@ -32,7 +32,6 @@ public class FadeTransition : MonoBehaviour
     {
         SceneToChange = SceneName;
         StartCoroutine(FadeLoad());
-
     }
 
     IEnumerator FadeLoad()
