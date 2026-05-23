@@ -13,7 +13,7 @@ public class BedCounter : MonoBehaviour
     public TextMeshProUGUI PassDayText;
     public string[] SleepRawMessages;
     public string[] SleepPassMessages;
-    private string PassDayMessage = "DIA";
+    private string PassDayMessage = "DIA ";
     private bool DayPassed = false;
 
     void Start()

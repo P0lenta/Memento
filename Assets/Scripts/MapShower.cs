@@ -73,6 +73,11 @@ public class MapShower : MonoBehaviour
 
         UpdateMapHelpers();
 
+        EmotionManager.Instance.WasMapOpened = true;
+
+        MapTutorial mapTutorial = FindFirstObjectByType<MapTutorial>();
+        if (mapTutorial != null) mapTutorial.OnMapOpened();
+
         IsMapOpen = true;
 
         PlayerInteraction.IsInMap = true;

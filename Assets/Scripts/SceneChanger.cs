@@ -21,6 +21,10 @@ public class SceneChanger : MonoBehaviour
 
         if (Require)
         {
+            EmotionManager.Instance.WasWaterAcessed = true;
+            WaterTutorial waterTutorial = FindFirstObjectByType<WaterTutorial>();
+            if (waterTutorial != null) waterTutorial.OnWaterAcessed();
+
             EmotionType CurrentEmotion = EmotionManager.Instance.GetCurrentEmotion();
 
             if (CurrentEmotion == EmotionType.None)
