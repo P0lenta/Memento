@@ -9,6 +9,7 @@ public class DeathTransition : MonoBehaviour
     public Animator DeathAnimation;
 
     [Header("Textos de morte")]
+    public bool IsForReal;
     public string DeathHeaderText = "Você Morreu";
     public string[] DeathMessageText;
 
@@ -29,7 +30,8 @@ public class DeathTransition : MonoBehaviour
 
     private IEnumerator PlayerDied()
     {
-        DeathAnimation.SetTrigger("Died");
+        if (IsForReal) DeathAnimation.SetTrigger("DiedR");
+        else DeathAnimation.SetTrigger("DiedM");
         
         yield return new WaitForSeconds(1f);
 
