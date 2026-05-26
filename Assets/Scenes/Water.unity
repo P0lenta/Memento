@@ -27,7 +27,7 @@ RenderSettings:
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.08788716, g: 0.13016205, b: 0.23584908, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 5e01a367a85b145ca880d39c00d1bf69, type: 2}
-  m_HaloStrength: 0.463
+  m_HaloStrength: 0.43
   m_FlareStrength: 0.616
   m_FlareFadeSpeed: 3
   m_HaloTexture: {fileID: 0}
@@ -52698,7 +52698,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &683601333
 RectTransform:
   m_ObjectHideFlags: 0
@@ -52758,7 +52758,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   DeathAnimation: {fileID: 683601334}
-  IsForReal: 0
+  IsForReal: 1
   DeathHeaderText: "Voc\xEA Morreu"
   DeathMessageText:
   - "Sua exist\xEAncia \xE9 pecaminosa demais para ficar nessa terra. Descanse, e
