@@ -8,7 +8,7 @@ public class OxygenManager : MonoBehaviour
     public float MaxOxygen = 100f;
     public float CurrentOxygen;
     public float DecreaseRate = 1f; 
-    public float Accelerate = 0f;
+    public bool IsImortal = false;
 
     [Header("UI")]
     public Image OxygenFill;
@@ -29,19 +29,18 @@ public class OxygenManager : MonoBehaviour
     {
         if (context.performed)
         {
-            Accelerate = 19f;
-        }
-        else
-        {
-            Accelerate = 0f;
+            IsImortal = !IsImortal;
+            if (IsImortal) Debug.Log("É imortal");
+            if (!IsImortal) Debug.Log("É mortal");
         }
     }
 
     void FixedUpdate()
     {
-        float TaxaTotal = DecreaseRate + Accelerate;
+        float TaxaTotal = DecreaseRate;
 
         if (IsDead) return;
+        if (IsImortal) return;
 
         if (!PlayerInteraction.IsInputLocked)
         {
@@ -60,6 +59,7 @@ public class OxygenManager : MonoBehaviour
     public void Die()
     {
         if (IsDead) return;
+        if (IsImortal) return;
 
         IsDead = true;
 

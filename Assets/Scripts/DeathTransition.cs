@@ -42,6 +42,15 @@ public class DeathTransition : MonoBehaviour
         
         yield return new WaitForSeconds(1f);
 
+        PlayerWaterMovement MoveScript = GetComponent<PlayerWaterMovement>();
+        if (MoveScript != null)
+            {
+                MoveScript.IsDead = false;
+                MoveScript.enabled = true;   
+            }
+
+        PlayerInteraction.Instance?.RefreshHandsUIVisibility();
+
         if (FadeTransition.Instance != null) FadeTransition.Instance.StartFade("Submarine");
 
     } 
