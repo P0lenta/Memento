@@ -12,9 +12,6 @@
             [Tooltip("Frases do diálogo")]
             public string[] lines;
 
-            [Tooltip("Sprites do diálogo")]
-            public Sprite[] LineSprites;
-
             [Tooltip("Índice da missão necessária")]
             public int RequiredMissionIndex = -1;
 
@@ -50,15 +47,18 @@
         public TextMeshProUGUI DialogueText;    
         public GameObject DialogueImage;
         public Image SkipProgressImage;
-        public GameObject LineImageObject;
-        public Image LineImage;
 
         [Header ("Animação máquina de escrever")]
         public float TypingSpeed = 0.05f;
         public bool CanSkip = true;
 
-        [Header ("Efeito sonoro digitação")]
-        public AudioSource TypingSound;
+        public static DialogueOption CurrentDialogueOption { get; private set; }
+        public static int CurrentDialogueLine { get; private set; }
+        public static bool IsDialogueActive => CurrentDialogue != null;
+
+        public static event System.Action<DialogueOption> OnDialgueStarted;
+        public static event System.Action<DialogueOption, int> OnLineChanged;
+        public static event System.Action<DialogueOption> OnDialogueEnded;
 
         private Coroutine TypingCoroutine;
         private string FullText;
@@ -67,11 +67,6 @@
         public bool IsActive = false;
         private static DialogueOption ActiveDialogue;
         private static DialogueManager CurrentDialogue;
-
-        void Start()
-        {
-            if (LineImageObject != null) LineImageObject.SetActive(false);
-        }
 
         public void StartDialogue()
         {
@@ -88,6 +83,8 @@
             IsActive = true;
             ShowCurrentLine();
             PlayerInteraction.IsInDialogue = true;
+
+            OnDialgueStarted?.Invoke(ActiveDialogue);
 
             PlayerInteraction.Instance?.RefreshHandsUIVisibility();
             PlayerInteraction.Instance?.SetInteractionImageVisible(false);
@@ -134,6 +131,9 @@
         {
             if (DialogueText ==  null || DialogueImage ==  null) return;
 
+            CurrentDialogueLine = CurrentLine;
+            OnLineChanged?.Invoke(ActiveDialogue, CurrentLine);
+
             FullText = ActiveDialogue.lines[CurrentLine];
 
             if (TypingCoroutine != null) StopCoroutine(TypingCoroutine);
@@ -142,22 +142,6 @@
             DialogueText.text = ActiveDialogue.lines[CurrentLine];
             DialogueText.gameObject.SetActive(true);
             DialogueImage.gameObject.SetActive(true);
-            UpdateCurrentImage();
-        }
-
-        private void UpdateCurrentImage()
-        {
-            if (LineImage == null) return;
-
-            if (ActiveDialogue.LineSprites != null && ActiveDialogue.LineSprites.Length > CurrentLine && ActiveDialogue.LineSprites[CurrentLine] != null)
-            {
-                LineImage.sprite = ActiveDialogue.LineSprites[CurrentLine];
-                if (LineImageObject != null) LineImageObject.SetActive(true);
-            }
-            else
-            {
-                if (LineImageObject != null) LineImageObject.SetActive(false);
-            }
         }
 
         private IEnumerator TypeWriterEffect()
@@ -191,7 +175,6 @@
             CurrentLine++;
             if (CurrentLine >= ActiveDialogue.lines.Length) EndDialogue();
             else ShowCurrentLine();
-            if (TypingSound != null) TypingSound.Play();
         }
 
         private void SkipTyping()
@@ -208,24 +191,22 @@
             if (CurrentDialogue != null) CurrentDialogue.NextLine();
         }
 
+        public DialogueOption GetCurrentDialogueOption()
+        {
+            return ActiveDialogue;
+        }
+
         private void EndDialogue()
         {
             IsActive = false;
-            if (DialogueText == null) return;
-            if (DialogueImage == null) return;
-            DialogueText.gameObject.SetActive(false);
-            DialogueImage.gameObject.SetActive(false);
-
-            if (LineImageObject != null) LineImageObject.SetActive(false);
+            if (DialogueText != null) DialogueText.gameObject.SetActive(false);
+            if (DialogueImage != null) DialogueImage.gameObject.SetActive(false);
 
             PlayerInteraction.IsInDialogue = false;
             PlayerInteraction.Instance?.RefreshHandsUIVisibility();
 
             CameraFocus Camera = GetComponent<CameraFocus>();
             if (Camera != null) Camera.EndFocus();
-
-            /*Interactable Interaction = GetComponent<Interactable>();
-            if (Interaction != null) Interaction.enabled = false;*/
 
             if (ActiveDialogue != null && ActiveDialogue.EmotionToGive != EmotionType.None) EmotionManager.Instance.SetEmotion(ActiveDialogue.EmotionToGive);
 
@@ -238,6 +219,12 @@
             PlayerInteraction.Instance?.StopCurrentInteractionSound();
 
             CurrentDialogue = null;
+
+            OnDialogueEnded?.Invoke(ActiveDialogue);
+            CurrentDialogueOption = null;
+            CurrentDialogueLine = -1;
+            CurrentDialogue = null;
+            ActiveDialogue = null;
         }
 
         public static void UpdateSkipProgress(float Fill)

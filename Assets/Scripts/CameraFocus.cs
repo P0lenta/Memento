@@ -15,7 +15,6 @@ public class CameraFocus : MonoBehaviour
     private Transform originalParent;
     private Vector3 originalLocalPos;
     private Quaternion originalLocalRot;
-    private Renderer PlayerRenderer;
     private Renderer HandRenderer;
     
 
@@ -31,18 +30,12 @@ public class CameraFocus : MonoBehaviour
             playerCamera = playerMovement.camTransform;
             if (playerCamera == null) return;
 
-            if (playerMovement.playerModel != null)
-            {
-                PlayerRenderer = playerMovement.playerModel.GetComponent<Renderer>();
-                PlayerRenderer.enabled = false;
-            }
-
             playerMovement.StopMovement();
 
             if(playerInteraction.HandsUI != null)
             {   
                 HandRenderer = playerInteraction.HandsUI.GetComponent<Renderer>();
-                HandRenderer.enabled = false;
+                if (HandRenderer != null) HandRenderer.enabled = false;
             }
 
             
@@ -66,9 +59,15 @@ public class CameraFocus : MonoBehaviour
         }
 
         IsFocused = true;
+    }
 
-
-
+    public void UpdateFocusPosition()
+    {
+        if (IsFocused && playerCamera != null)
+        {
+            playerCamera.position = cameraPosition;
+            playerCamera.rotation = Quaternion.Euler(cameraRotation);
+        }
     }
 
     public void EndFocus()
@@ -79,7 +78,6 @@ public class CameraFocus : MonoBehaviour
         playerCamera.localPosition = originalLocalPos;
         playerCamera.localRotation = originalLocalRot;
 
-        PlayerRenderer.enabled = true;
         HandRenderer.enabled = true;
         playerMovement.IsMovementLocked = false;
         playerInteraction.enabled = true;
@@ -94,17 +92,11 @@ public class CameraFocus : MonoBehaviour
 
     [ContextMenu("Capturar posição atual da câmera")]
     void CaptureCurrentCameraPosition()
-{
-    PlayerMovement movement = FindFirstObjectByType<PlayerMovement>();
-    if (movement == null || movement.camTransform == null)
     {
-        Debug.Log("PlayerMovement ou câmera não encontrados!");
-        return;
+        PlayerMovement movement = FindFirstObjectByType<PlayerMovement>();
+        if (movement == null || movement.camTransform == null) return;
+        
+        cameraPosition = movement.camTransform.position;
+        cameraRotation = movement.camTransform.eulerAngles;
     }
-
-    cameraPosition = movement.camTransform.position;
-    cameraRotation = movement.camTransform.eulerAngles;
-
-    Debug.Log($"Posição capturada: {cameraPosition}, Rotação: {cameraRotation}");
-}
 }

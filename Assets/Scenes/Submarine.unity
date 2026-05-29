@@ -334,7 +334,6 @@ MonoBehaviour:
     - "Voc\xEA coloca o p\xE9 e sente algo estranho."
     - "Era para a \xE1gua estar t\xE3o gelada?"
     - "Uma surpresa desagrad\xE1vel\u2026"
-    LineSprites: []
     RequiredMissionIndex: -1
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -350,7 +349,6 @@ MonoBehaviour:
     - "Gritos abafados. Sirenes. \xC1gua vermelha escorrendo pela rua."
     - "O seu reflexo naquele vermelho parecia querer tingir a pr\xF3pria lua."
     - "Voc\xEA fecha o chuveiro r\xE1pido demais."
-    LineSprites: []
     RequiredMissionIndex: -1
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -368,7 +366,6 @@ MonoBehaviour:
       mudar algo."
     - Sempre a mesma coisa.
     - "Voc\xEA sai do banho irritado."
-    LineSprites: []
     RequiredMissionIndex: -1
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -388,7 +385,6 @@ MonoBehaviour:
     - Antes de todo mundo decidir que era pesado demais.
     - "Talvez voc\xEA esteja ensaiando como \xE9 ser feliz, de novo. Era muito melhor
       sem eles."
-    LineSprites: []
     RequiredMissionIndex: -1
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -404,7 +400,6 @@ MonoBehaviour:
     - "O mar parece querer se grudar em voc\xEA, come\xE7a a fazer parte de voc\xEA. "
     - "Mas tudo bem, est\xE1 tudo bem. Voc\xEAs n\xE3o s\xE3o diferentes."
     - "Por enquanto\u2026 isso basta. A \xE1gua \xE9 viva, n\xE3o?"
-    LineSprites: []
     RequiredMissionIndex: -1
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -417,11 +412,8 @@ MonoBehaviour:
   DialogueText: {fileID: 95930983}
   DialogueImage: {fileID: 1834426189}
   SkipProgressImage: {fileID: 167102002}
-  LineImageObject: {fileID: 1915540539}
-  LineImage: {fileID: 0}
   TypingSpeed: 0.05
   CanSkip: 1
-  TypingSound: {fileID: 58955124}
   CurrentLine: 0
   IsActive: 0
 --- !u!82 &58955123
@@ -6052,7 +6044,6 @@ MonoBehaviour:
     - "\u201CN\xE3o importa quanto tempo demore.  Voc\xEA sempre encontra o caminho
       de volta.\u201D"
     - "Voc\xEA sorri sem perceber."
-    LineSprites: []
     RequiredMissionIndex: -1
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -6068,7 +6059,6 @@ MonoBehaviour:
     - "\u201CPromete que volta inteiro.\u201D"
     - "Voc\xEA l\xEA a frase v\xE1rias vezes."
     - "Nenhum dos dois sabia o que \u201Cinteiro\u201D significava naquela \xE9poca."
-    LineSprites: []
     RequiredMissionIndex: -1
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -6081,11 +6071,8 @@ MonoBehaviour:
   DialogueText: {fileID: 95930983}
   DialogueImage: {fileID: 1834426189}
   SkipProgressImage: {fileID: 167102002}
-  LineImageObject: {fileID: 1915540539}
-  LineImage: {fileID: 0}
   TypingSpeed: 0.05
   CanSkip: 1
-  TypingSound: {fileID: 159748706}
   CurrentLine: 0
   IsActive: 0
 --- !u!82 &159748705
@@ -26694,8 +26681,8 @@ Transform:
   m_GameObject: {fileID: 387453221}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.445, z: 0.076}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalPosition: {x: 0.154, y: 0.445, z: 0.05}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 436523015}
@@ -26762,7 +26749,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: f62f758a4357c844985e369b22b40ad6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 71f775a9a81a56098a29ab1b46942579, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -27218,8 +27205,11 @@ GameObject:
   - component: {fileID: 436523011}
   - component: {fileID: 436523010}
   - component: {fileID: 436523009}
-  - component: {fileID: 436523008}
   - component: {fileID: 436523007}
+  - component: {fileID: 436523018}
+  - component: {fileID: 436523020}
+  - component: {fileID: 436523019}
+  - component: {fileID: 436523008}
   - component: {fileID: 436523016}
   - component: {fileID: 436523017}
   m_Layer: 0
@@ -27257,7 +27247,6 @@ MonoBehaviour:
     - Era...
     - "Sobre estar com algu\xE9m..."
     - Obrigada.
-    LineSprites: []
     RequiredMissionIndex: 0
     RequiredEmotion: 0
     RequiredHeldFish: 1
@@ -27280,7 +27269,6 @@ MonoBehaviour:
     - Mas agora parece distante... vazio.
     - Talvez... felicidade?
     - Tente ficar feliz, e me alcance o peixe que aparecer.
-    LineSprites: []
     RequiredMissionIndex: 0
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -27300,7 +27288,6 @@ MonoBehaviour:
     - ... Eu me lembro agora.
     - "N\xE3o era s\xF3 dor... Era algu\xE9m que eu amava."
     - Obrigada.
-    LineSprites: []
     RequiredMissionIndex: 1
     RequiredEmotion: 0
     RequiredHeldFish: 2
@@ -27323,7 +27310,6 @@ MonoBehaviour:
     - Eu preciso da tristeza.
     - Por favor.
     - Desligo.
-    LineSprites: []
     RequiredMissionIndex: 1
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -27342,7 +27328,6 @@ MonoBehaviour:
     - "Voc\xEA n\xE3o recebe sinal de volta."
     - "Parece que ningu\xE9m precisa mais de voc\xEA."
     - "Seria bom dormir, voc\xEA j\xE1 trabalhou muito."
-    LineSprites: []
     RequiredMissionIndex: 2
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -27362,7 +27347,6 @@ MonoBehaviour:
     - ... Agora eu me lembro.
     - "Eu fiquei em sil\xEAncio... quando n\xE3o devia."
     - Nunca mais.
-    LineSprites: []
     RequiredMissionIndex: 2
     RequiredEmotion: 0
     RequiredHeldFish: 3
@@ -27382,7 +27366,6 @@ MonoBehaviour:
     - Mas mesmo depois de tudo aquilo... nada vem.
     - "Nossos pecados s\xE3o realmente t\xE3o profundos que s\xF3 o mar p\xF4de ocult\xE1-los?"
     - "Eu quero sentir isso, eu mere\xE7o."
-    LineSprites: []
     RequiredMissionIndex: 2
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -27403,7 +27386,6 @@ MonoBehaviour:
     - "Eu n\xE3o esperava por isso..."
     - "\xC9 estranho... mas \xE9 bom."
     - Fico grato.
-    LineSprites: []
     RequiredMissionIndex: 3
     RequiredEmotion: 0
     RequiredHeldFish: 5
@@ -27422,7 +27404,6 @@ MonoBehaviour:
     - 'Bem, eis o meu pedido: Nada me pega de surpresa mais.'
     - "Tudo parece... previs\xEDvel demais."
     - "Voc\xEA pode me ajudar, eu sei que pode. Quebra essa por mim."
-    LineSprites: []
     RequiredMissionIndex: 3
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -27441,7 +27422,6 @@ MonoBehaviour:
     - "T\xE3o bom que n\xE3o precisam mais de voc\xEA."
     - "V\xE1 dormir, seus monstros merecem falar com voc\xEA, a s\xF3s."
     - "(Fazer isso encerrar\xE1 a build)."
-    LineSprites: []
     RequiredMissionIndex: 4
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -27454,11 +27434,8 @@ MonoBehaviour:
   DialogueText: {fileID: 95930983}
   DialogueImage: {fileID: 1834426189}
   SkipProgressImage: {fileID: 167102002}
-  LineImageObject: {fileID: 1915540539}
-  LineImage: {fileID: 0}
   TypingSpeed: 0.05
   CanSkip: 1
-  TypingSound: {fileID: 0}
   CurrentLine: 0
   IsActive: 0
 --- !u!114 &436523008
@@ -27488,8 +27465,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e87d1e6aa2b7e897dbaef1ab6206bc98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraFocus
-  cameraPosition: {x: 25.279928, y: 1.9292281, z: 1.3018793}
-  cameraRotation: {x: 24.168365, y: 92.21288, z: 0.12043192}
+  cameraPosition: {x: 25.398285, y: 1.9843434, z: 1.8555275}
+  cameraRotation: {x: 27.74372, y: 125.443146, z: 0.00085759483}
 --- !u!114 &436523010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27538,7 +27515,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2089345429}
   - {fileID: 387453222}
+  - {fileID: 1670444305}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &436523016
@@ -27552,7 +27531,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -994303699366805881, guid: f33b28dbf35d64b41b9031c8908306f8, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: dbde1f0b45ba022e18b68d2c4d80fa80, type: 3}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -27651,6 +27630,150 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RadarWarning
   RadioObj: {fileID: 387453221}
+--- !u!114 &436523018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 436523006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e68a733e6ecd4944ac827895dbeb7bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSoundPlayer
+  AudioPlayer: {fileID: 436523016}
+  Dialogue: {fileID: 436523007}
+  DefaultLineSound: {fileID: 8300000, guid: dbde1f0b45ba022e18b68d2c4d80fa80, type: 3}
+  SoundSets: []
+--- !u!114 &436523019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 436523006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c3f03c76fcd6a7668f82659cc5b520e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueCameraControl
+  Camera: {fileID: 436523009}
+  Dialogue: {fileID: 436523007}
+  CameraSet:
+  - Point:
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: -1.7643842, y: 0.14603877, z: 0.14336228}
+      CameraRotation: {x: 2.9919536, y: 236.70367, z: 0.00032273948}
+    - CameraPosition: {x: -1.7643842, y: 0.14603877, z: 0.14336228}
+      CameraRotation: {x: 2.9919536, y: 236.70367, z: 0.00032273948}
+    - CameraPosition: {x: -1.7643842, y: 0.14603877, z: 0.14336228}
+      CameraRotation: {x: 2.9919536, y: 236.70367, z: 0.00032273948}
+    - CameraPosition: {x: -1.7643842, y: 0.14603877, z: 0.14336228}
+      CameraRotation: {x: 2.9919536, y: 236.70367, z: 0.00032273948}
+    - CameraPosition: {x: -1.7643842, y: 0.14603877, z: 0.14336228}
+      CameraRotation: {x: 2.9919536, y: 236.70367, z: 0.00032273948}
+    - CameraPosition: {x: -1.7643842, y: 0.14603877, z: 0.14336228}
+      CameraRotation: {x: 2.9919536, y: 236.70367, z: 0.00032273948}
+    - CameraPosition: {x: -1.7643842, y: 0.14603877, z: 0.14336228}
+      CameraRotation: {x: 2.9919536, y: 236.70367, z: 0.00032273948}
+    - CameraPosition: {x: -1.7643842, y: 0.14603877, z: 0.14336228}
+      CameraRotation: {x: 2.9919536, y: 236.70367, z: 0.00032273948}
+    - CameraPosition: {x: -1.7643842, y: 0.14603877, z: 0.14336228}
+      CameraRotation: {x: 2.9919536, y: 236.70367, z: 0.00032273948}
+    - CameraPosition: {x: -1.7643842, y: 0.14603877, z: 0.14336228}
+      CameraRotation: {x: 2.9919536, y: 236.70367, z: 0.00032273948}
+  - Point:
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 25.95404, y: 1.3726342, z: 1.5816463}
+      CameraRotation: {x: 2.9919498, y: 113.720024, z: 0.0003194266}
+    - CameraPosition: {x: 25.95404, y: 1.3726342, z: 1.5816463}
+      CameraRotation: {x: 2.9919498, y: 113.720024, z: 0.0003194266}
+    - CameraPosition: {x: 25.95404, y: 1.3726342, z: 1.5816463}
+      CameraRotation: {x: 2.9919498, y: 113.720024, z: 0.0003194266}
+    - CameraPosition: {x: 25.95404, y: 1.3726342, z: 1.5816463}
+      CameraRotation: {x: 2.9919498, y: 113.720024, z: 0.0003194266}
+    - CameraPosition: {x: 25.95404, y: 1.3726342, z: 1.5816463}
+      CameraRotation: {x: 2.9919498, y: 113.720024, z: 0.0003194266}
+    - CameraPosition: {x: 25.95404, y: 1.3726342, z: 1.5816463}
+      CameraRotation: {x: 2.9919498, y: 113.720024, z: 0.0003194266}
+    - CameraPosition: {x: 25.95404, y: 1.3726342, z: 1.5816463}
+      CameraRotation: {x: 2.9919498, y: 113.720024, z: 0.0003194266}
+    - CameraPosition: {x: 25.95404, y: 1.3726342, z: 1.5816463}
+      CameraRotation: {x: 2.9919498, y: 113.720024, z: 0.0003194266}
+    - CameraPosition: {x: 25.95404, y: 1.3726342, z: 1.5816463}
+      CameraRotation: {x: 2.9919498, y: 113.720024, z: 0.0003194266}
+  - Point: []
+  - Point: []
+  - Point: []
+  - Point: []
+  - Point: []
+  - Point: []
+  - Point: []
+  - Point: []
+--- !u!114 &436523020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 436523006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6490d36237edee28d37eaea2ca5283, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSpriteRenderer
+  Renderer: {fileID: 2089345428}
+  Dialogue: {fileID: 436523007}
+  SpriteSet:
+  - LineSprites:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: -439564188, guid: ff3e75ed5d5d70640a7ebabdd5e1b176, type: 3}
+    - {fileID: -439564188, guid: ff3e75ed5d5d70640a7ebabdd5e1b176, type: 3}
+    - {fileID: -439564188, guid: ff3e75ed5d5d70640a7ebabdd5e1b176, type: 3}
+    - {fileID: -439564188, guid: ff3e75ed5d5d70640a7ebabdd5e1b176, type: 3}
+    - {fileID: -439564188, guid: ff3e75ed5d5d70640a7ebabdd5e1b176, type: 3}
+    - {fileID: -439564188, guid: ff3e75ed5d5d70640a7ebabdd5e1b176, type: 3}
+    - {fileID: -439564188, guid: ff3e75ed5d5d70640a7ebabdd5e1b176, type: 3}
+    - {fileID: -439564188, guid: ff3e75ed5d5d70640a7ebabdd5e1b176, type: 3}
+    - {fileID: -439564188, guid: ff3e75ed5d5d70640a7ebabdd5e1b176, type: 3}
+    - {fileID: -439564188, guid: ff3e75ed5d5d70640a7ebabdd5e1b176, type: 3}
+  - LineSprites:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: -439564188, guid: ff3e75ed5d5d70640a7ebabdd5e1b176, type: 3}
+    - {fileID: -439564188, guid: ff3e75ed5d5d70640a7ebabdd5e1b176, type: 3}
+    - {fileID: -439564188, guid: ff3e75ed5d5d70640a7ebabdd5e1b176, type: 3}
+    - {fileID: -439564188, guid: ff3e75ed5d5d70640a7ebabdd5e1b176, type: 3}
+    - {fileID: -439564188, guid: ff3e75ed5d5d70640a7ebabdd5e1b176, type: 3}
+    - {fileID: -439564188, guid: ff3e75ed5d5d70640a7ebabdd5e1b176, type: 3}
+    - {fileID: -439564188, guid: ff3e75ed5d5d70640a7ebabdd5e1b176, type: 3}
+    - {fileID: -439564188, guid: ff3e75ed5d5d70640a7ebabdd5e1b176, type: 3}
+  - LineSprites: []
+  - LineSprites: []
+  - LineSprites: []
+  - LineSprites: []
+  - LineSprites: []
+  - LineSprites: []
+  - LineSprites: []
+  - LineSprites: []
 --- !u!1 &436751985 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8184517615640322420, guid: ef4ed10b49f60bb42a6f7cbb9d996592, type: 3}
@@ -28129,7 +28252,6 @@ MonoBehaviour:
     - "N\xE3o faz muito tempo desde que voc\xEA ouviu pela \xFAltima vez."
     - "Mesmo assim\u2026 o sentimento de ouvir a voz dessa pessoa ainda aperta seu
       peito."
-    LineSprites: []
     RequiredMissionIndex: -1
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -28148,7 +28270,6 @@ MonoBehaviour:
     - "Voc\xEA n\xE3o lembra dessa parte."
     - A fita continua girando.
     - "Pela primeira vez em muito tempo\u2026 suas m\xE3os tremem."
-    LineSprites: []
     RequiredMissionIndex: -1
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -28161,11 +28282,8 @@ MonoBehaviour:
   DialogueText: {fileID: 95930983}
   DialogueImage: {fileID: 1834426189}
   SkipProgressImage: {fileID: 167102002}
-  LineImageObject: {fileID: 1915540539}
-  LineImage: {fileID: 0}
   TypingSpeed: 0.05
   CanSkip: 1
-  TypingSound: {fileID: 478308181}
   CurrentLine: 0
   IsActive: 0
 --- !u!82 &478308180
@@ -53734,7 +53852,6 @@ MonoBehaviour:
     - "Voc\xEA olha pela passagem do perisc\xF3pio como sempre faz."
     - "Por um instante, voc\xEA pode jurar que algo estava olhando para voc\xEA de
       volta, mesmo n\xE3o sabendo exatamente o que era. "
-    LineSprites: []
     RequiredMissionIndex: -1
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -53749,7 +53866,6 @@ MonoBehaviour:
     - Nenhum movimento incomum.
     - "Voc\xEA continua olhando por alguns segundos."
     - Depois volta ao trabalho.
-    LineSprites: []
     RequiredMissionIndex: -1
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -53762,11 +53878,8 @@ MonoBehaviour:
   DialogueText: {fileID: 95930983}
   DialogueImage: {fileID: 1834426189}
   SkipProgressImage: {fileID: 167102002}
-  LineImageObject: {fileID: 1915540539}
-  LineImage: {fileID: 0}
   TypingSpeed: 0.05
   CanSkip: 1
-  TypingSound: {fileID: 718921156}
   CurrentLine: 0
   IsActive: 0
 --- !u!82 &718921156
@@ -54993,96 +55106,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3156846228011964682, guid: ef4ed10b49f60bb42a6f7cbb9d996592, type: 3}
---- !u!1 &910905262
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 910905265}
-  - component: {fileID: 910905264}
-  - component: {fileID: 910905263}
-  m_Layer: 3
-  m_Name: PlayerModel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!33 &910905263
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 910905262}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &910905264
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 910905262}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 2b44c2a44717d41aea1364092800dec2, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_MaskInteraction: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!4 &910905265
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 910905262}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.75, y: 1, z: 0.75}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1958548638}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &925107179
 GameObject:
   m_ObjectHideFlags: 0
@@ -99109,9 +99132,6 @@ MonoBehaviour:
   - lines:
     - O rosto na foto levemente rasgado ainda te incomoda.
     - "N\xE3o pela aus\xEAncia, mas pelo o que voc\xEA fez antes dele sumir."
-    LineSprites:
-    - {fileID: 21300000, guid: 30c19795378f1144385156cbe6567913, type: 3}
-    - {fileID: 21300000, guid: e3ec40784bcad824ca069ffc2ea1aa8b, type: 3}
     RequiredMissionIndex: -1
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -99129,7 +99149,6 @@ MonoBehaviour:
     - "Por alguns segundos\u2026  "
     - A culpa fica quieta.
     - "E s\xF3 sobra a boa mem\xF3ria."
-    LineSprites: []
     RequiredMissionIndex: -1
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -99142,11 +99161,8 @@ MonoBehaviour:
   DialogueText: {fileID: 95930983}
   DialogueImage: {fileID: 1834426189}
   SkipProgressImage: {fileID: 167102002}
-  LineImageObject: {fileID: 1915540539}
-  LineImage: {fileID: 0}
   TypingSpeed: 0.05
   CanSkip: 1
-  TypingSound: {fileID: 1554339880}
   CurrentLine: 0
   IsActive: 0
 --- !u!82 &1554339879
@@ -104514,6 +104530,143 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!1 &1670444304
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1670444305}
+  - component: {fileID: 1670444308}
+  - component: {fileID: 1670444307}
+  - component: {fileID: 1670444306}
+  m_Layer: 0
+  m_Name: Camera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1670444305
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1670444304}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.014274526, y: 0.8370519, z: -0.021858608, w: 0.54650027}
+  m_LocalPosition: {x: 25.95404, y: 1.3726342, z: 1.5816463}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 436523015}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1670444306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1670444304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalCameraData
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
+  m_Version: 2
+--- !u!81 &1670444307
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1670444304}
+  m_Enabled: 1
+--- !u!20 &1670444308
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1670444304}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
 --- !u!1 &1692760901
 GameObject:
   m_ObjectHideFlags: 0
@@ -104665,7 +104818,6 @@ MonoBehaviour:
     - "Voc\xEA l\xEA algumas p\xE1ginas."
     - "As palavras entram\u2026e saem da cabe\xE7a logo depois."
     - "Segunda-feira \xE9 um p\xE9ssimo dia para ler."
-    LineSprites: []
     RequiredMissionIndex: -1
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -104681,7 +104833,6 @@ MonoBehaviour:
     - "Voc\xEA reconhece algumas anota\xE7\xF5es nas margens."
     - Sua letra.
     - "Voc\xEA fecha o livro com for\xE7a."
-    LineSprites: []
     RequiredMissionIndex: -1
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -104694,11 +104845,8 @@ MonoBehaviour:
   DialogueText: {fileID: 95930983}
   DialogueImage: {fileID: 1834426189}
   SkipProgressImage: {fileID: 167102002}
-  LineImageObject: {fileID: 1915540539}
-  LineImage: {fileID: 0}
   TypingSpeed: 0.05
   CanSkip: 1
-  TypingSound: {fileID: 1692760903}
   CurrentLine: 0
   IsActive: 0
 --- !u!65 &1692760905
@@ -110748,11 +110896,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6933400897493803042, guid: ef4ed10b49f60bb42a6f7cbb9d996592, type: 3}
---- !u!1 &1915540539 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2442216410247795922, guid: e93ebf6033b4ebe4594bc27aeb0d824d, type: 3}
-  m_PrefabInstance: {fileID: 2962594385791780639}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1920933769 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1303774481499192940, guid: ef4ed10b49f60bb42a6f7cbb9d996592, type: 3}
@@ -111341,7 +111484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ba8e3c3c073a279f83454b57a3c3489, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  playerModel: {fileID: 910905262}
+  playerModel: {fileID: 0}
   speed: 7
   turnSpeedHorizontal: 0.3
   turnSpeeVertical: 0.1
@@ -111396,7 +111539,6 @@ Transform:
   m_LocalScale: {x: 1.1000001, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 910905265}
   - {fileID: 395623566}
   - {fileID: 330585546}
   m_Father: {fileID: 0}
@@ -126478,6 +126620,97 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5982025436497842098, guid: ef4ed10b49f60bb42a6f7cbb9d996592, type: 3}
+--- !u!1 &2089345427
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2089345429}
+  - component: {fileID: 2089345428}
+  m_Layer: 0
+  m_Name: NpcImages
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &2089345428
+SpriteRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2089345427}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_Sprite: {fileID: -617564668, guid: ff3e75ed5d5d70640a7ebabdd5e1b176, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 12.202057, y: 12.21}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 0
+--- !u!4 &2089345429
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2089345427}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.57116944, z: -0, w: 0.8208322}
+  m_LocalPosition: {x: 0.1056, y: -0.35259998, z: 0.135}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 436523015}
+  m_LocalEulerAnglesHint: {x: 0, y: -69.664, z: 0}
 --- !u!1 &2121027410 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7985232947347809885, guid: ef4ed10b49f60bb42a6f7cbb9d996592, type: 3}
