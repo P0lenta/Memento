@@ -25,15 +25,16 @@ Material:
   m_Parent: {fileID: 2100000, guid: 9f6978f5f3b11254db683f48bd351c35, type: 2}
   m_ModifiedSerializedProperties: 18
   m_ValidKeywords:
+  - _ALPHATEST_ON
   - _METALLICSPECGLOSSMAP
   - _NORMALMAP
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
+  m_CustomRenderQueue: 2450
   stringTagMap:
-    RenderType: Opaque
+    RenderType: TransparentCutout
   disabledShaderPasses:
   - MOTIONVECTORS
   m_LockedProperties: 
@@ -62,6 +63,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _AlphaClip: 1
+    - _AlphaToMask: 1
+    - _Cutoff: 0.088
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _Smoothness: 0.543
