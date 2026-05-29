@@ -49,6 +49,7 @@
         [Header("Configurações de UI")]
         public TextMeshProUGUI DialogueText;    
         public GameObject DialogueImage;
+        public Image SkipProgressImage;
         public GameObject LineImageObject;
         public Image LineImage;
 
@@ -90,6 +91,8 @@
 
             PlayerInteraction.Instance?.RefreshHandsUIVisibility();
             PlayerInteraction.Instance?.SetInteractionImageVisible(false);
+
+            CurrentDialogue.SkipProgressImage.fillAmount = 0f;
 
             if (Chosen.UnlocksMap && EmotionManager.Instance != null) EmotionManager.Instance.IsMapUnlocked = true;
             if (Chosen.BedTime && EmotionManager.Instance != null) EmotionManager.Instance.IsTimeToBed = true;
@@ -188,7 +191,7 @@
             CurrentLine++;
             if (CurrentLine >= ActiveDialogue.lines.Length) EndDialogue();
             else ShowCurrentLine();
-            TypingSound.Play();
+            if (TypingSound != null) TypingSound.Play();
         }
 
         private void SkipTyping()
@@ -235,6 +238,21 @@
             PlayerInteraction.Instance?.StopCurrentInteractionSound();
 
             CurrentDialogue = null;
+        }
+
+        public static void UpdateSkipProgress(float Fill)
+        {
+            if (CurrentDialogue?.SkipProgressImage != null) CurrentDialogue.SkipProgressImage.fillAmount = Fill;
+        }
+
+        public static void CancelSkip()
+        {
+            if (CurrentDialogue?.SkipProgressImage != null) CurrentDialogue.SkipProgressImage.fillAmount = 0f;
+        }
+
+        public static void SkipDialogue()
+        {
+            if (CurrentDialogue != null) CurrentDialogue.EndDialogue();
         }
 
     }

@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
+using System.Collections;
 
 public class PlayerInteraction : MonoBehaviour
 {
@@ -106,7 +107,6 @@ public class PlayerInteraction : MonoBehaviour
 
     public void SetHeldFish(EmotionType Fish)
     {
-
         HeldFishEmotion = Fish;
 
         if (EmotionManager.Instance != null) EmotionManager.Instance.HeldFish = Fish;
@@ -128,6 +128,35 @@ public class PlayerInteraction : MonoBehaviour
         }
 
         UpdateHoldingAnimation();
+    }
+
+    private Coroutine SkipCoroutine;
+    public void OnSkipDialogue(InputAction.CallbackContext context)
+    {
+        Debug.Log($"OnSkipDialogue chamado! started: {context.started}, canceled: {context.canceled}, IsInDialogue: {IsInDialogue}");
+        if (context.started && IsInDialogue) SkipCoroutine = StartCoroutine(SkipHoldDialogue());
+        if (context.canceled && SkipCoroutine != null)
+        {
+            if (SkipCoroutine != null)
+            {
+                StopCoroutine(SkipCoroutine);
+                SkipCoroutine = null;   
+            }
+            DialogueManager.CancelSkip();
+        }
+    }
+    private IEnumerator SkipHoldDialogue()
+    {
+        float Timer = 0f;
+        while (Timer < 2f)
+        {
+            Timer += Time.deltaTime;
+            DialogueManager.UpdateSkipProgress(Timer/2f);
+            yield return null;
+        }
+
+        SkipCoroutine = null;
+        DialogueManager.SkipDialogue();
     }
 
     public void OnClick(InputAction.CallbackContext context)
