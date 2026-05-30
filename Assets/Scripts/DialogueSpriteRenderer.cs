@@ -52,6 +52,10 @@ public class DialogueSpriteRenderer : MonoBehaviour
             Renderer.sprite = OriginalSprite;
             OriginalSprite = null;
         }
+        else
+        {
+            Renderer.sprite = null;
+        }
     }
 
 }

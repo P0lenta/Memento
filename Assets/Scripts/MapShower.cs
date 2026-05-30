@@ -24,6 +24,7 @@ public class MapShower : MonoBehaviour
 
     void Start()
     {
+        if (MapCompass != null) MapCompass.SetActive(false);
         MapBackground.SetActive(false);
         if (MapRadius != null) MapRadius.SetActive(false);
         MapHelper.SetActive(false);
