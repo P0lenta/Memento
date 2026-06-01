@@ -27309,11 +27309,12 @@ MonoBehaviour:
     - "Voc\xEA liga o r\xE1dio."
     - Fica um tempo na espera...
     - ...
+    - ...
     - "Voc\xEA faz seu trabalho muito bem, n\xE9?"
-    - Desde aqueles que te obriguem a ajudar, desde aqueles que te obriguem a machucar.
+    - "N\xE3o importa a fun\xE7\xE3o."
+    - Pode ser aqueles que ajudam os outros, ou aqueles que machucam os outros.
     - "T\xE3o bom que n\xE3o precisam mais de voc\xEA."
     - "V\xE1 dormir, seus monstros merecem falar com voc\xEA, a s\xF3s."
-    - "(Fazer isso encerrar\xE1 a build)."
     RequiredMissionIndex: 4
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -27323,6 +27324,132 @@ MonoBehaviour:
     EmotionToGive: 0
     UnlocksMap: 0
     BedTime: 1
+  - lines:
+    - "Voc\xEA liga o r\xE1dio."
+    - Fica um tempo na espera...
+    - ...
+    - .
+    - .
+    - .
+    - Obrigada.
+    - "... d\xF3i."
+    - "Mas\u2026 pelo menos agora faz sentido."
+    RequiredMissionIndex: 4
+    RequiredEmotion: 0
+    RequiredHeldFish: 2
+    RequiredDayIndex: 3
+    IsExtra: 0
+    CompletesMission: 1
+    EmotionToGive: 0
+    UnlocksMap: 1
+    BedTime: 0
+  - lines:
+    - "Voc\xEA liga o r\xE1dio."
+    - Fica um tempo na espera...
+    - ...
+    - .
+    - .
+    - .
+    - "Eu sei que parece estranho querer sentir dor\u2026 mas acho que\u2026"
+    - "Tudo parece... previs\xEDvel demais."
+    - "Algumas mem\xF3rias s\xF3 voltam quando a gente permite sentir."
+    RequiredMissionIndex: 4
+    RequiredEmotion: 0
+    RequiredHeldFish: 0
+    RequiredDayIndex: 3
+    IsExtra: 0
+    CompletesMission: 0
+    EmotionToGive: 0
+    UnlocksMap: 1
+    BedTime: 0
+  - lines:
+    - "Voc\xEA liga o r\xE1dio."
+    - Fica um tempo na espera...
+    - ...
+    - .
+    - .
+    - "Isso\u2026"
+    - Isso foi inesperado.
+    - E bom.
+    - "Eu tinha esquecido como isso fazia diferen\xE7a."
+    RequiredMissionIndex: 5
+    RequiredEmotion: 0
+    RequiredHeldFish: 5
+    RequiredDayIndex: 3
+    IsExtra: 0
+    CompletesMission: 1
+    EmotionToGive: 0
+    UnlocksMap: 0
+    BedTime: 0
+  - lines:
+    - "Voc\xEA liga o r\xE1dio."
+    - Fica um tempo na espera...
+    - ...
+    - .
+    - .
+    - .
+    - "Tem algo na minha mem\xF3ria que n\xE3o encaixa\u2026"
+    - "Como se estivesse faltando uma rea\xE7\xE3o."
+    - .
+    RequiredMissionIndex: 5
+    RequiredEmotion: 0
+    RequiredHeldFish: 0
+    RequiredDayIndex: 3
+    IsExtra: 0
+    CompletesMission: 0
+    EmotionToGive: 0
+    UnlocksMap: 1
+    BedTime: 0
+  - lines:
+    - "Voc\xEA liga o r\xE1dio."
+    - Fica um tempo na espera...
+    - ...
+    - ...
+    - "... Est\xE1 quase no fim."
+    - "Sua mente est\xE1 se difundindo com as ondas do oceano."
+    - "Sua sanidade cabe entre os gr\xE3os de areia desse mar."
+    - "At\xE9 onde voc\xEA consegue aguentar, sem se tornar um deles?"
+    - "Eles s\xE3o os maiores seres desses mares, maiores que todas os peixes."
+    - Seria um bom destino para seus erros.
+    - "Assim eles nunca afetariam ningu\xE9m, de novo..."
+    - "...Ou ir\xE1 tra\xED-los? "
+    - Abandonar seu novo cargo. Jogar fora tudo o que lhe foi garantido.
+    - "Voc\xEA construiu seu pr\xF3prio purgat\xF3rio, decidiu n\xE3o afundar sua
+      culpa."
+    - Entendeu que ela faz parte do seu ser.
+    - "Ent\xE3o escolheu usar do resto de sua vida miser\xE1vel para ajudar os outros."
+    - "Vai jogar tudo fora, por ego\xEDsmo? Vai acabar com tudo isso? O que vai lhe
+      sobrar?"
+    - "Aqui lhe oferecemos gr\xE3os, l\xE1 lhe oferecer\xE3o migalhas."
+    - "Durma, amanh\xE3 voc\xEA decide o tamanho do seus crimes."
+    RequiredMissionIndex: 6
+    RequiredEmotion: 0
+    RequiredHeldFish: 0
+    RequiredDayIndex: 3
+    IsExtra: 0
+    CompletesMission: 0
+    EmotionToGive: 0
+    UnlocksMap: 0
+    BedTime: 1
+  - lines:
+    - "Voc\xEA liga o r\xE1dio."
+    - Fica um tempo na espera...
+    - ...
+    - .
+    - .
+    - .
+    - .
+    - "Eu perdi muita coisa\u2026"
+    - "E depois disso\u2026 eu parei de sentir qualquer coisa boa."
+    RequiredMissionIndex: 6
+    RequiredEmotion: 0
+    RequiredHeldFish: 0
+    RequiredDayIndex: 4
+    IsExtra: 0
+    CompletesMission: 0
+    EmotionToGive: 0
+    UnlocksMap: 1
+    BedTime: 0
   DialogueText: {fileID: 95930983}
   DialogueImage: {fileID: 1834426189}
   SkipProgressImage: {fileID: 167102002}
@@ -27357,8 +27484,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e87d1e6aa2b7e897dbaef1ab6206bc98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraFocus
-  cameraPosition: {x: 25.398285, y: 1.9843434, z: 1.8555275}
-  cameraRotation: {x: 27.74372, y: 125.443146, z: 0.00085759483}
+  cameraPosition: {x: 23.696968, y: 0.95502806, z: 1.3174465}
+  cameraRotation: {x: 8.457971, y: 56.586525, z: 0.000009063194}
 --- !u!114 &436523010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27372,7 +27499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FishDelivery
   RequiredEmotion: 1
-  PossibleEmotion: 0100000002000000030000000500000004000000
+  PossibleEmotion: 01000000020000000300000005000000040000000400000004000000040000000400000004000000
 --- !u!65 &436523011
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27409,7 +27536,6 @@ Transform:
   m_Children:
   - {fileID: 2089345429}
   - {fileID: 387453222}
-  - {fileID: 1670444305}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &436523016
@@ -27562,26 +27688,26 @@ MonoBehaviour:
       CameraRotation: {x: 0, y: 0, z: 0}
     - CameraPosition: {x: 0, y: 0, z: 0}
       CameraRotation: {x: 0, y: 0, z: 0}
-    - CameraPosition: {x: 25.95404, y: 1.3726342, z: 1.5816463}
-      CameraRotation: {x: 2.9919498, y: 113.720024, z: 0.0003194266}
-    - CameraPosition: {x: 25.95404, y: 1.3726342, z: 1.5816463}
-      CameraRotation: {x: 2.9919498, y: 113.720024, z: 0.0003194266}
-    - CameraPosition: {x: 25.95404, y: 1.3726342, z: 1.5816463}
-      CameraRotation: {x: 2.9919498, y: 113.720024, z: 0.0003194266}
-    - CameraPosition: {x: 25.95404, y: 1.3726342, z: 1.5816463}
-      CameraRotation: {x: 2.9919498, y: 113.720024, z: 0.0003194266}
-    - CameraPosition: {x: 25.95404, y: 1.3726342, z: 1.5816463}
-      CameraRotation: {x: 2.9919498, y: 113.720024, z: 0.0003194266}
-    - CameraPosition: {x: 25.95404, y: 1.3726342, z: 1.5816463}
-      CameraRotation: {x: 2.9919498, y: 113.720024, z: 0.0003194266}
-    - CameraPosition: {x: 25.95404, y: 1.3726342, z: 1.5816463}
-      CameraRotation: {x: 2.9919498, y: 113.720024, z: 0.0003194266}
-    - CameraPosition: {x: 25.95404, y: 1.3726342, z: 1.5816463}
-      CameraRotation: {x: 2.9919498, y: 113.720024, z: 0.0003194266}
-    - CameraPosition: {x: 25.95404, y: 1.3726342, z: 1.5816463}
-      CameraRotation: {x: 2.9919498, y: 113.720024, z: 0.0003194266}
-    - CameraPosition: {x: 25.95404, y: 1.3726342, z: 1.5816463}
-      CameraRotation: {x: 2.9919498, y: 113.720024, z: 0.0003194266}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
   - Point:
     - CameraPosition: {x: 0, y: 0, z: 0}
       CameraRotation: {x: 0, y: 0, z: 0}
@@ -27589,32 +27715,24 @@ MonoBehaviour:
       CameraRotation: {x: 0, y: 0, z: 0}
     - CameraPosition: {x: 0, y: 0, z: 0}
       CameraRotation: {x: 0, y: 0, z: 0}
-    - CameraPosition: {x: 25.95404, y: 1.3726342, z: 1.5816463}
-      CameraRotation: {x: 2.9919498, y: 113.720024, z: 0.0003194266}
-    - CameraPosition: {x: 25.95404, y: 1.3726342, z: 1.5816463}
-      CameraRotation: {x: 2.9919498, y: 113.720024, z: 0.0003194266}
-    - CameraPosition: {x: 25.95404, y: 1.3726342, z: 1.5816463}
-      CameraRotation: {x: 2.9919498, y: 113.720024, z: 0.0003194266}
-    - CameraPosition: {x: 25.95404, y: 1.3726342, z: 1.5816463}
-      CameraRotation: {x: 2.9919498, y: 113.720024, z: 0.0003194266}
-    - CameraPosition: {x: 25.95404, y: 1.3726342, z: 1.5816463}
-      CameraRotation: {x: 2.9919498, y: 113.720024, z: 0.0003194266}
-    - CameraPosition: {x: 25.95404, y: 1.3726342, z: 1.5816463}
-      CameraRotation: {x: 2.9919498, y: 113.720024, z: 0.0003194266}
-    - CameraPosition: {x: 25.95404, y: 1.3726342, z: 1.5816463}
-      CameraRotation: {x: 2.9919498, y: 113.720024, z: 0.0003194266}
-    - CameraPosition: {x: 25.95404, y: 1.3726342, z: 1.5816463}
-      CameraRotation: {x: 2.9919498, y: 113.720024, z: 0.0003194266}
-    - CameraPosition: {x: 25.95404, y: 1.3726342, z: 1.5816463}
-      CameraRotation: {x: 2.9919498, y: 113.720024, z: 0.0003194266}
-  - Point: []
-  - Point: []
-  - Point: []
-  - Point: []
-  - Point: []
-  - Point: []
-  - Point: []
-  - Point: []
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
 --- !u!114 &436523020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61120,7 +61238,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 305aa8264660299449dd3553ae9f29af, type: 2}
     - target: {fileID: -391218510727533036, guid: ef4ed10b49f60bb42a6f7cbb9d996592, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.30707464
+      value: -0.38
       objectReference: {fileID: 0}
     - target: {fileID: -391218510727533036, guid: ef4ed10b49f60bb42a6f7cbb9d996592, type: 3}
       propertyPath: m_LocalPosition.z
@@ -61643,7 +61761,8 @@ PrefabInstance:
       value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: -351250541854938033, guid: ef4ed10b49f60bb42a6f7cbb9d996592, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: ef4ed10b49f60bb42a6f7cbb9d996592, type: 3}
       insertIndex: -1
@@ -61871,9 +61990,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -2689661013475867210, guid: ef4ed10b49f60bb42a6f7cbb9d996592, type: 3}
       insertIndex: -1
       addedObject: {fileID: 104996142}
-    - targetCorrespondingSourceObject: {fileID: -351250541854938033, guid: ef4ed10b49f60bb42a6f7cbb9d996592, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1927465816}
     - targetCorrespondingSourceObject: {fileID: 5943021186170854799, guid: ef4ed10b49f60bb42a6f7cbb9d996592, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2126527853}
@@ -104023,12 +104139,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1670444304}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.014274526, y: 0.8370519, z: -0.021858608, w: 0.54650027}
-  m_LocalPosition: {x: 25.95404, y: 1.3726342, z: 1.5816463}
+  m_LocalRotation: {x: 0.06493293, y: 0.47269413, z: -0.03495284, w: 0.8781356}
+  m_LocalPosition: {x: 23.696968, y: 0.95502806, z: 1.3174465}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 436523015}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1670444306
 MonoBehaviour:
@@ -110335,33 +110451,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -3191571869609287586, guid: ef4ed10b49f60bb42a6f7cbb9d996592, type: 3}
---- !u!1 &1927465812 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -351250541854938033, guid: ef4ed10b49f60bb42a6f7cbb9d996592, type: 3}
-  m_PrefabInstance: {fileID: 1030647960}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &1927465816
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1927465812}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 9114946644617149247, guid: ef4ed10b49f60bb42a6f7cbb9d996592, type: 3}
 --- !u!1 &1934865509
 GameObject:
   m_ObjectHideFlags: 0
@@ -126547,6 +126636,7 @@ SceneRoots:
   - {fileID: 302602683}
   - {fileID: 925107185}
   - {fileID: 1306405953}
+  - {fileID: 1670444305}
   - {fileID: 436523015}
   - {fileID: 413873379}
   - {fileID: 555703521}
