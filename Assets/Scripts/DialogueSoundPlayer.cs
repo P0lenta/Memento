@@ -17,12 +17,14 @@ public class DialogueSoundPlayer : MonoBehaviour
 
     void OnEnable() 
     {
-        DialogueManager.OnLineChanged += PlayLineSound;    
+        DialogueManager.OnLineChanged += PlayLineSound;
+        DialogueManager.OnDialogueEnded += StopLineSound;
     }
 
     void OnDisable() 
     {
-        DialogueManager.OnLineChanged -= PlayLineSound;        
+        DialogueManager.OnLineChanged -= PlayLineSound;
+        DialogueManager.OnDialogueEnded -= StopLineSound;   
     }
 
     void PlayLineSound(DialogueManager.DialogueOption Option, int LineIndex)
@@ -42,5 +44,10 @@ public class DialogueSoundPlayer : MonoBehaviour
 
         if (DefaultLineSound != null) AudioPlayer.PlayOneShot(DefaultLineSound);
     }   
+
+    void StopLineSound(DialogueManager.DialogueOption Option)
+    {
+        if (AudioPlayer != null) AudioPlayer.Stop();
+    }
 
 }
