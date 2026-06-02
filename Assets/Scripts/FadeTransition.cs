@@ -36,6 +36,8 @@ public class FadeTransition : MonoBehaviour
 
     IEnumerator FadeLoad()
     {
+        PlayerInteraction.IsSleeping = true;
+
         yield return StartCoroutine(Fade(0f, 1f));
         
         if (EmotionManager.Instance != null)
@@ -50,6 +52,8 @@ public class FadeTransition : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         yield return StartCoroutine(Fade(1f, 0f));
+
+        PlayerInteraction.IsSleeping = false;
     }
 
     IEnumerator Fade(float From, float To)

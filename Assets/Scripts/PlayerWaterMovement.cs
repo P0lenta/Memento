@@ -4,8 +4,6 @@ using UnityEngine.InputSystem;
 public class PlayerWaterMovement : MonoBehaviour
 {
 
-[Header("Modelo 3D")]
-    public GameObject playerModel;
 
 [Header("Valores de velocidade")]
     public float MoveSpeed = 10f;

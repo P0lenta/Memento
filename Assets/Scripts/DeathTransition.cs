@@ -32,6 +32,8 @@ public class DeathTransition : MonoBehaviour
     {
         if (IsForReal) DeathAnimation.SetTrigger("DiedR");
         else DeathAnimation.SetTrigger("DiedM");
+
+        PlayerInteraction.IsSleeping = true;
         
         yield return new WaitForSeconds(1f);
 

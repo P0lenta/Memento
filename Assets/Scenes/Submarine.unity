@@ -270,8 +270,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e87d1e6aa2b7e897dbaef1ab6206bc98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraFocus
-  cameraPosition: {x: 6.672703, y: 2.7465367, z: -1.6369009}
-  cameraRotation: {x: 35.54723, y: 68.76869, z: 0.19405936}
+  cameraPosition: {x: 6.846499, y: 2.033331, z: -0.24868965}
+  cameraRotation: {x: 35.03165, y: 127.585365, z: 0.013442084}
 --- !u!4 &58955121
 Transform:
   m_ObjectHideFlags: 0
@@ -345,7 +345,7 @@ MonoBehaviour:
     RequiredDayIndex: 3
     IsExtra: 0
     CompletesMission: 0
-    EmotionToGive: 4
+    EmotionToGive: 3
     UnlocksMap: 0
     BedTime: 0
   - lines:
@@ -364,7 +364,7 @@ MonoBehaviour:
     RequiredDayIndex: 4
     IsExtra: 0
     CompletesMission: 0
-    EmotionToGive: 4
+    EmotionToGive: 1
     UnlocksMap: 0
     BedTime: 0
   - lines:
@@ -372,14 +372,14 @@ MonoBehaviour:
     - A rotina continua funcionando.
     - "O mar parece querer se grudar em voc\xEA, come\xE7a a fazer parte de voc\xEA. "
     - "Mas tudo bem, est\xE1 tudo bem. Voc\xEAs n\xE3o s\xE3o diferentes."
-    - "Por enquanto\u2026 isso basta. A \xE1gua \xE9 viva, n\xE3o?"
+    - "Por enquanto\u2026 isso basta."
     RequiredMissionIndex: -1
     RequiredEmotion: 0
     RequiredHeldFish: 0
-    RequiredDayIndex: 2
+    RequiredDayIndex: 5
     IsExtra: 0
     CompletesMission: 0
-    EmotionToGive: 4
+    EmotionToGive: 0
     UnlocksMap: 0
     BedTime: 0
   DialogueText: {fileID: 95930983}
@@ -5959,8 +5959,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e87d1e6aa2b7e897dbaef1ab6206bc98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraFocus
-  cameraPosition: {x: 20.946396, y: 1.8054724, z: -1.1248646}
-  cameraRotation: {x: 43.316463, y: 240.28064, z: 0.2201233}
+  cameraPosition: {x: 20.09867, y: 0.9555012, z: -2.384825}
+  cameraRotation: {x: 33.41595, y: 223.7312, z: -0.0013368747}
 --- !u!4 &159748701
 Transform:
   m_ObjectHideFlags: 0
@@ -5970,7 +5970,7 @@ Transform:
   m_GameObject: {fileID: 159748694}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 39.261, y: -1.27073, z: -3.351}
+  m_LocalPosition: {x: 38.571, y: -1.27073, z: -5.088}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5995,7 +5995,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 2, z: 2}
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &159748704
 MonoBehaviour:
@@ -6014,6 +6014,7 @@ MonoBehaviour:
     - 'Uma carta. '
     - 'De uma pessoa amada. '
     - "Voc\xEA decorou cada linha h\xE1 muito tempo. "
+    - "Ainda assim\u2026 rel\xEA devagar."
     - "\u201CN\xE3o importa quanto tempo demore.  Voc\xEA sempre encontra o caminho
       de volta.\u201D"
     - "Voc\xEA sorri sem perceber."
@@ -6029,6 +6030,8 @@ MonoBehaviour:
   - lines:
     - A carta parece menor hoje.
     - "Ou talvez seja voc\xEA."
+    - "Faz tanto tempo\u2026 as mem\xF3rias parecem querer se manter distantes."
+    - "Voc\xEA l\xEA um trecho para se lembrar:"
     - "\u201CPromete que volta inteiro.\u201D"
     - "Voc\xEA l\xEA a frase v\xE1rias vezes."
     - "Nenhum dos dois sabia o que \u201Cinteiro\u201D significava naquela \xE9poca."
@@ -6036,6 +6039,57 @@ MonoBehaviour:
     RequiredEmotion: 0
     RequiredHeldFish: 0
     RequiredDayIndex: 2
+    IsExtra: 0
+    CompletesMission: 0
+    EmotionToGive: 2
+    UnlocksMap: 0
+    BedTime: 0
+  - lines:
+    - "Voc\xEA l\xEA a carta inteira."
+    - "Depois l\xEA de novo."
+    - "As palavras continuam l\xE1. Mas hoje\u2026 n\xE3o parecem alcan\xE7ar nada
+      dentro de voc\xEA."
+    - "S\xF3 tinta velha em papel \xFAmido."
+    RequiredMissionIndex: -1
+    RequiredEmotion: 0
+    RequiredHeldFish: 0
+    RequiredDayIndex: 3
+    IsExtra: 0
+    CompletesMission: 0
+    EmotionToGive: 0
+    UnlocksMap: 0
+    BedTime: 0
+  - lines:
+    - "A carta escorrega da sua m\xE3o."
+    - "Ela cai aberta no ch\xE3o. Verso para cima."
+    - Tem algo escrito ali.
+    - "\"Se alguma coisa acontecer com voc\xEA\u2026\""
+    - "A frase para a\xED. O resto est\xE1 borrado."
+    - "\xC1gua do mar, provavelmente."
+    - Ou pavor. Seu.
+    - "Voc\xEA n\xE3o sabe o que d\xF3i mais: n\xE3o saber o final da frase, ou saber
+      exatamente o que viria depois."
+    RequiredMissionIndex: -1
+    RequiredEmotion: 0
+    RequiredHeldFish: 0
+    RequiredDayIndex: 4
+    IsExtra: 0
+    CompletesMission: 0
+    EmotionToGive: 4
+    UnlocksMap: 0
+    BedTime: 0
+  - lines:
+    - "A tinta est\xE1 desaparecendo aos poucos."
+    - "Algumas palavras j\xE1 n\xE3o podem mais ser lidas."
+    - "\u201CPromete que\u2026\u201D."
+    - "Voc\xEA tenta completar as frases de mem\xF3ria."
+    - "N\xE3o consegue."
+    - "Essa parte foi jogada de prop\xF3sito? Do\xEDa tanto que era melhor esquecer?"
+    - "Mas percebe que est\xE1 esquecendo tamb\xE9m. Isso d\xF3i ainda mais."
+    RequiredMissionIndex: -1
+    RequiredEmotion: 0
+    RequiredHeldFish: 0
+    RequiredDayIndex: 5
     IsExtra: 0
     CompletesMission: 0
     EmotionToGive: 2
@@ -6069,7 +6123,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 1.7543384
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -6166,7 +6220,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 1.7460948
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -27403,7 +27457,8 @@ MonoBehaviour:
     - "Eu me lembro de rir com algu\xE9m..."
     - Mas agora parece distante... vazio.
     - Talvez... felicidade?
-    - Tente ficar feliz, e me alcance o peixe que aparecer.
+    - "Tente ficar feliz, v\xE1 para o mar, e me alcance o peixe que aparecer no
+      mapa."
     RequiredMissionIndex: 0
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -27422,7 +27477,7 @@ MonoBehaviour:
     - "Ent\xE3o era verdade, voc\xEA pode trazer emo\xE7\xF5es...?!"
     - ... Eu me lembro agora.
     - "N\xE3o era s\xF3 dor... Era algu\xE9m que eu amava."
-    - Obrigada.
+    - Obrigado.
     RequiredMissionIndex: 1
     RequiredEmotion: 0
     RequiredHeldFish: 2
@@ -27476,6 +27531,7 @@ MonoBehaviour:
     - "Voc\xEA liga o r\xE1dio."
     - Fica um tempo na espera...
     - ...
+    - "Depois de uns minutos, voc\xEA recebe sinal do outro lado."
     - "Voltou, ent\xE3o."
     - Como foi? Profundo? Imagino.
     - "Meu pedido est\xE1 feito? ... Ah, ai est\xE1.!"
@@ -27571,12 +27627,12 @@ MonoBehaviour:
     - "Voc\xEA liga o r\xE1dio."
     - Fica um tempo na espera...
     - ...
-    - .
-    - .
-    - .
-    - .
-    - "N\xE3o era s\xF3 escurid\xE3o\u2026 era um aviso."
-    - Eu precisava disso pra me proteger.
+    - "Depois de uns minutos, voc\xEA recebe sinal do outro lado."
+    - Boa noite, senhor.
+    - "Minha dor n\xE3o \xE9 pesada demais, para voc\xEA, n\xE9?"
+    - ...
+    - "Isso \xE9\u2026 desconfort\xE1vel."
+    - "Mas\u2026 \xE9 o certo."
     RequiredMissionIndex: 4
     RequiredEmotion: 0
     RequiredHeldFish: 4
@@ -27590,12 +27646,12 @@ MonoBehaviour:
     - "Voc\xEA liga o r\xE1dio."
     - Fica um tempo na espera...
     - ...
-    - .
-    - .
-    - .
-    - "Tem algo que eu n\xE3o lembro\u2026mas sei que deveria me assustar."
-    - Mas sei que deveria me assustar.
-    - Se encontrar esse medo, me traga.
+    - "Depois de uns minutos, algu\xE9m sussurra."
+    - "Tem algo na minha mem\xF3ria que n\xE3o encaixa."
+    - Como se tivesse um buraco escuro onde deveria fugir.
+    - "Mas eu n\xE3o quero mais fugir."
+    - Nada mais me assusta.
+    - "Sem medo\u2026 eu n\xE3o sei onde parar."
     RequiredMissionIndex: 4
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -27609,10 +27665,11 @@ MonoBehaviour:
     - "Voc\xEA liga o r\xE1dio."
     - Fica um tempo na espera...
     - ...
-    - .
-    - .
-    - .
-    - Obrigada.
+    - "Depois de uns minutos, voc\xEA recebe sinal do outro lado."
+    - "... \xC9 voc\xEA? Possui o que eu perdi?"
+    - ... Eu me lembro.
+    - "N\xE3o era s\xF3 dor... Era o rosto da minha m\xE3e. O cheiro de caf\xE9.
+      A \xFAltima vez que eu disse adeus."
     - "... d\xF3i."
     - "Mas\u2026 pelo menos agora faz sentido."
     RequiredMissionIndex: 5
@@ -27628,10 +27685,10 @@ MonoBehaviour:
     - "Voc\xEA liga o r\xE1dio."
     - Fica um tempo na espera...
     - ...
-    - .
-    - .
-    - .
-    - .
+    - "Depois de uns minutos, uma voz tr\xEAmula responde."
+    - "Eu... eu n\xE3o sei se isso vai fazer sentido."
+    - "Mas eu joguei no mar h\xE1 tanto tempo..."
+    - "Agora n\xE3o consigo chorar. N\xE3o consigo... sentir falta."
     - "Eu sei que parece estranho querer sentir dor\u2026 mas acho que\u2026"
     - "Algumas mem\xF3rias s\xF3 voltam quando a gente permite sentir."
     RequiredMissionIndex: 5
@@ -27680,12 +27737,14 @@ MonoBehaviour:
     - "Voc\xEA liga o r\xE1dio."
     - Fica um tempo na espera...
     - ...
-    - .
-    - .
+    - "Depois de uns minutos, voc\xEA recebe sinal do outro lado."
+    - "Vamos ver se tinha raz\xE3o mesmo para jogar isso fora."
     - "Isso\u2026"
-    - Isso foi inesperado.
-    - E bom.
+    - Isso foi inesperado. E bom.
     - "Eu tinha esquecido como isso fazia diferen\xE7a."
+    - "N\xE3o era s\xF3 t\xE9dio... Era o desconhecido. Era a segunda gota de uma
+      chuva que deveria ter passado."
+    - "At\xE9 mais."
     RequiredMissionIndex: 6
     RequiredEmotion: 0
     RequiredHeldFish: 5
@@ -27699,10 +27758,10 @@ MonoBehaviour:
     - "Voc\xEA liga o r\xE1dio."
     - Fica um tempo na espera...
     - ...
-    - .
-    - .
-    - .
-    - .
+    - Depois de uns minutos, uma voz calma surge.
+    - Senhor mergulhador, poderias atender meu pedido, certo?
+    - Eu sinto algo estranho comigo.
+    - "At\xE9 o sil\xEAncio do mar \xE9 igual todos os dias."
     - "Tem algo na minha mem\xF3ria que n\xE3o encaixa\u2026"
     - "Como se estivesse faltando uma rea\xE7\xE3o."
     RequiredMissionIndex: 6
@@ -27718,12 +27777,12 @@ MonoBehaviour:
     - "Voc\xEA liga o r\xE1dio."
     - Fica um tempo na espera...
     - ...
-    - .
-    - .
-    - .
+    - "Depois de uns minutos, voc\xEA recebe sinal do outro lado."
+    - "Mais um sobrevivente, espero que tenha meu pedido em m\xE3os.."
+    - ...
     - "Eu achei que n\xE3o podia mais sentir isso."
-    - "Mas ainda t\xE1 aqui\u2026"
-    - Mesmo depois de tudo.
+    - "Mas ainda t\xE1 aqui\u2026 O toque suave na minha m\xE3o."
+    - Mesmo depois de tudo, sinto como se nunca tivesse usado uma arma.
     RequiredMissionIndex: 7
     RequiredEmotion: 0
     RequiredHeldFish: 1
@@ -27737,12 +27796,13 @@ MonoBehaviour:
     - "Voc\xEA liga o r\xE1dio."
     - Fica um tempo na espera...
     - ...
-    - .
-    - .
-    - .
-    - .
-    - "Eu perdi muita coisa\u2026"
-    - "E depois disso\u2026 eu parei de sentir qualquer coisa boa."
+    - Depois de uns minutos, um homem fala baixinho.
+    - "Eu sobrevivi a guerra. Um dos \xFAnicos."
+    - Mas eu perdi muita coisa... parei de sentir.
+    - "Principalmente as boas mem\xF3rias. "
+    - "Aos poucos elas deixam minha cabe\xE7a."
+    - "Eu gostaria de poder recuper\xE1-las. Do contr\xE1rio, s\xF3 o trauma que
+      sobra."
     RequiredMissionIndex: 7
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -27773,7 +27833,7 @@ MonoBehaviour:
     - Afundaram no mar.
     - 'Cada pessoa sentiu um peso sendo removido. '
     - "E voc\xEA, n\xE3o... perdeu nada... "
-    - "Eu morri, o que restou de meu ser \xE9 essa dor"
+    - "Eu morri, o que restou de meu ser \xE9 essa dor."
     - "Mas voc\xEA ainda pode fazer a diferen\xE7a. Ainda pode devolver os sentimentos
       das pessoas."
     - "Por favor, n\xE3o me abandone novamente."
@@ -27796,13 +27856,14 @@ MonoBehaviour:
     BedTime: 1
   - lines:
     - "Voc\xEA liga o r\xE1dio."
-    - Fica um tempo na espera...
-    - ...
-    - .
-    - .
-    - .
-    - "Eu tava com raiva\u2026 de mim."
-    - E eu fugi disso.
+    - "O sinal j\xE1 est\xE1 conectado."
+    - "Parece que algu\xE9m tem tentado te contactar seguidamente h\xE1 v\xE1rias
+      horas."
+    - "Ent\xE3o, voc\xEA envia sinal ao outro lado."
+    - Enfim voltou!!! Por favor, por favor, por favor, me entregue..
+    - ... Ah, sim.
+    - "Era tudo culpa minha. Eu tava com raiva\u2026 de mim."
+    - E eu fugi disso. A culpa machuca.
     - "Mas agora\u2026 eu posso olhar pra isso de verdade."
     RequiredMissionIndex: 8
     RequiredEmotion: 0
@@ -27817,11 +27878,11 @@ MonoBehaviour:
     - "Voc\xEA liga o r\xE1dio."
     - Fica um tempo na espera...
     - ...
-    - .
-    - .
-    - .
-    - "Eu acho que fiz algo errado\u2026"
-    - Era raiva?..
+    - "Depois de uns minutos, uma voz \xE1spera responde."
+    - Eu fiz algo errado. Eu sei que fiz...
+    - "Agora n\xE3o consigo me perdoar, porque perdoar tamb\xE9m \xE9 sentir."
+    - "... A culpa, a vergonha, o \xF3dio."
+    - "Me mostre, por favor. N\xE3o me abandone agora."
     - "Se voc\xEA encontrar esse sentimento\u2026 eu preciso encarar isso."
     RequiredMissionIndex: 8
     RequiredEmotion: 0
@@ -27836,12 +27897,13 @@ MonoBehaviour:
     - "Voc\xEA liga o r\xE1dio."
     - Fica um tempo na espera...
     - ...
-    - .
-    - .
-    - .
-    - .
-    - "Isso \xE9\u2026 desconfort\xE1vel."
-    - "Mas\u2026 \xE9 o certo."
+    - "Depois de uns minutos, voc\xEA recebe sinal do outro lado."
+    - "Ol\xE1, mergulhador. Tudo certo?"
+    - Vejo que nem o abismo tem coragem de te encarar, hehe.
+    - ... Eu me lembro agora.
+    - "N\xE3o era s\xF3 escurid\xE3o\u2026 era um aviso..."
+    - "De que o \xFAltimo passo poderia ser o \xFAltimo."
+    - "Eu precisava disso pra me proteger. \xC9 o certo."
     RequiredMissionIndex: 9
     RequiredEmotion: 0
     RequiredHeldFish: 4
@@ -27855,12 +27917,12 @@ MonoBehaviour:
     - "Voc\xEA liga o r\xE1dio."
     - Fica um tempo na espera...
     - ...
-    - .
-    - .
-    - .
-    - .
-    - Nada mais me assusta.
-    - "Sem medo\u2026 eu n\xE3o sei onde parar."
+    - Depois de uns minutos, uma voz firme, mas cansada.
+    - "Eu n\xE3o temo nada. J\xE1 enfrentei todos os meus traumas."
+    - "Mas mesmo assim, eu sinto uma esp\xE9cie de... vazio."
+    - "Tem algo que eu n\xE3o lembro\u2026"
+    - Mas sei que deveria me assustar.
+    - Se encontrar esse medo, me traga.
     RequiredMissionIndex: 9
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -27884,18 +27946,18 @@ MonoBehaviour:
       a outra."
     - "A mem\xF3ria \xE9 o contexto do sentimento. E o sentimento \xE9 a casa da
       mem\xF3ria."
-    - "Eu ainda tenho minhas mem\xF3rias, mas estou preso a um sentimento. Voc\xEA
-      \xE9 livre."
-    - "Voc\xEA nunca foi um de n\xF3s."
+    - "Eu ainda tenho minhas mem\xF3rias, mas estou preso a um sentimento. "
+    - "Voc\xEA \xE9 livre, nunca foi um de n\xF3s."
     - "Eu sou o fragmento de dor daquele que era seu irm\xE3o. Voc\xEA \xE9 completo!"
     - "Sente tudo. A culpa te move \xE0 raiva pelos seus erros. "
-    - "Uma carta de amor pode te trazer felicidade, ou tristeza, dependendo da mem\xF3ria."
+    - 'E seus erros te deixam surpreso, a surpresa de uma nova falha te deixa triste. '
+    - "A tristeza corr\xF3i a sua mente, e lhe d\xE1 medo. Que somente \xE9 combatido
+      com as mem\xF3rias felizes."
     - "O mar nos prende em uma casca. Por isso voc\xEA n\xE3o pode ficar."
-    - "Ela est\xE1 te esperando."
+    - "Enquanto ela estiver te esperando, sempre sobrar\xE1 um lugar para voc\xEA."
     - "Seus crimes nunca ser\xE3o pagos. Mas eles podem ser perdoados."
     - "O que os outros abandonaram n\xE3o \xE9 de sua responsabilidade buscar."
-    - "Durma, por uma vez, com um peso a menos nas suas costas. Mas com um espa\xE7o
-      preenchido."
+    - Durma, por uma vez, com um peso a menos nas suas costas.
     - "Se permita fechar os olhos, uma \xFAnica vez. E nade para a superf\xEDcie."
     RequiredMissionIndex: 10
     RequiredEmotion: 0
@@ -28152,8 +28214,8 @@ MonoBehaviour:
       CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
     - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
       CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
-    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
-      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.13653, y: 1.2091157, z: 1.5322478}
+      CameraRotation: {x: 11.895626, y: 58.717896, z: -0.00196315}
     - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
       CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
     - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
@@ -28189,6 +28251,533 @@ MonoBehaviour:
       CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
     - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
       CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+  - Point:
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.13653, y: 1.2091157, z: 1.5322478}
+      CameraRotation: {x: 11.895626, y: 58.717896, z: -0.00196315}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+  - Point:
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+  - Point:
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 19.988136, y: 3.1404223, z: 5.673879}
+      CameraRotation: {x: 28.32807, y: 124.10317, z: -0.0022899983}
+    - CameraPosition: {x: 20.041838, y: 2.4776735, z: 2.6453998}
+      CameraRotation: {x: 19.768072, y: 89.897896, z: -0.0022844246}
+    - CameraPosition: {x: -6.5472126, y: 1.9427757, z: 0.53868866}
+      CameraRotation: {x: 33.862835, y: 123.415375, z: -0.0022835867}
+  - Point:
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.13653, y: 1.2091157, z: 1.5322478}
+      CameraRotation: {x: 11.895626, y: 58.717896, z: -0.00196315}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+  - Point:
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+  - Point:
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.13653, y: 1.2091157, z: 1.5322478}
+      CameraRotation: {x: 11.895626, y: 58.717896, z: -0.00196315}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+  - Point:
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+  - Point:
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 19.988136, y: 3.1404223, z: 5.673879}
+      CameraRotation: {x: 28.32807, y: 124.10317, z: -0.0022899983}
+    - CameraPosition: {x: 19.988136, y: 3.1404223, z: 5.673879}
+      CameraRotation: {x: 28.32807, y: 124.10317, z: -0.0022899983}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: -6.5472126, y: 1.9427757, z: 0.53868866}
+      CameraRotation: {x: 33.862835, y: 123.415375, z: -0.0022835867}
+  - Point:
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.13653, y: 1.2091157, z: 1.5322478}
+      CameraRotation: {x: 11.895626, y: 58.717896, z: -0.00196315}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+  - Point:
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+  - Point:
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.13653, y: 1.2091157, z: 1.5322478}
+      CameraRotation: {x: 11.895626, y: 58.717896, z: -0.00196315}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+  - Point:
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+  - Point:
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 19.988136, y: 3.1404223, z: 5.673879}
+      CameraRotation: {x: 28.32807, y: 124.10317, z: -0.0022899983}
+    - CameraPosition: {x: 19.988136, y: 3.1404223, z: 5.673879}
+      CameraRotation: {x: 28.32807, y: 124.10317, z: -0.0022899983}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 19.988136, y: 3.1404223, z: 5.673879}
+      CameraRotation: {x: 28.32807, y: 124.10317, z: -0.0022899983}
+    - CameraPosition: {x: 19.988136, y: 3.1404223, z: 5.673879}
+      CameraRotation: {x: 28.32807, y: 124.10317, z: -0.0022899983}
+    - CameraPosition: {x: 19.988136, y: 3.1404223, z: 5.673879}
+      CameraRotation: {x: 28.32807, y: 124.10317, z: -0.0022899983}
+    - CameraPosition: {x: 19.988136, y: 3.1404223, z: 5.673879}
+      CameraRotation: {x: 28.32807, y: 124.10317, z: -0.0022899983}
+    - CameraPosition: {x: 19.988136, y: 3.1404223, z: 5.673879}
+      CameraRotation: {x: 28.32807, y: 124.10317, z: -0.0022899983}
+    - CameraPosition: {x: 19.988136, y: 3.1404223, z: 5.673879}
+      CameraRotation: {x: 28.32807, y: 124.10317, z: -0.0022899983}
+    - CameraPosition: {x: 19.988136, y: 3.1404223, z: 5.673879}
+      CameraRotation: {x: 28.32807, y: 124.10317, z: -0.0022899983}
+    - CameraPosition: {x: -6.5472126, y: 1.9427757, z: 0.53868866}
+      CameraRotation: {x: 33.862835, y: 123.415375, z: -0.0022835867}
+  - Point:
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.13653, y: 1.2091157, z: 1.5322478}
+      CameraRotation: {x: 11.895626, y: 58.717896, z: -0.00196315}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+  - Point:
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+  - Point:
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.13653, y: 1.2091157, z: 1.5322478}
+      CameraRotation: {x: 11.895626, y: 58.717896, z: -0.00196315}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+  - Point:
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+  - Point:
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 19.988136, y: 3.1404223, z: 5.673879}
+      CameraRotation: {x: 28.32807, y: 124.10317, z: -0.0022899983}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: -8.908789, y: 1.422287, z: 1.0311775}
+      CameraRotation: {x: 36.75055, y: 214.00026, z: -0.0017741483}
+    - CameraPosition: {x: -8.908789, y: 1.422287, z: 1.0311775}
+      CameraRotation: {x: 36.75055, y: 214.00026, z: -0.0017741483}
+    - CameraPosition: {x: -8.908789, y: 1.422287, z: 1.0311775}
+      CameraRotation: {x: 36.75055, y: 214.00026, z: -0.0017741483}
+    - CameraPosition: {x: -8.908789, y: 1.422287, z: 1.0311775}
+      CameraRotation: {x: 36.75055, y: 214.00026, z: -0.0017741483}
+    - CameraPosition: {x: 19.988136, y: 3.1404223, z: 5.673879}
+      CameraRotation: {x: 28.32807, y: 124.10317, z: -0.0022899983}
+    - CameraPosition: {x: 19.988136, y: 3.1404223, z: 5.673879}
+      CameraRotation: {x: 28.32807, y: 124.10317, z: -0.0022899983}
+    - CameraPosition: {x: 19.988136, y: 3.1404223, z: 5.673879}
+      CameraRotation: {x: 28.32807, y: 124.10317, z: -0.0022899983}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.13653, y: 1.2091157, z: 1.5322478}
+      CameraRotation: {x: 11.895626, y: 58.717896, z: -0.00196315}
+    - CameraPosition: {x: 23.13653, y: 1.2091157, z: 1.5322478}
+      CameraRotation: {x: 11.895626, y: 58.717896, z: -0.00196315}
+    - CameraPosition: {x: 23.13653, y: 1.2091157, z: 1.5322478}
+      CameraRotation: {x: 11.895626, y: 58.717896, z: -0.00196315}
+    - CameraPosition: {x: 23.13653, y: 1.2091157, z: 1.5322478}
+      CameraRotation: {x: 11.895626, y: 58.717896, z: -0.00196315}
+    - CameraPosition: {x: -6.5472126, y: 1.9427757, z: 0.53868866}
+      CameraRotation: {x: 33.862835, y: 123.415375, z: -0.0022835867}
+    - CameraPosition: {x: -6.5472126, y: 1.9427757, z: 0.53868866}
+      CameraRotation: {x: 33.862835, y: 123.415375, z: -0.0022835867}
+    - CameraPosition: {x: -6.5472126, y: 1.9427757, z: 0.53868866}
+      CameraRotation: {x: 33.862835, y: 123.415375, z: -0.0022835867}
+    - CameraPosition: {x: -6.5472126, y: 1.9427757, z: 0.53868866}
+      CameraRotation: {x: 33.862835, y: 123.415375, z: -0.0022835867}
+  - Point:
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.13653, y: 1.2091157, z: 1.5322478}
+      CameraRotation: {x: 11.895626, y: 58.717896, z: -0.00196315}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+  - Point:
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+  - Point:
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.13653, y: 1.2091157, z: 1.5322478}
+      CameraRotation: {x: 11.895626, y: 58.717896, z: -0.00196315}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+  - Point:
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+  - Point:
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 0, y: 0, z: 0}
+      CameraRotation: {x: 0, y: 0, z: 0}
+    - CameraPosition: {x: 19.988136, y: 3.1404223, z: 5.673879}
+      CameraRotation: {x: 28.32807, y: 124.10317, z: -0.0022899983}
+    - CameraPosition: {x: 19.988136, y: 3.1404223, z: 5.673879}
+      CameraRotation: {x: 28.32807, y: 124.10317, z: -0.0022899983}
+    - CameraPosition: {x: -6.418062, y: 1.4481752, z: 1.6414533}
+      CameraRotation: {x: 5.7077036, y: 356.25522, z: -0.0011403053}
+    - CameraPosition: {x: -6.418062, y: 1.4481752, z: 1.6414533}
+      CameraRotation: {x: 5.7077036, y: 356.25522, z: -0.0011403053}
+    - CameraPosition: {x: -8.908789, y: 1.422287, z: 1.0311775}
+      CameraRotation: {x: 36.75055, y: 214.00026, z: -0.0017741483}
+    - CameraPosition: {x: -8.908789, y: 1.422287, z: 1.0311775}
+      CameraRotation: {x: 36.75055, y: 214.00026, z: -0.0017741483}
+    - CameraPosition: {x: -8.908789, y: 1.422287, z: 1.0311775}
+      CameraRotation: {x: 36.75055, y: 214.00026, z: -0.0017741483}
+    - CameraPosition: {x: 19.988136, y: 3.1404223, z: 5.673879}
+      CameraRotation: {x: 28.32807, y: 124.10317, z: -0.0022899983}
+    - CameraPosition: {x: 19.988136, y: 3.1404223, z: 5.673879}
+      CameraRotation: {x: 28.32807, y: 124.10317, z: -0.0022899983}
+    - CameraPosition: {x: 19.988136, y: 3.1404223, z: 5.673879}
+      CameraRotation: {x: 28.32807, y: 124.10317, z: -0.0022899983}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.893888, y: 0.820019, z: 1.7063522}
+      CameraRotation: {x: 0.37927422, y: 90.10457, z: 0.000018850133}
+    - CameraPosition: {x: 23.13653, y: 1.2091157, z: 1.5322478}
+      CameraRotation: {x: 11.895626, y: 58.717896, z: -0.00196315}
+    - CameraPosition: {x: 23.13653, y: 1.2091157, z: 1.5322478}
+      CameraRotation: {x: 11.895626, y: 58.717896, z: -0.00196315}
+    - CameraPosition: {x: 23.13653, y: 1.2091157, z: 1.5322478}
+      CameraRotation: {x: 11.895626, y: 58.717896, z: -0.00196315}
+    - CameraPosition: {x: 23.13653, y: 1.2091157, z: 1.5322478}
+      CameraRotation: {x: 11.895626, y: 58.717896, z: -0.00196315}
+    - CameraPosition: {x: -6.5472126, y: 1.9427757, z: 0.53868866}
+      CameraRotation: {x: 33.862835, y: 123.415375, z: -0.0022835867}
+    - CameraPosition: {x: -6.5472126, y: 1.9427757, z: 0.53868866}
+      CameraRotation: {x: 33.862835, y: 123.415375, z: -0.0022835867}
 --- !u!114 &436523020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28209,37 +28798,296 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
-    - {fileID: 21300000, guid: a81fe1c3daf45a763a936def08e5ba93, type: 3}
-    - {fileID: 21300000, guid: a81fe1c3daf45a763a936def08e5ba93, type: 3}
-    - {fileID: 21300000, guid: a81fe1c3daf45a763a936def08e5ba93, type: 3}
-    - {fileID: 21300000, guid: a81fe1c3daf45a763a936def08e5ba93, type: 3}
-    - {fileID: 21300000, guid: a81fe1c3daf45a763a936def08e5ba93, type: 3}
-    - {fileID: 21300000, guid: a81fe1c3daf45a763a936def08e5ba93, type: 3}
-    - {fileID: 21300000, guid: a81fe1c3daf45a763a936def08e5ba93, type: 3}
-    - {fileID: 21300000, guid: a81fe1c3daf45a763a936def08e5ba93, type: 3}
-    - {fileID: 21300000, guid: a81fe1c3daf45a763a936def08e5ba93, type: 3}
-    - {fileID: 21300000, guid: a81fe1c3daf45a763a936def08e5ba93, type: 3}
+    - {fileID: 21300000, guid: e433adc826978aa2fa6bd7bbc06afff7, type: 3}
+    - {fileID: 21300000, guid: e433adc826978aa2fa6bd7bbc06afff7, type: 3}
+    - {fileID: 21300000, guid: e433adc826978aa2fa6bd7bbc06afff7, type: 3}
+    - {fileID: 21300000, guid: e433adc826978aa2fa6bd7bbc06afff7, type: 3}
+    - {fileID: 21300000, guid: e433adc826978aa2fa6bd7bbc06afff7, type: 3}
+    - {fileID: 21300000, guid: e433adc826978aa2fa6bd7bbc06afff7, type: 3}
+    - {fileID: 21300000, guid: e433adc826978aa2fa6bd7bbc06afff7, type: 3}
+    - {fileID: 21300000, guid: e433adc826978aa2fa6bd7bbc06afff7, type: 3}
+    - {fileID: 21300000, guid: e433adc826978aa2fa6bd7bbc06afff7, type: 3}
+    - {fileID: 21300000, guid: e433adc826978aa2fa6bd7bbc06afff7, type: 3}
   - LineSprites:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
-    - {fileID: 21300000, guid: a81fe1c3daf45a763a936def08e5ba93, type: 3}
-    - {fileID: 21300000, guid: a81fe1c3daf45a763a936def08e5ba93, type: 3}
-    - {fileID: 21300000, guid: a81fe1c3daf45a763a936def08e5ba93, type: 3}
-    - {fileID: 21300000, guid: a81fe1c3daf45a763a936def08e5ba93, type: 3}
-    - {fileID: 21300000, guid: a81fe1c3daf45a763a936def08e5ba93, type: 3}
-    - {fileID: 21300000, guid: a81fe1c3daf45a763a936def08e5ba93, type: 3}
-    - {fileID: 21300000, guid: a81fe1c3daf45a763a936def08e5ba93, type: 3}
-    - {fileID: 21300000, guid: a81fe1c3daf45a763a936def08e5ba93, type: 3}
+    - {fileID: 21300000, guid: e433adc826978aa2fa6bd7bbc06afff7, type: 3}
+    - {fileID: 21300000, guid: e433adc826978aa2fa6bd7bbc06afff7, type: 3}
+    - {fileID: 21300000, guid: e433adc826978aa2fa6bd7bbc06afff7, type: 3}
+    - {fileID: 21300000, guid: e433adc826978aa2fa6bd7bbc06afff7, type: 3}
+    - {fileID: 21300000, guid: e433adc826978aa2fa6bd7bbc06afff7, type: 3}
+    - {fileID: 21300000, guid: e433adc826978aa2fa6bd7bbc06afff7, type: 3}
+    - {fileID: 21300000, guid: e433adc826978aa2fa6bd7bbc06afff7, type: 3}
+    - {fileID: 21300000, guid: e433adc826978aa2fa6bd7bbc06afff7, type: 3}
+  - LineSprites:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 21300000, guid: efaa2e229a4a8eb45bda07d1117ad3f9, type: 3}
+    - {fileID: 21300000, guid: efaa2e229a4a8eb45bda07d1117ad3f9, type: 3}
+    - {fileID: 21300000, guid: efaa2e229a4a8eb45bda07d1117ad3f9, type: 3}
+    - {fileID: 21300000, guid: efaa2e229a4a8eb45bda07d1117ad3f9, type: 3}
+    - {fileID: 21300000, guid: efaa2e229a4a8eb45bda07d1117ad3f9, type: 3}
+  - LineSprites:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 21300000, guid: efaa2e229a4a8eb45bda07d1117ad3f9, type: 3}
+    - {fileID: 21300000, guid: efaa2e229a4a8eb45bda07d1117ad3f9, type: 3}
+    - {fileID: 21300000, guid: efaa2e229a4a8eb45bda07d1117ad3f9, type: 3}
+    - {fileID: 21300000, guid: efaa2e229a4a8eb45bda07d1117ad3f9, type: 3}
+    - {fileID: 21300000, guid: efaa2e229a4a8eb45bda07d1117ad3f9, type: 3}
+    - {fileID: 21300000, guid: efaa2e229a4a8eb45bda07d1117ad3f9, type: 3}
+    - {fileID: 21300000, guid: efaa2e229a4a8eb45bda07d1117ad3f9, type: 3}
+    - {fileID: 21300000, guid: efaa2e229a4a8eb45bda07d1117ad3f9, type: 3}
   - LineSprites: []
-  - LineSprites: []
-  - LineSprites: []
-  - LineSprites: []
-  - LineSprites: []
-  - LineSprites: []
-  - LineSprites: []
-  - LineSprites: []
+  - LineSprites:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 21300000, guid: 48a29017cb2176ed896a34e0a3c7783f, type: 3}
+    - {fileID: 21300000, guid: 48a29017cb2176ed896a34e0a3c7783f, type: 3}
+    - {fileID: 21300000, guid: 48a29017cb2176ed896a34e0a3c7783f, type: 3}
+    - {fileID: 21300000, guid: 48a29017cb2176ed896a34e0a3c7783f, type: 3}
+    - {fileID: 21300000, guid: 48a29017cb2176ed896a34e0a3c7783f, type: 3}
+    - {fileID: 21300000, guid: 48a29017cb2176ed896a34e0a3c7783f, type: 3}
+  - LineSprites:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 21300000, guid: 48a29017cb2176ed896a34e0a3c7783f, type: 3}
+    - {fileID: 21300000, guid: 48a29017cb2176ed896a34e0a3c7783f, type: 3}
+    - {fileID: 21300000, guid: 48a29017cb2176ed896a34e0a3c7783f, type: 3}
+    - {fileID: 21300000, guid: 48a29017cb2176ed896a34e0a3c7783f, type: 3}
+    - {fileID: 21300000, guid: 48a29017cb2176ed896a34e0a3c7783f, type: 3}
+    - {fileID: 21300000, guid: 48a29017cb2176ed896a34e0a3c7783f, type: 3}
+  - LineSprites:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 21300000, guid: 6cafc224a896731a1b2cfe7b06f23ab2, type: 3}
+    - {fileID: 21300000, guid: 6cafc224a896731a1b2cfe7b06f23ab2, type: 3}
+    - {fileID: 21300000, guid: 6cafc224a896731a1b2cfe7b06f23ab2, type: 3}
+    - {fileID: 21300000, guid: 6cafc224a896731a1b2cfe7b06f23ab2, type: 3}
+    - {fileID: 21300000, guid: 6cafc224a896731a1b2cfe7b06f23ab2, type: 3}
+    - {fileID: 21300000, guid: 6cafc224a896731a1b2cfe7b06f23ab2, type: 3}
+    - {fileID: 21300000, guid: 6cafc224a896731a1b2cfe7b06f23ab2, type: 3}
+  - LineSprites:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 21300000, guid: 6cafc224a896731a1b2cfe7b06f23ab2, type: 3}
+    - {fileID: 21300000, guid: 6cafc224a896731a1b2cfe7b06f23ab2, type: 3}
+    - {fileID: 21300000, guid: 6cafc224a896731a1b2cfe7b06f23ab2, type: 3}
+    - {fileID: 21300000, guid: 6cafc224a896731a1b2cfe7b06f23ab2, type: 3}
+    - {fileID: 21300000, guid: 6cafc224a896731a1b2cfe7b06f23ab2, type: 3}
+  - LineSprites:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - LineSprites:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 21300000, guid: 0e829977a63336afca1114e17831c4cf, type: 3}
+    - {fileID: 21300000, guid: 0e829977a63336afca1114e17831c4cf, type: 3}
+    - {fileID: 21300000, guid: 0e829977a63336afca1114e17831c4cf, type: 3}
+    - {fileID: 21300000, guid: 0e829977a63336afca1114e17831c4cf, type: 3}
+    - {fileID: 21300000, guid: 0e829977a63336afca1114e17831c4cf, type: 3}
+    - {fileID: 21300000, guid: 0e829977a63336afca1114e17831c4cf, type: 3}
+  - LineSprites:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 21300000, guid: 0e829977a63336afca1114e17831c4cf, type: 3}
+    - {fileID: 21300000, guid: 0e829977a63336afca1114e17831c4cf, type: 3}
+    - {fileID: 21300000, guid: 0e829977a63336afca1114e17831c4cf, type: 3}
+    - {fileID: 21300000, guid: 0e829977a63336afca1114e17831c4cf, type: 3}
+    - {fileID: 21300000, guid: 0e829977a63336afca1114e17831c4cf, type: 3}
+  - LineSprites:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 21300000, guid: 4c532ebc6fc26fd26b8329e32f5fc36f, type: 3}
+    - {fileID: 21300000, guid: 4c532ebc6fc26fd26b8329e32f5fc36f, type: 3}
+    - {fileID: 21300000, guid: 4c532ebc6fc26fd26b8329e32f5fc36f, type: 3}
+    - {fileID: 21300000, guid: 4c532ebc6fc26fd26b8329e32f5fc36f, type: 3}
+    - {fileID: 21300000, guid: 4c532ebc6fc26fd26b8329e32f5fc36f, type: 3}
+  - LineSprites:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 21300000, guid: 4c532ebc6fc26fd26b8329e32f5fc36f, type: 3}
+    - {fileID: 21300000, guid: 4c532ebc6fc26fd26b8329e32f5fc36f, type: 3}
+    - {fileID: 21300000, guid: 4c532ebc6fc26fd26b8329e32f5fc36f, type: 3}
+    - {fileID: 21300000, guid: 4c532ebc6fc26fd26b8329e32f5fc36f, type: 3}
+    - {fileID: 21300000, guid: 4c532ebc6fc26fd26b8329e32f5fc36f, type: 3}
+  - LineSprites:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - LineSprites:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 21300000, guid: 65fefbe1ee78efb53b3c9ee9882ad209, type: 3}
+    - {fileID: 21300000, guid: 65fefbe1ee78efb53b3c9ee9882ad209, type: 3}
+    - {fileID: 21300000, guid: 65fefbe1ee78efb53b3c9ee9882ad209, type: 3}
+    - {fileID: 21300000, guid: 65fefbe1ee78efb53b3c9ee9882ad209, type: 3}
+    - {fileID: 21300000, guid: 65fefbe1ee78efb53b3c9ee9882ad209, type: 3}
+    - {fileID: 21300000, guid: 65fefbe1ee78efb53b3c9ee9882ad209, type: 3}
+  - LineSprites:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 21300000, guid: 65fefbe1ee78efb53b3c9ee9882ad209, type: 3}
+    - {fileID: 21300000, guid: 65fefbe1ee78efb53b3c9ee9882ad209, type: 3}
+    - {fileID: 21300000, guid: 65fefbe1ee78efb53b3c9ee9882ad209, type: 3}
+    - {fileID: 21300000, guid: 65fefbe1ee78efb53b3c9ee9882ad209, type: 3}
+    - {fileID: 21300000, guid: 65fefbe1ee78efb53b3c9ee9882ad209, type: 3}
+  - LineSprites:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 21300000, guid: 4e2baac2b1ab7a0b1b37f5f1d468dde0, type: 3}
+    - {fileID: 21300000, guid: 4e2baac2b1ab7a0b1b37f5f1d468dde0, type: 3}
+    - {fileID: 21300000, guid: 4e2baac2b1ab7a0b1b37f5f1d468dde0, type: 3}
+    - {fileID: 21300000, guid: 4e2baac2b1ab7a0b1b37f5f1d468dde0, type: 3}
+    - {fileID: 21300000, guid: 4e2baac2b1ab7a0b1b37f5f1d468dde0, type: 3}
+  - LineSprites:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 21300000, guid: 4e2baac2b1ab7a0b1b37f5f1d468dde0, type: 3}
+    - {fileID: 21300000, guid: 4e2baac2b1ab7a0b1b37f5f1d468dde0, type: 3}
+    - {fileID: 21300000, guid: 4e2baac2b1ab7a0b1b37f5f1d468dde0, type: 3}
+    - {fileID: 21300000, guid: 4e2baac2b1ab7a0b1b37f5f1d468dde0, type: 3}
+    - {fileID: 21300000, guid: 4e2baac2b1ab7a0b1b37f5f1d468dde0, type: 3}
+  - LineSprites:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  - LineSprites:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 21300000, guid: 81a1c7e04695d141c9fea2dd67300cfe, type: 3}
+    - {fileID: 21300000, guid: 81a1c7e04695d141c9fea2dd67300cfe, type: 3}
+    - {fileID: 21300000, guid: 81a1c7e04695d141c9fea2dd67300cfe, type: 3}
+    - {fileID: 21300000, guid: 81a1c7e04695d141c9fea2dd67300cfe, type: 3}
+    - {fileID: 21300000, guid: 81a1c7e04695d141c9fea2dd67300cfe, type: 3}
+  - LineSprites:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 21300000, guid: 81a1c7e04695d141c9fea2dd67300cfe, type: 3}
+    - {fileID: 21300000, guid: 81a1c7e04695d141c9fea2dd67300cfe, type: 3}
+    - {fileID: 21300000, guid: 81a1c7e04695d141c9fea2dd67300cfe, type: 3}
+    - {fileID: 21300000, guid: 81a1c7e04695d141c9fea2dd67300cfe, type: 3}
+    - {fileID: 21300000, guid: 81a1c7e04695d141c9fea2dd67300cfe, type: 3}
+  - LineSprites:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 21300000, guid: 25b5fb8a00f6c76afb56ffe3e58488c4, type: 3}
+    - {fileID: 21300000, guid: 25b5fb8a00f6c76afb56ffe3e58488c4, type: 3}
+    - {fileID: 21300000, guid: 25b5fb8a00f6c76afb56ffe3e58488c4, type: 3}
+    - {fileID: 21300000, guid: 25b5fb8a00f6c76afb56ffe3e58488c4, type: 3}
+    - {fileID: 21300000, guid: 25b5fb8a00f6c76afb56ffe3e58488c4, type: 3}
+    - {fileID: 21300000, guid: 25b5fb8a00f6c76afb56ffe3e58488c4, type: 3}
+  - LineSprites:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 21300000, guid: 25b5fb8a00f6c76afb56ffe3e58488c4, type: 3}
+    - {fileID: 21300000, guid: 25b5fb8a00f6c76afb56ffe3e58488c4, type: 3}
+    - {fileID: 21300000, guid: 25b5fb8a00f6c76afb56ffe3e58488c4, type: 3}
+    - {fileID: 21300000, guid: 25b5fb8a00f6c76afb56ffe3e58488c4, type: 3}
+    - {fileID: 21300000, guid: 25b5fb8a00f6c76afb56ffe3e58488c4, type: 3}
+  - LineSprites:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
 --- !u!1 &436751985 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8184517615640322420, guid: ef4ed10b49f60bb42a6f7cbb9d996592, type: 3}
@@ -28654,7 +29502,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 2, z: 0.89}
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &478308173
 MonoBehaviour:
@@ -28683,8 +29531,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e87d1e6aa2b7e897dbaef1ab6206bc98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraFocus
-  cameraPosition: {x: -3.9366002, y: 1.8731323, z: 1.8170806}
-  cameraRotation: {x: 28.431137, y: 216.19576, z: 0.20020258}
+  cameraPosition: {x: -3.7586823, y: 1.0995617, z: 1.3726172}
+  cameraRotation: {x: 26.471758, y: 230.1988, z: 0.008954017}
 --- !u!4 &478308178
 Transform:
   m_ObjectHideFlags: 0
@@ -28694,8 +29542,8 @@ Transform:
   m_GameObject: {fileID: 478308170}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.436, y: -1.27073, z: -0.558}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 15.001, y: -1.27073, z: -1.078}
+  m_LocalScale: {x: 0.65175, y: 0.65175, z: 0.65175}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 574269983}
@@ -28718,6 +29566,7 @@ MonoBehaviour:
     - "N\xE3o faz muito tempo desde que voc\xEA ouviu pela \xFAltima vez."
     - "Mesmo assim\u2026 o sentimento de ouvir a voz dessa pessoa ainda aperta seu
       peito."
+    - Por que aquilo tinha que acontecer?
     RequiredMissionIndex: -1
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -28743,6 +29592,59 @@ MonoBehaviour:
     IsExtra: 0
     CompletesMission: 0
     EmotionToGive: 5
+    UnlocksMap: 0
+    BedTime: 0
+  - lines:
+    - "A grava\xE7\xE3o come\xE7a como sempre, at\xE9 chegar naquela parte."
+    - As risadas dela.
+    - "T\xE3o contagiantes."
+    - "Voc\xEA fica im\xF3vel por alguns segundos."
+    - "\xC9 estranho ouvir aquilo agora."
+    - "T\xE3o leve. T\xE3o normal."
+    RequiredMissionIndex: -1
+    RequiredEmotion: 0
+    RequiredHeldFish: 0
+    RequiredDayIndex: 3
+    IsExtra: 0
+    CompletesMission: 0
+    EmotionToGive: 1
+    UnlocksMap: 0
+    BedTime: 0
+  - lines:
+    - "A grava\xE7\xE3o falha logo no come\xE7o."
+    - "De novo. Voc\xEA rebobina. Aperta play. Falha outra vez."
+    - "Sua m\xE3o d\xF3i de tanto apertar o bot\xE3o."
+    - "Voc\xEA joga a fita na mesa com for\xE7a."
+    - "Ela quica. Cai no ch\xE3o."
+    - "E voc\xEA fica olhando pra ela como se a fita tivesse culpa."
+    - "Mas a culpa n\xE3o est\xE1 na fita."
+    - "A fita s\xF3 guarda o que jogaram dentro dela."
+    RequiredMissionIndex: -1
+    RequiredEmotion: 0
+    RequiredHeldFish: 0
+    RequiredDayIndex: 4
+    IsExtra: 0
+    CompletesMission: 0
+    EmotionToGive: 3
+    UnlocksMap: 0
+    BedTime: 0
+  - lines:
+    - "A fita come\xE7a sozinha antes mesmo de voc\xEA apertar o play."
+    - "Chiado. Respira\xE7\xE3o."
+    - "Uma voz. Ela n\xE3o deveria estar neste gravador."
+    - "A saudade come\xE7a a apertar seu peito. O medo do que aconteceu. De quando
+      voc\xEA abandonou ela."
+    - "Voc\xEA desliga imediatamente."
+    - "Mas o som continua na sua cabe\xE7a por horas."
+    - "O submarino volta ao sil\xEAncio."
+    - "Mas agora ele parece menor. A maresia est\xE1 ocupando seu espa\xE7o."
+    RequiredMissionIndex: -1
+    RequiredEmotion: 0
+    RequiredHeldFish: 0
+    RequiredDayIndex: 5
+    IsExtra: 0
+    CompletesMission: 0
+    EmotionToGive: 4
     UnlocksMap: 0
     BedTime: 0
   DialogueText: {fileID: 95930983}
@@ -28773,7 +29675,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 1.3878622
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -28870,7 +29772,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 1.3761041
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -54355,7 +55257,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 2, z: 2}
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &718921149
 MonoBehaviour:
@@ -54384,8 +55286,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e87d1e6aa2b7e897dbaef1ab6206bc98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraFocus
-  cameraPosition: {x: 5.8671503, y: 2.4674175, z: 7.7993593}
-  cameraRotation: {x: 22.690107, y: 47.850933, z: 0.16309085}
+  cameraPosition: {x: 6.2101793, y: 1.8037641, z: 7.68797}
+  cameraRotation: {x: 31.387674, y: 38.40946, z: 0.013251718}
 --- !u!4 &718921154
 Transform:
   m_ObjectHideFlags: 0
@@ -54395,7 +55297,7 @@ Transform:
   m_GameObject: {fileID: 718921146}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 26.21, y: -1, z: 6.766}
+  m_LocalPosition: {x: 26.157, y: -0.81, z: 6.518}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -54416,8 +55318,10 @@ MonoBehaviour:
   Dialogues:
   - lines:
     - "Voc\xEA olha pela passagem do perisc\xF3pio como sempre faz."
+    - Tudo parece normal no oceano.
     - "Por um instante, voc\xEA pode jurar que algo estava olhando para voc\xEA de
       volta, mesmo n\xE3o sabendo exatamente o que era. "
+    - Eles ainda te perseguem.
     RequiredMissionIndex: -1
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -54439,6 +55343,58 @@ MonoBehaviour:
     IsExtra: 0
     CompletesMission: 0
     EmotionToGive: 0
+    UnlocksMap: 0
+    BedTime: 0
+  - lines:
+    - "Voc\xEA encosta o rosto no visor por for\xE7a do h\xE1bito."
+    - "O oceano est\xE1 parado. Nada especial. Nenhum brilho."
+    - "S\xF3 o cinza encontra o cinza."
+    - "Voc\xEA ajusta o foco para o fundo. Quer tentar chegar no ponto onde os gritos
+      come\xE7am."
+    - "Ningu\xE9m pode ouvi-los do fundo. Mas tem mais que vozes l\xE1. "
+    - "N\xE3o \xE9 um peixe, \xE9 maior. Voc\xEA se lembra do que eles s\xE3o."
+    RequiredMissionIndex: -1
+    RequiredEmotion: 0
+    RequiredHeldFish: 0
+    RequiredDayIndex: 3
+    IsExtra: 0
+    CompletesMission: 0
+    EmotionToGive: 2
+    UnlocksMap: 0
+    BedTime: 0
+  - lines:
+    - Algo brilhou.
+    - "N\xE3o era peixe. N\xE3o era o sol entre a ferrugem."
+    - "Voc\xEA ajusta o foco com pressa."
+    - Nada.
+    - "Mas seu cora\xE7\xE3o bate mais r\xE1pido."
+    - "Uma novidade nesse mar seria interessante... descer l\xE1 para o fundo parece
+      uma boa ideia."
+    RequiredMissionIndex: -1
+    RequiredEmotion: 0
+    RequiredHeldFish: 0
+    RequiredDayIndex: 4
+    IsExtra: 0
+    CompletesMission: 0
+    EmotionToGive: 5
+    UnlocksMap: 0
+    BedTime: 0
+  - lines:
+    - "O oceano est\xE1 claro hoje."
+    - "Raios de luz atravessam a \xE1gua por alguns segundos."
+    - Peixes pequenos. Cardumes.
+    - "Voc\xEA segue eles com o olhar. S\xF3 observando."
+    - "Tem coisas no fundo do mar que n\xE3o s\xE3o tristeza."
+    - "Tem coisas que n\xE3o deveriam ficar aqui."
+    - Coisas que ainda brilham.
+    - O mundo parece vivo outra vez.
+    RequiredMissionIndex: -1
+    RequiredEmotion: 0
+    RequiredHeldFish: 0
+    RequiredDayIndex: 5
+    IsExtra: 0
+    CompletesMission: 0
+    EmotionToGive: 1
     UnlocksMap: 0
     BedTime: 0
   DialogueText: {fileID: 95930983}
@@ -54469,7 +55425,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 1.4070082
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -55263,19 +56219,7 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -8258711468696440346, guid: ed771e14fcf1d1a4186c76f69205a5f5, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1776102647}
-    - targetCorrespondingSourceObject: {fileID: -8258711468696440346, guid: ed771e14fcf1d1a4186c76f69205a5f5, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1596065731}
-    - targetCorrespondingSourceObject: {fileID: -8258711468696440346, guid: ed771e14fcf1d1a4186c76f69205a5f5, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1275391861}
-    - targetCorrespondingSourceObject: {fileID: -8258711468696440346, guid: ed771e14fcf1d1a4186c76f69205a5f5, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1066162758}
-    - targetCorrespondingSourceObject: {fileID: -8258711468696440346, guid: ed771e14fcf1d1a4186c76f69205a5f5, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 935338298}
+      addedObject: {fileID: 1720786742}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ed771e14fcf1d1a4186c76f69205a5f5, type: 3}
       insertIndex: -1
@@ -55957,13 +56901,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 935338297}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.06477031, y: -0.84569746, z: 0.24924155, w: 0.4674177}
-  m_LocalPosition: {x: 0.02, y: 0.1432, z: -0.062}
+  m_LocalRotation: {x: 0.34225357, y: -0.7966406, z: 0.41922796, w: 0.26921013}
+  m_LocalPosition: {x: -0.08354697, y: 0.05843361, z: -0.07916323}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1225811939}
-  m_Father: {fileID: 823580743}
+  m_Father: {fileID: 1720786742}
   m_LocalEulerAnglesHint: {x: 28.824, y: -120.056, z: 8.1}
 --- !u!1 &947425271
 GameObject:
@@ -61724,6 +62668,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 7a34d00b1903ffe4ebf55b37307feabb, type: 2}
+    - target: {fileID: -2954899681667421872, guid: ef4ed10b49f60bb42a6f7cbb9d996592, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b893adcf0a7967d3cb3142ee9588d4b4, type: 2}
     - target: {fileID: -2915651561407555161, guid: ef4ed10b49f60bb42a6f7cbb9d996592, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -67763,13 +68711,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1066162757}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.009154216, y: -0.6768629, z: 0.25735727, w: 0.6895942}
-  m_LocalPosition: {x: 0.02, y: 0.1432, z: -0.062}
-  m_LocalScale: {x: 6.7, y: 6.7, z: 6.7}
+  m_LocalRotation: {x: 0.20818277, y: -0.6864917, z: 0.4995493, w: 0.48563316}
+  m_LocalPosition: {x: -0.08354697, y: 0.05843361, z: -0.07916323}
+  m_LocalScale: {x: 6.6999993, y: 6.7, z: 6.7000012}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1147852253}
-  m_Father: {fileID: 823580743}
+  m_Father: {fileID: 1720786742}
   m_LocalEulerAnglesHint: {x: 19.619, y: -84.911, z: 22.953}
 --- !u!1 &1077867321 stripped
 GameObject:
@@ -88622,13 +89570,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1275391860}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.08733822, y: -0.7016922, z: 0.17889671, w: 0.6841023}
-  m_LocalPosition: {x: 0.02, y: 0.1432, z: -0.062}
-  m_LocalScale: {x: 6.7, y: 6.7, z: 6.7}
+  m_LocalRotation: {x: 0.1517372, y: -0.73873866, z: 0.41843224, w: 0.50611806}
+  m_LocalPosition: {x: -0.08354697, y: 0.05843361, z: -0.07916323}
+  m_LocalScale: {x: 6.6999993, y: 6.7, z: 6.699999}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1187631550}
-  m_Father: {fileID: 823580743}
+  m_Father: {fileID: 1720786742}
   m_LocalEulerAnglesHint: {x: 7.56, y: -90, z: 21.75}
 --- !u!1 &1279498175 stripped
 GameObject:
@@ -99683,7 +100631,7 @@ Transform:
   m_GameObject: {fileID: 1554339869}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.75, y: -1.27073, z: -1.01}
+  m_LocalPosition: {x: 9.75, y: -1.27073, z: -1.313}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -99708,7 +100656,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 2, z: 1.33}
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1554339873
 MonoBehaviour:
@@ -99753,8 +100701,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
   Dialogues:
   - lines:
-    - O rosto na foto levemente rasgado ainda te incomoda.
-    - "N\xE3o pela aus\xEAncia, mas pelo o que voc\xEA fez antes dele sumir."
+    - A foto te ajuda a lembrar que existem bons tempos.
+    - "Mas tem algo\u2026"
+    - O rosto levemente rasgado ainda te incomoda.
+    - "N\xE3o pela aus\xEAncia, mas pelo que voc\xEA fez antes dele sumir."
     RequiredMissionIndex: -1
     RequiredEmotion: 0
     RequiredHeldFish: 0
@@ -99779,6 +100729,59 @@ MonoBehaviour:
     IsExtra: 0
     CompletesMission: 0
     EmotionToGive: 1
+    UnlocksMap: 0
+    BedTime: 0
+  - lines:
+    - "A fotografia escapa dos seus dedos quando voc\xEA tenta guard\xE1-la. "
+    - "Voc\xEA se abaixa para pegar. "
+    - "No verso\u2026 existe algo escrito."
+    - "Voc\xEA nunca tinha virado a foto antes."
+    - "A letra \xE9 do seu irm\xE3o. "
+    - "\u201CSe a gente sobreviver a isso, a primeira bebida \xE9 por minha conta.\u201D "
+    - "Voc\xEA fica olhando a frase por tempo demais. "
+    RequiredMissionIndex: -1
+    RequiredEmotion: 0
+    RequiredHeldFish: 0
+    RequiredDayIndex: 3
+    IsExtra: 0
+    CompletesMission: 0
+    EmotionToGive: 5
+    UnlocksMap: 0
+    BedTime: 0
+  - lines:
+    - "Voc\xEA pega a foto. Olha. Guarda."
+    - Repete.
+    - "Como quem verifica se ainda d\xF3i."
+    - "Hoje n\xE3o d\xF3i."
+    - "Tamb\xE9m n\xE3o aquece. S\xF3 est\xE1 a\xED."
+    - "Voc\xEA reconhece os rostos. As roupas. A situa\xE7\xE3o."
+    - "Mas hoje\u2026 ela n\xE3o parece diferente de qualquer outro objeto do submarino."
+    RequiredMissionIndex: -1
+    RequiredEmotion: 0
+    RequiredHeldFish: 0
+    RequiredDayIndex: 4
+    IsExtra: 0
+    CompletesMission: 0
+    EmotionToGive: 0
+    UnlocksMap: 0
+    BedTime: 0
+  - lines:
+    - "Voc\xEA vira a fotografia ao contr\xE1rio."
+    - "Mesmo sem olhar\u2026 ainda consegue lembrar do rosto do seu irm\xE3o. "
+    - "O sorriso. A voz. O que voc\xEA disse. O que voc\xEA n\xE3o disse."
+    - "Voc\xEA deveria ter ficado calado. Mas ficou com medo."
+    - "Voc\xEA tentou jogar essa culpa no mar."
+    - Funcionou por um tempo.
+    - E ele pagou por isso.
+    - "Ele n\xE3o vai mais incomodar sua vida, nunca mais."
+    - "Que morra de novo, como assombra\xE7\xE3o."
+    RequiredMissionIndex: -1
+    RequiredEmotion: 0
+    RequiredHeldFish: 0
+    RequiredDayIndex: 5
+    IsExtra: 0
+    CompletesMission: 0
+    EmotionToGive: 3
     UnlocksMap: 0
     BedTime: 0
   DialogueText: {fileID: 95930983}
@@ -99809,7 +100812,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 1.6837077
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -99906,7 +100909,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 1.7091881
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -100060,13 +101063,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1596065730}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.08733822, y: -0.7016922, z: 0.17889671, w: 0.6841023}
-  m_LocalPosition: {x: 0.02, y: 0.1432, z: -0.062}
-  m_LocalScale: {x: 6.7, y: 6.7, z: 6.7}
+  m_LocalRotation: {x: 0.1517372, y: -0.73873866, z: 0.41843224, w: 0.50611806}
+  m_LocalPosition: {x: -0.08354697, y: 0.05843361, z: -0.07916323}
+  m_LocalScale: {x: 6.6999993, y: 6.7, z: 6.699999}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1869840650}
-  m_Father: {fileID: 823580743}
+  m_Father: {fileID: 1720786742}
   m_LocalEulerAnglesHint: {x: 7.56, y: -90, z: 21.75}
 --- !u!1 &1602122554 stripped
 GameObject:
@@ -105126,8 +106129,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1670444304}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.06493293, y: 0.47269413, z: -0.03495284, w: 0.8781356}
-  m_LocalPosition: {x: 23.696968, y: 0.95502806, z: 1.3174465}
+  m_LocalRotation: {x: 0.14334996, y: 0.44344276, z: -0.0719937, w: 0.88183117}
+  m_LocalPosition: {x: 5.3756824, y: 1.267092, z: -3.7681906}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -105411,6 +106414,57 @@ MonoBehaviour:
     EmotionToGive: 3
     UnlocksMap: 0
     BedTime: 0
+  - lines:
+    - "Voc\xEA folheia o livro sem prestar aten\xE7\xE3o."
+    - Coordenadas. Datas. Nomes. Todos esquecidos.
+    - "Alguns dos nomes est\xE3o riscados com tinta preta. Baixas confirmadas."
+    - "Outros\u2026 com um tra\xE7o vermelho. Desaparecidos."
+    - "Voc\xEA est\xE1 quase fechando, quando seus olhos param."
+    - "No final da p\xE1gina, embaixo de uma mancha escura:"
+    - O nome dele.
+    - "Com um tra\xE7ado vermelho."
+    RequiredMissionIndex: -1
+    RequiredEmotion: 0
+    RequiredHeldFish: 0
+    RequiredDayIndex: 3
+    IsExtra: 0
+    CompletesMission: 0
+    EmotionToGive: 4
+    UnlocksMap: 0
+    BedTime: 0
+  - lines:
+    - "Um dos livros ainda tem areia presa entre as p\xE1ginas."
+    - "Costa norte. Voc\xEA lembra agora."
+    - "Era pra voc\xEAs irem pra l\xE1 depois da guerra. Depois de tudo."
+    - "Voc\xEA fecha o livro devagar."
+    - Raramente as pessoas vivem o bastante para cumprir suas promessas.
+    - "Mas essa era s\xF3 uma promessa jogada para o mar. T\xE3o pequena que cabe
+      entre os corais no ch\xE3o."
+    RequiredMissionIndex: -1
+    RequiredEmotion: 0
+    RequiredHeldFish: 0
+    RequiredDayIndex: 4
+    IsExtra: 0
+    CompletesMission: 0
+    EmotionToGive: 2
+    UnlocksMap: 0
+    BedTime: 0
+  - lines:
+    - "Um envelope cai de dentro do livro quando voc\xEA o abre."
+    - "Voc\xEA nunca viu aquilo antes."
+    - Dentro, existe apenas uma fotografia pequena.
+    - "Voc\xEA\u2026 sorrindo. Sem uniforme. Sem sangue."
+    - "Voc\xEA nem sabia que algu\xE9m tinha guardado isso."
+    - "O \xFAltimo dia que voc\xEA passou s\xF3 pensando nela."
+    RequiredMissionIndex: -1
+    RequiredEmotion: 0
+    RequiredHeldFish: 0
+    RequiredDayIndex: 5
+    IsExtra: 0
+    CompletesMission: 0
+    EmotionToGive: 5
+    UnlocksMap: 0
+    BedTime: 0
   DialogueText: {fileID: 95930983}
   DialogueImage: {fileID: 1834426189}
   SkipProgressImage: {fileID: 167102002}
@@ -105466,8 +106520,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e87d1e6aa2b7e897dbaef1ab6206bc98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraFocus
-  cameraPosition: {x: 5.0813527, y: 1.7607502, z: -3.431664}
-  cameraRotation: {x: 10.348673, y: 60.844666, z: 0.14534427}
+  cameraPosition: {x: 5.3756824, y: 1.267092, z: -3.7681906}
+  cameraRotation: {x: 18.461727, y: 53.39411, z: 0.009811054}
+--- !u!1 &1720786741
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1720786742}
+  m_Layer: 0
+  m_Name: HandleFish
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1720786742
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720786741}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1776102647}
+  - {fileID: 1596065731}
+  - {fileID: 1275391861}
+  - {fileID: 1066162758}
+  - {fileID: 935338298}
+  m_Father: {fileID: 823580743}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1741816113
 GameObject:
   m_ObjectHideFlags: 0
@@ -105697,13 +106787,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1776102646}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.03396716, y: -0.86467177, z: 0.19615875, w: 0.4612057}
-  m_LocalPosition: {x: 0.02, y: 0.1432, z: -0.062}
-  m_LocalScale: {x: 6.7, y: 6.7, z: 6.7}
+  m_LocalRotation: {x: 0.26243764, y: -0.8505981, z: 0.3594944, w: 0.27995232}
+  m_LocalPosition: {x: -0.08354697, y: 0.05843361, z: -0.07916323}
+  m_LocalScale: {x: 6.6999974, y: 6.699999, z: 6.699997}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 622253171}
-  m_Father: {fileID: 823580743}
+  m_Father: {fileID: 1720786742}
   m_LocalEulerAnglesHint: {x: 17.932, y: -121.536, z: 14.591}
 --- !u!1 &1780238603 stripped
 GameObject:
@@ -127354,13 +128444,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2089345427}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.57116944, z: -0, w: 0.8208322}
-  m_LocalPosition: {x: 0.1056, y: -0.35259998, z: 0.135}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0.209, y: -0.266, z: 0.211}
+  m_LocalScale: {x: 0.029142193, y: 0.029142193, z: 0.029142193}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 436523015}
-  m_LocalEulerAnglesHint: {x: 0, y: -69.664, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &2122893035 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4187953720066261998, guid: ef4ed10b49f60bb42a6f7cbb9d996592, type: 3}
