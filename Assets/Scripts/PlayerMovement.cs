@@ -4,9 +4,6 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
 
-[Header("Modelo 3D")]
-    public GameObject playerModel;
-
 [Header("Valores de velocidade")]
     public float speed = 10;                    
     public float turnSpeedHorizontal = 0.3f; 
@@ -27,7 +24,6 @@ public class PlayerMovement : MonoBehaviour
     public bool IsDead = false;
     public Animator HandsAnimation;
     public bool IsMovementLocked = false;
-    public bool IsTutorialRunning = false;
 
 [Header("Som de passos")]
     public AudioSource FootSteps;
@@ -57,6 +53,9 @@ public class PlayerMovement : MonoBehaviour
 
             if (MoveInput.sqrMagnitude > 0.1f)
             {
+                TutorialManager tutorial = FindFirstObjectByType<TutorialManager>();
+                if (tutorial != null) tutorial.OnPlayerMoved();
+
                 HandsAnimation.SetBool("IsMoving", true);
             }
             else
@@ -104,8 +103,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        IsMovementLocked = IsTutorialRunning;
-
         bool IsInGround = Physics.Raycast(transform.position, Vector3.down, 1.1f, floorLayers);
 
         if (IsInGround && MoveInput.sqrMagnitude > 0.1f && !PlayerInteraction.IsInputLocked)

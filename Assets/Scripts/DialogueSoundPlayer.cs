@@ -29,7 +29,7 @@ public class DialogueSoundPlayer : MonoBehaviour
 
     void PlayLineSound(DialogueManager.DialogueOption Option, int LineIndex)
     {
-        if (Dialogue.GetCurrentDialogueOption() != Option) return;
+        if (!Dialogue.IsActive) return;
 
             int OptionIndex = System.Array.IndexOf(Dialogue.Dialogues, Option);
             if (OptionIndex >= 0 && OptionIndex < SoundSets.Length)

@@ -160,9 +160,15 @@
 
             IsTyping = false;
             TypingCoroutine = null;
+
+            if (!CanSkip)
+            {
+                yield return new WaitForSeconds(1f);
+                NextLine(true);
+            }
         }
 
-        public void NextLine()
+        public void NextLine(bool Auto = false)
         {
             if (!IsActive) return;
 
@@ -171,6 +177,8 @@
                 SkipTyping();
                 return;
             }
+
+            if (!CanSkip && !Auto) return;
 
             CurrentLine++;
             if (CurrentLine >= ActiveDialogue.lines.Length) EndDialogue();
@@ -229,6 +237,7 @@
 
         public static void UpdateSkipProgress(float Fill)
         {
+            if (CurrentDialogue != null && !CurrentDialogue.CanSkip) return;
             if (CurrentDialogue?.SkipProgressImage != null) CurrentDialogue.SkipProgressImage.fillAmount = Fill;
         }
 
@@ -239,6 +248,7 @@
 
         public static void SkipDialogue()
         {
+            if (CurrentDialogue != null && !CurrentDialogue.CanSkip) return;
             if (CurrentDialogue != null) CurrentDialogue.EndDialogue();
         }
 

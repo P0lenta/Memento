@@ -14,8 +14,6 @@ public class EmotionManager : MonoBehaviour
     public bool IsMapUnlocked = false;
     public bool IsTimeToBed = false;
     public string LastScene = "";
-    public bool WasMapOpened = false;
-    public bool WasWaterAcessed = false;
 
 
     private void Awake()
@@ -49,8 +47,6 @@ public class EmotionManager : MonoBehaviour
     {
         PlayerPrefs.SetInt("CurrentMission", CurrentMission);
         PlayerPrefs.SetInt("CurrentDay", CurrentDay);
-        PlayerPrefs.SetInt("WasMapOpened", WasMapOpened ? 1 : 0);
-        PlayerPrefs.SetInt("WasWaterAcessed", WasWaterAcessed ? 1 : 0);
         PlayerPrefs.Save();
     }
 
@@ -58,8 +54,6 @@ public class EmotionManager : MonoBehaviour
     {
         CurrentMission = PlayerPrefs.GetInt("CurrentMission", 0);
         CurrentDay = PlayerPrefs.GetInt("CurrentDay", 1);
-        WasMapOpened = PlayerPrefs.GetInt("WasMapOpened", 0) == 1;
-        WasWaterAcessed = PlayerPrefs.GetInt("WasWaterAcessed", 0) == 1;
     }
 
 }

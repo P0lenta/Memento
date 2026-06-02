@@ -4,7 +4,6 @@ public class Projector : MonoBehaviour
 {
     public Sprite[] Frames;
     public float Intervalo = 5f;
-    public TutorialTime tutorialTime;
     public SpriteRenderer Renderer;
     private int Index = 0;
     private float Timer;
@@ -32,7 +31,5 @@ public class Projector : MonoBehaviour
         Index = (Index + 1) % Frames.Length;
         Renderer.sprite = Frames[Index];
         Timer = Intervalo;
-
-        if (Index == 0 && tutorialTime != null) tutorialTime.LiberateWalk();
     }
 }

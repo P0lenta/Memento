@@ -72,12 +72,10 @@ public class MapShower : MonoBehaviour
 
         if (PlayerInteraction.IsInputLocked) return;
 
+        TutorialManager tutorial = FindFirstObjectByType<TutorialManager>();
+        if (tutorial != null) tutorial.OnPlayerOpenedMap();
+
         UpdateMapHelpers();
-
-        EmotionManager.Instance.WasMapOpened = true;
-
-        MapTutorial mapTutorial = FindFirstObjectByType<MapTutorial>();
-        if (mapTutorial != null) mapTutorial.OnMapOpened();
 
         IsMapOpen = true;
 
