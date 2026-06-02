@@ -193,6 +193,7 @@ public class MenuManagers : MonoBehaviour
     public void DeleteSave()
     {
         PlayerPrefs.DeleteAll();
+        PlayerPrefs.SetInt("TutorialCompleto", 0);
         PlayerPrefs.Save();
         if (EmotionManager.Instance != null) 
         {

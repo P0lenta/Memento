@@ -205,6 +205,9 @@ public class PlayerInteraction : MonoBehaviour
 
         SetInteractionImageVisible(false);
 
+        TutorialManager tutorial = FindFirstObjectByType<TutorialManager>();
+        if (tutorial != null) tutorial.OnPlayerInteracted();
+
         DialogueManager Dialogue = ActualInteractiveObject.GetComponent<DialogueManager>();
         if (Dialogue != null) Dialogue.StartDialogue();
 
@@ -253,6 +256,8 @@ public class PlayerInteraction : MonoBehaviour
 
     public void RefreshHandsUIVisibility()
     {
+        if (HandsRenderers == null) return;
+
         foreach (var Rend in HandsRenderers)
         {
             if (Rend != null) Rend.enabled = !IsInputLocked;

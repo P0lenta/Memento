@@ -5,14 +5,27 @@ public class RadarWarning : MonoBehaviour
     [SerializeField]
     private GameObject RadioObj;
 
+    private bool RadioLiberado = false;
+
+    public void AtivarRadio()
+    {
+        RadioLiberado = true;
+    }
+
     void Start() 
     {
-        if (RadioObj != null) RadioObj.SetActive(false);    
+        if (RadioObj != null) RadioObj.SetActive(false);
     }
 
     void Update()
     {
         if (RadioObj == null) return;
+
+        if (!RadioLiberado)
+        {
+            RadioObj.SetActive(false);
+            return;
+        }
 
         bool MapaTaBloqueado = !EmotionManager.Instance.IsMapUnlocked;
         bool NumDormeNao = !EmotionManager.Instance.IsTimeToBed;
