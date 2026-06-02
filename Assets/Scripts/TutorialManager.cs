@@ -69,9 +69,15 @@ public class TutorialManager : MonoBehaviour
         if (TextoObjAndar) TextoObjAndar.SetActive(false);
     }
 
+    private bool JaInteragiu = false;
+
     public void OnPlayerInteracted()
     {
         if (TutorialCompleto) return;
+        if (JaInteragiu) return;
+
+        JaInteragiu = true;
+
         if (TextoObjInteragir) TextoObjInteragir.SetActive(false);
         if (TextoObjMapa) TextoObjMapa.SetActive(true);
 
