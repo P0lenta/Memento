@@ -25505,7 +25505,7 @@ ParticleSystem:
       serializedVersion: 2
       m_Bits: 4294967295
     maxCollisionShapes: 256
-    quality: 0
+    quality: 2
     voxelSize: 0.5
     collisionMessages: 0
     collidesWithDynamic: 1
@@ -28151,7 +28151,7 @@ Transform:
   m_Children:
   - {fileID: 2089345429}
   - {fileID: 387453222}
-  - {fileID: 1425136356}
+  - {fileID: 311734810}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &436523016
@@ -60568,7 +60568,7 @@ ParticleSystem:
       serializedVersion: 2
       m_Bits: 4294967295
     maxCollisionShapes: 256
-    quality: 0
+    quality: 2
     voxelSize: 0.5
     collisionMessages: 0
     collidesWithDynamic: 1
@@ -62821,9 +62821,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -6425242984369218054, guid: ef4ed10b49f60bb42a6f7cbb9d996592, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1256312264}
-    - targetCorrespondingSourceObject: {fileID: 6154282303986746247, guid: ef4ed10b49f60bb42a6f7cbb9d996592, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 311734810}
     - targetCorrespondingSourceObject: {fileID: -3452006065628246305, guid: ef4ed10b49f60bb42a6f7cbb9d996592, type: 3}
       insertIndex: 0
       addedObject: {fileID: 2041496780}
@@ -72487,7 +72484,7 @@ ParticleSystem:
       serializedVersion: 2
       m_Bits: 4294967295
     maxCollisionShapes: 256
-    quality: 0
+    quality: 2
     voxelSize: 0.5
     collisionMessages: 0
     collidesWithDynamic: 1
@@ -82363,7 +82360,7 @@ ParticleSystem:
       serializedVersion: 2
       m_Bits: 4294967295
     maxCollisionShapes: 256
-    quality: 0
+    quality: 2
     voxelSize: 0.5
     collisionMessages: 0
     collidesWithDynamic: 1
@@ -98926,11 +98923,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f9abae9a5f966641a3dad298c6ef0cb, type: 3}
---- !u!4 &1425136356 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8374266896529724984, guid: 6f9abae9a5f966641a3dad298c6ef0cb, type: 3}
-  m_PrefabInstance: {fileID: 1425136355}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1437795439 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3361648159528079280, guid: ef4ed10b49f60bb42a6f7cbb9d996592, type: 3}
@@ -122089,7 +122081,7 @@ ParticleSystem:
       serializedVersion: 2
       m_Bits: 4294967295
     maxCollisionShapes: 256
-    quality: 0
+    quality: 2
     voxelSize: 0.5
     collisionMessages: 0
     collidesWithDynamic: 1
@@ -126993,7 +126985,7 @@ ParticleSystem:
       serializedVersion: 2
       m_Bits: 4294967295
     maxCollisionShapes: 256
-    quality: 0
+    quality: 2
     voxelSize: 0.5
     collisionMessages: 0
     collidesWithDynamic: 1
