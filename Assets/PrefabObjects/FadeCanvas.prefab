@@ -385,8 +385,25 @@ MonoBehaviour:
   SleepRawMessages:
   - "Dormir aqui \xE9 pesado. Voc\xEA tenta descansar os olhos, mas \xE9 imposs\xEDvel.
     Eles ainda est\xE3o l\xE1 fora te esperando."
+  - "Voc\xEA deita, fecha os olhos, mas o fundo da sua vis\xE3o ainda brilha. Cada
+    vez que tenta relaxar, o corpo enrijece. Essa noite, o sono n\xE3o vem. Talvez
+    ele nunca mais venha."
+  - "O travesseiro est\xE1 \xFAmido. Voc\xEA n\xE3o sabe se \xE9 sua testa. O sonar
+    ressoa. Os minutos passam como gotas de \xE1gua em uma torneira enferrujada.
+    \xC9 melhor ir trabalhar, n\xE3o \xE9 o momento para descansar."
+  - "Voc\xEA tenta se convencer de que est\xE1 seguro. Mas o barulho l\xE1 fora\u2026
+    As sombras do teto parecem se mexer quando voc\xEA n\xE3o olha. Melhor ficar
+    acordado. Pelo menos acordado voc\xEA pode fugir."
   SleepPassMessages:
   - "Seus pecados ficam menos pesados, voc\xEA finalmente consegue dormir uma noite."
+  - "Pela primeira vez em muito tempo, seus olhos se fecham sem medo do que encontrar\xE3o
+    do outro lado."
+  - "O peso em seus ombros n\xE3o desapareceu. Contudo, voc\xEA encontra for\xE7as
+    para carreg\xE1-lo por mais um dia. Mais um dia vestindo a maldita roupa."
+  - "A noite n\xE3o o perdoou. Ela nunca perdoa. Mas ela te deixou descansar. Entre
+    os arrependimentos, voc\xEA encontra preciosas horas para relaxar."
+  - "Parece ser uma boa hora para acordar, depois de tudo que passou. Voc\xEA saiu
+    inteiro, agora \xE9 rezar para que o mesmo possa ser dito dos seus pensamentos."
 --- !u!1 &8751917248419828708
 GameObject:
   m_ObjectHideFlags: 0

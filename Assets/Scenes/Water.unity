@@ -8,8 +8,8 @@ OcclusionCullingSettings:
     smallestOccluder: 5
     smallestHole: 0.25
     backfaceThreshold: 100
-  m_SceneGUID: 00000000000000000000000000000000
-  m_OcclusionCullingData: {fileID: 0}
+  m_SceneGUID: 4bddda3cb513b424e833edea0b073d63
+  m_OcclusionCullingData: {fileID: 36300000, guid: 4dcd12003d698c5598cbbe954ed0eed4, type: 2}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
@@ -42994,6 +42994,21 @@ MonoBehaviour:
     Mas isso n\xE3o te impedir\xE1 de repetir o ciclo."
   - "Finalmente \xE9 o momento de se juntar a eles. Depois de tudo o que voc\xEA
     causou, esse \xE9 o m\xEDnimo."
+  - "A \xE1gua preenche seus pulm\xF5es como um \xFAltimo abra\xE7o frio. Voc\xEA
+    tenta nadar para a superf\xEDcie, mas ela est\xE1 cada vez mais distante. Aos
+    poucos, voc\xEA se torna um com a escurid\xE3o do mar. "
+  - "Seu corpo inerte afunda lentamente, balan\xE7ado pela correnteza. Os peixes
+    se aproximam, curiosos. Voc\xEA tenta piscar, mas v\xEA que \xE9 sombra para
+    todo lado."
+  - "Voc\xEA sente o \xFAltimo sopro de oxig\xEAnio escapar entre os l\xE1bios. As
+    bolhas sobem como fantasmas em dire\xE7\xE3o \xE0 luz que voc\xEA nunca mais
+    vai alcan\xE7ar. Sua nova casa est\xE1 esperando."
+  - "Morrer debaixo d'\xE1gua n\xE3o \xE9 como na superf\xEDcie. N\xE3o h\xE1 c\xE9u
+    para te receber. Apenas a press\xE3o te esmagando, e a escurid\xE3o que vai te
+    levar para um novo come\xE7o."
+  - "Suas m\xE3os ainda tentam remar, mas o corpo j\xE1 n\xE3o responde. A alma se
+    desprende como algas arrancadas da rocha. O oceano ganha mais um habitante. Reze
+    para que tenha tido boas emo\xE7\xF5es antes da morte."
   DeathHeader: {fileID: 1727970873}
   DeathMessage: {fileID: 1783096916}
 --- !u!1 &692272129
@@ -85317,6 +85332,123 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1212454572
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1212454576}
+  - component: {fileID: 1212454575}
+  - component: {fileID: 1212454574}
+  - component: {fileID: 1212454573}
+  m_Layer: 0
+  m_Name: Occluder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 18
+  m_IsActive: 1
+--- !u!65 &1212454573
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212454572}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1212454574
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212454572}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1212454575
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212454572}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1212454576
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212454572}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 203.16728, y: 272.3, z: -305.32074}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1228196454 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5833353905705803827, guid: 4a113a809e2f442e5b6e78a31a88b27d, type: 3}
+  m_PrefabInstance: {fileID: 154568293983449408}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1229834581
 GameObject:
   m_ObjectHideFlags: 0
@@ -160849,3 +160981,4 @@ SceneRoots:
   - {fileID: 705055509}
   - {fileID: 1469627243}
   - {fileID: 147445567}
+  - {fileID: 1212454576}
