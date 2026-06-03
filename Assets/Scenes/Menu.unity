@@ -6158,7 +6158,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Build 2.4
+  m_text: Build 2.7
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a9fd6a77884c8b13c8df1d94b7e722e2, type: 2}
   m_sharedMaterial: {fileID: -2415546261234362810, guid: a9fd6a77884c8b13c8df1d94b7e722e2, type: 2}
@@ -6921,8 +6921,6 @@ MonoBehaviour:
   IsMapUnlocked: 0
   IsTimeToBed: 0
   LastScene: 
-  WasMapOpened: 0
-  WasWaterAcessed: 0
 --- !u!1 &2104169262
 GameObject:
   m_ObjectHideFlags: 0
