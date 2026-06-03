@@ -42,6 +42,10 @@ public class SceneChanger : MonoBehaviour
             else
             {
                 if (MusicManager.Instance != null) MusicManager.Instance.LoadSoundMenu();
+
+                TutorialManager tutorial = FindFirstObjectByType<TutorialManager>();
+                if (tutorial != null) tutorial.OnPlayerEnteredWater();
+                
                 FadeTransition.Instance.StartFade(SceneName);
             }
         }

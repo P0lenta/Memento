@@ -6,7 +6,7 @@ public class TutorialManager : MonoBehaviour
 {
     public RadarWarning AvisoRadio;
     public GameObject ComputerObj;
-    private bool TutorialCompleto;
+    public bool TutorialCompleto;
 
     [Header("Referências GameObject")]
     public GameObject TextoObjAndar;
@@ -52,6 +52,8 @@ public class TutorialManager : MonoBehaviour
             if (TextoObjInteragir) TextoObjInteragir.SetActive(false);
             if (TextoObjMapa) TextoObjMapa.SetActive(false);
             if (TextoObjAgua) TextoObjAgua.SetActive(false);
+            if (ComputerObj) ComputerObj.SetActive(false);
+            if (AvisoRadio != null) AvisoRadio.AtivarRadio();
         }
     }
 
@@ -82,7 +84,7 @@ public class TutorialManager : MonoBehaviour
         if (TextoObjMapa) TextoObjMapa.SetActive(true);
 
         if (AvisoRadio != null) AvisoRadio.AtivarRadio();
-        if (ComputerObj != null) ComputerObj.SetActive(false);
+        if (ComputerObj != null) Destroy(ComputerObj);
     }
 
     public void OnPlayerOpenedMap()

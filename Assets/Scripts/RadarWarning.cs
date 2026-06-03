@@ -24,6 +24,7 @@ public class RadarWarning : MonoBehaviour
         if (!RadioLiberado)
         {
             RadioObj.SetActive(false);
+            Debug.Log("Radio num tá liberado");
             return;
         }
 

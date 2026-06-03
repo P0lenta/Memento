@@ -172,13 +172,13 @@
         {
             if (!IsActive) return;
 
-            if (IsTyping && CanSkip)
+            if (IsTyping)
             {
                 SkipTyping();
                 return;
             }
 
-            if (!CanSkip && !Auto) return;
+            if (CanSkip && Auto) return;
 
             CurrentLine++;
             if (CurrentLine >= ActiveDialogue.lines.Length) EndDialogue();
