@@ -26,9 +26,25 @@ public class BedCounter : MonoBehaviour
 
     public void Sleep()
     {
+        bool IsFinalDay = EmotionManager.Instance.CurrentDay == 5 &&
+                          EmotionManager.Instance.CurrentMission >= 10 &&
+                          EmotionManager.Instance.IsTimeToBed;
+
+        if (IsFinalDay)
+        {
+            PlayerInteraction.IsSleeping = true;
+            PlayerInteraction.IsMenuOpen = false;
+
+            EndGame cutscene = FindFirstObjectByType<EndGame>();
+            if (cutscene != null) cutscene.CutsceneAnimator.SetTrigger("FinalCutscene");
+            return;
+        }
+
         DayPassed = false;
 
-        if (EmotionManager.Instance.CurrentMission >= EmotionManager.Instance.CurrentDay * 2) IncreaseDay();
+        bool CanIncreaseDay = !(EmotionManager.Instance.CurrentDay == 5 && EmotionManager.Instance.CurrentMission >= 10);
+
+        if (CanIncreaseDay && EmotionManager.Instance.CurrentMission >= EmotionManager.Instance.CurrentDay * 2) IncreaseDay();
 
         StartCoroutine(FadeAnimation());
     }
