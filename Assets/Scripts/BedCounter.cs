@@ -36,7 +36,11 @@ public class BedCounter : MonoBehaviour
             PlayerInteraction.IsMenuOpen = false;
 
             EndGame cutscene = FindFirstObjectByType<EndGame>();
-            if (cutscene != null) cutscene.CutsceneAnimator.SetTrigger("FinalCutscene");
+            if (cutscene != null) 
+            {
+                cutscene.CutsceneAnimator.SetTrigger("FinalCutscene");
+                cutscene.MuteAllSFX();
+            }
             return;
         }
 

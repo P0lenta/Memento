@@ -224,8 +224,6 @@
                 if (Delivery != null) Delivery.CompleteDelivery();
             }
 
-            PlayerInteraction.Instance?.StopCurrentInteractionSound();
-
             CurrentDialogue = null;
 
             OnDialogueEnded?.Invoke(ActiveDialogue);

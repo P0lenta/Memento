@@ -15,6 +15,7 @@ public class OxygenManager : MonoBehaviour
     public GameObject HandsUI;
     private bool IsDead = false;
     public Renderer HandsRenderer;
+    public GameObject Hacktext;
     
     [Header("Animação")]
     public DeathTransition deathTransition;
@@ -30,8 +31,8 @@ public class OxygenManager : MonoBehaviour
         if (context.performed)
         {
             IsImortal = !IsImortal;
-            if (IsImortal) Debug.Log("É imortal");
-            if (!IsImortal) Debug.Log("É mortal");
+            if (IsImortal) Hacktext.SetActive(true);
+            if (!IsImortal) Hacktext.SetActive(false);
         }
     }
 

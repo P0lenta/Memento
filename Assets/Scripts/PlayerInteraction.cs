@@ -17,7 +17,6 @@ public class PlayerInteraction : MonoBehaviour
     public MenuManagers MenuManager;
     public MapShower MapController;
     public GameObject InteractionImage;
-    private AudioSource CurrentInteractionSound;
 
 
     [Header("flags")]
@@ -111,7 +110,16 @@ public class PlayerInteraction : MonoBehaviour
 
         if (EmotionManager.Instance != null) EmotionManager.Instance.HeldFish = Fish;
 
-        foreach (var entry in FishModels) entry.Model.SetActive(false);
+        foreach (var entry in FishModels) 
+        if (entry.Model != null)
+            {
+                entry.Model.SetActive(false);        
+            }
+            else
+            {
+                Debug.LogWarning($"Modelo nulo para o peixe: {entry.Emotion}, IsHard: {entry.IsHard}");
+            }
+        
 
         if (Fish == EmotionType.None) UpdateHoldingAnimation();
     }
@@ -190,16 +198,6 @@ public class PlayerInteraction : MonoBehaviour
                 focus.EndFocus();
             return;
         }
-
-        if (ActualInteractiveObject != null)
-        {
-            Interactable InteractSound = ActualInteractiveObject.GetComponent<Interactable>();
-            if (InteractSound != null && InteractSound.InteractionSound != null)
-            {
-                CurrentInteractionSound = InteractSound.InteractionSound;
-                CurrentInteractionSound.Play();
-            }
-        }
         
         if (!CanInteract || ActualInteractiveObject == null) return;
 
@@ -272,12 +270,6 @@ public class PlayerInteraction : MonoBehaviour
     public void SetInteractionImageVisible(bool visible)
     {
         if (InteractionImage != null) InteractionImage.SetActive(visible);
-    }
-
-    public void StopCurrentInteractionSound()
-    {
-        if (CurrentInteractionSound != null && CurrentInteractionSound.isPlaying) CurrentInteractionSound.Stop();
-        CurrentInteractionSound = null;
     }
 
     void CheckActualFish()

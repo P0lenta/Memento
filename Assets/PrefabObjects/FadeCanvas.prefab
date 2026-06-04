@@ -274,7 +274,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!114 &4326509559705669228
 MonoBehaviour:
@@ -391,9 +391,9 @@ MonoBehaviour:
   - "O travesseiro est\xE1 \xFAmido. Voc\xEA n\xE3o sabe se \xE9 sua testa. O sonar
     ressoa. Os minutos passam como gotas de \xE1gua em uma torneira enferrujada.
     \xC9 melhor ir trabalhar, n\xE3o \xE9 o momento para descansar."
-  - "Voc\xEA tenta se convencer de que est\xE1 seguro. Mas o barulho l\xE1 fora\u2026
-    As sombras do teto parecem se mexer quando voc\xEA n\xE3o olha. Melhor ficar
-    acordado. Pelo menos acordado voc\xEA pode fugir."
+  - "Voc\xEA tenta acreditar que est\xE1 seguro. Mas o barulho l\xE1 fora\u2026 As
+    sombras no teto parecem se mexer. Melhor ficar acordado. Pelo menos acordado
+    voc\xEA pode fugir."
   SleepPassMessages:
   - "Seus pecados ficam menos pesados, voc\xEA finalmente consegue dormir uma noite."
   - "Pela primeira vez em muito tempo, seus olhos se fecham sem medo do que encontrar\xE3o

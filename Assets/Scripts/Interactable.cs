@@ -7,9 +7,6 @@ public class Interactable : MonoBehaviour
     public TextMeshProUGUI InteractionText;
     public string message = "E";
 
-    [Header("Efeitos sonoros")]
-    public AudioSource InteractionSound;
-
     void Start()
     {
         if (InteractionText != null) InteractionText.gameObject.SetActive(false);  
@@ -42,16 +39,4 @@ public class Interactable : MonoBehaviour
         if (InteractionText != null) InteractionText.gameObject.SetActive(false);
 
     }
-
-    public void PlayerInteractionSound()
-    {
-        if (InteractionSound != null) InteractionSound.Play();
-    }
-
-    public void StopInteractionSound()
-    {
-        if (InteractionSound != null) InteractionSound.Stop();
-    }
-
-
 }

@@ -5,8 +5,9 @@ using System.Collections;
 
 public class DeathTransition : MonoBehaviour
 {
-    [Header("Controlador de animaçãp")]
+    [Header("Controlador de animação")]
     public Animator DeathAnimation;
+    public AudioSource audioSource;
 
     [Header("Textos de morte")]
     public bool IsForReal;
@@ -25,6 +26,7 @@ public class DeathTransition : MonoBehaviour
 
     public void StartDeath()
     {
+        audioSource.Play();
         StartCoroutine(PlayerDied());
     }
 

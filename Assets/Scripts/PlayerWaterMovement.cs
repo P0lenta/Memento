@@ -20,14 +20,17 @@ public class PlayerWaterMovement : MonoBehaviour
     public Rigidbody rig;               
     public Collider col;
     public Animator HandsAnimation;
+    public GameObject Hacktext;
 
 [Header("Flags")]
     public bool IsDead = false;             
     public bool IsInteracting = false;
+    public bool IsFast = false;
 
     private Vector3 MoveInput;
     private bool IsJumping;
     private bool IsCrouching;
+    private float NormalSpeed;
 
     void Start()
     {
@@ -36,6 +39,7 @@ public class PlayerWaterMovement : MonoBehaviour
         rig.useGravity = false;
         rig.linearDamping = WaterDrag;
 
+        NormalSpeed = MoveSpeed;
     }
 
     public void GetSensibility()
@@ -95,6 +99,25 @@ public class PlayerWaterMovement : MonoBehaviour
         float start = (min + max) * 0.5f - 180;
         float floor = Mathf.FloorToInt((angle - start) / 360) * 360;
         return Mathf.Clamp(angle, min + floor, max + floor);
+    }
+
+    public void OnSpeed(InputAction.CallbackContext context)
+    {
+
+        if (context.performed)
+        {
+            IsFast = !IsFast;
+            if (IsFast) 
+            {
+                MoveSpeed = 50f;
+                Hacktext.SetActive(true);
+            }
+            if (!IsFast) 
+            {
+                MoveSpeed = NormalSpeed;
+                Hacktext.SetActive(false);
+            }
+        }
     }
 
 
