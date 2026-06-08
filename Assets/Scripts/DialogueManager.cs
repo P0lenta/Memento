@@ -112,7 +112,7 @@
                     bool EmotionOk = (Didi.RequiredEmotion == EmotionType.None || Didi.RequiredEmotion == PlayerEmotion);
                     bool FishOk = (Didi.RequiredHeldFish == EmotionType.None || Didi.RequiredHeldFish == HeldFish);
                     bool DayOk = (Didi.RequiredDayIndex == -1 || Didi.RequiredDayIndex == 0 || Didi.RequiredDayIndex == CurrentDay);
-                    
+
                     if (MissionOk && EmotionOk && FishOk && DayOk)
                         return Didi;
                 }
