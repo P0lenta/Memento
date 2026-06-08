@@ -201,6 +201,9 @@ public class PlayerInteraction : MonoBehaviour
         
         if (!CanInteract || ActualInteractiveObject == null) return;
 
+        Interactable InteractSound = ActualInteractiveObject.GetComponent<Interactable>();
+        if (InteractSound != null && InteractSound.InteractionSound != null) InteractSound.InteractionSound.Play(); 
+
         SetInteractionImageVisible(false);
 
         TutorialManager tutorial = FindFirstObjectByType<TutorialManager>();

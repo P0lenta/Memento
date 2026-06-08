@@ -75,7 +75,7 @@ public class BedCounter : MonoBehaviour
         if (DayPassed) 
         {
             yield return StartCoroutine(TypeWriter
-            (PassDayText, PassDayMessage + EmotionManager.Instance.CurrentDay, PassDaySpeed));
+            (PassDayText, PassDayMessage + EmotionManager.Instance.CurrentDay + "/5", PassDaySpeed));
 
             yield return new WaitForSeconds (0.5f);
 

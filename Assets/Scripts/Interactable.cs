@@ -6,6 +6,7 @@ public class Interactable : MonoBehaviour
    [Header("UI")]
     public TextMeshProUGUI InteractionText;
     public string message = "E";
+    public AudioSource InteractionSound;
 
     void Start()
     {

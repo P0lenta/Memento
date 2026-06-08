@@ -266,7 +266,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 3892314111
+    rgba: 16777215
   m_fontColor: {r: 1, g: 1, b: 1, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -394,6 +394,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
   InteractionText: {fileID: 1954950602}
   message: Tomar banho
+  InteractionSound: {fileID: 0}
 --- !u!114 &58955117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6383,6 +6384,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
   InteractionText: {fileID: 1954950602}
   message: Ler carta
+  InteractionSound: {fileID: 0}
 --- !u!114 &159748696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27965,6 +27967,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
   InteractionText: {fileID: 1954950602}
   message: "Ir para \xC1gua"
+  InteractionSound: {fileID: 413873380}
 --- !u!65 &413873376
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28014,7 +28017,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 07ca3fc88aebf91209bc3df776e9f5cd, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.354
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -28892,6 +28895,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
   InteractionText: {fileID: 1954950602}
   message: "Abrir r\xE1dio"
+  InteractionSound: {fileID: 0}
 --- !u!114 &436523009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30421,6 +30425,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
   InteractionText: {fileID: 1954950602}
   message: Ouvir fita
+  InteractionSound: {fileID: 0}
 --- !u!114 &478308174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35918,6 +35923,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
   InteractionText: {fileID: 1954950602}
   message: "Avan\xE7ar imagem"
+  InteractionSound: {fileID: 0}
 --- !u!65 &555703526
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -56184,6 +56190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
   InteractionText: {fileID: 1954950602}
   message: "Usar perisc\xF3pio"
+  InteractionSound: {fileID: 0}
 --- !u!114 &718921150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57650,6 +57657,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
   InteractionText: {fileID: 1954950602}
   message: Jogar peixe fora
+  InteractionSound: {fileID: 925107187}
 --- !u!65 &925107181
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -91492,6 +91500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
   InteractionText: {fileID: 1954950602}
   message: Jogar peixe na privada
+  InteractionSound: {fileID: 1306405954}
 --- !u!65 &1306405952
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -101541,7 +101550,7 @@ Transform:
   m_GameObject: {fileID: 1411695882}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.205, y: 1.7, z: 0.62}
+  m_LocalPosition: {x: -8.064, y: 1.502, z: 0.888}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -101586,7 +101595,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 12
   m_Type: 2
-  m_Color: {r: 0.990566, g: 0.62550116, b: 0.54668033, a: 1}
+  m_Color: {r: 0.9528302, g: 0.6164581, b: 0.5438323, a: 1}
   m_Intensity: 4.77
   m_Range: 4
   m_SpotAngle: 30
@@ -103026,6 +103035,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
   InteractionText: {fileID: 1954950602}
   message: Ver foto
+  InteractionSound: {fileID: 0}
 --- !u!114 &1554339874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109111,6 +109121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
   InteractionText: {fileID: 1954950602}
   message: Ler livro
+  InteractionSound: {fileID: 0}
 --- !u!114 &1692760907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109666,6 +109677,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
   InteractionText: {fileID: 1954950602}
   message: Abrir computador
+  InteractionSound: {fileID: 0}
 --- !u!114 &1764999661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110248,6 +110260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
   InteractionText: {fileID: 1954950602}
   message: E
+  InteractionSound: {fileID: 0}
 --- !u!114 &1785925639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110502,6 +110515,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
   InteractionText: {fileID: 1954950602}
   message: Dormir
+  InteractionSound: {fileID: 0}
 --- !u!65 &1804155939
 BoxCollider:
   m_ObjectHideFlags: 0
