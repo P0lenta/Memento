@@ -93433,6 +93433,7 @@ MonoBehaviour:
   AudioPlayer: {fileID: 928648076}
   DetectSound: {fileID: 8300000, guid: ddd75f5ebb2539b93a9ed9424f2c87a3, type: 3}
   ChaseSound: {fileID: 8300000, guid: 43d7eae1348dbba4faa6ce252f4241c8, type: 3}
+  Jellyfish: {fileID: 1118639197}
 --- !u!82 &928648076
 AudioSource:
   m_ObjectHideFlags: 0

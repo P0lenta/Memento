@@ -54,7 +54,7 @@ public class DeathTransition : MonoBehaviour
             }
 
         PlayerInteraction.Instance?.RefreshHandsUIVisibility();
-
+        
         if (FadeTransition.Instance != null) FadeTransition.Instance.StartFade("Submarine");
 
     } 

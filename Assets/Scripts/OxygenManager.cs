@@ -64,6 +64,8 @@ public class OxygenManager : MonoBehaviour
 
         IsDead = true;
 
+        if (PlayerInteraction.Instance != null) PlayerInteraction.Instance.SetHeldFish(EmotionType.None);
+
          if(HandsRenderer != null) HandsRenderer.enabled = false;
         
         PlayerWaterMovement MoveScript = GetComponent<PlayerWaterMovement>();

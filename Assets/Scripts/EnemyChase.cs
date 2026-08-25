@@ -7,6 +7,7 @@ public class EnemyChase : MonoBehaviour
     public AudioSource AudioPlayer;
     public AudioClip DetectSound;
     public AudioClip ChaseSound;
+    public GameObject Jellyfish;
     private float LosePlayerDelay = 0.5f;
     private Transform Player;
     private bool IsChasing = false;
@@ -24,7 +25,7 @@ public class EnemyChase : MonoBehaviour
         Root = transform.root;
 
         bool DeveAparecer = EmotionManager.Instance != null && EmotionManager.Instance.CurrentMission >= 9;
-        gameObject.SetActive(DeveAparecer);    
+        Jellyfish.SetActive(DeveAparecer);    
 
         OriginalPosition = Root.position;
         OriginalRotation = Root.rotation;
